@@ -85,13 +85,22 @@ def git(*args, **kw):
 
 def git_upload(token, owner, name):
     url = "https://%s@github.com/%s/%s.git" % (token, owner, name)
+    clean = "https://github.com/%s/%s.git" % (owner, name)
     git("remote", "remove", "origin")
     git("remote", "add", "origin", url)
-    rc, out, err = git("push", "-u", "origin", "main", "--follow-tags")
-    if rc == 0:
-        git("push", "origin", "v1.0.0")
-        return True, out or err
-    return False, err
+    try:
+        rc, out, err = git("push", "-u", "origin", "main", "--follow-tags")
+        if rc != 0:
+            # a repo created with license_template carries one extra initial
+            # commit that our local tree does not have; ours is the truth
+            rc, out, err = git("push", "-f", "-u", "origin", "main", "--follow-tags")
+        if rc == 0:
+            git("push", "origin", "v1.0.0")
+            return True, out or err
+        return False, err
+    finally:
+        # never leave the token in .git/config
+        git("remote", "set-url", "origin", clean)
 
 
 # ----------------------------------------------------------------- API uploader
@@ -126,6 +135,11 @@ def api_upload(token, owner, name, branch="main"):
         payload = {"message": "Add %s" % rel,
                    "content": base64.b64encode(b).decode("ascii"),
                    "branch": branch}
+        # the Contents API now requires the sha of the file being replaced
+        s0, cur = api("/repos/%s/%s/contents/%s" % (owner, name, urllib.parse.quote(rel)),
+                      token, "GET")
+        if s0 == 200 and isinstance(cur, dict) and cur.get("sha"):
+            payload["sha"] = cur["sha"]
         st, _ = api("/repos/%s/%s/contents/%s" % (owner, name, urllib.parse.quote(rel)),
                     token, "PUT", payload)
         if st in (200, 201):
