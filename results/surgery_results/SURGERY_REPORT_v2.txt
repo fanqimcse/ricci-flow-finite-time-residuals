@@ -1,0 +1,61 @@
+SURGERY vs NO-SURGERY   (paired, identical numerics)
+==================================================================
+
+### tol = 0.1
+dataset                            no_surg   surgery     rm   drop x     status
+ENZYMES_g1                          0.1740    0.0284      6      6.1 horizon_re
+ENZYMES_g10                         0.3603    0.0027      9    131.8  saturated
+reptilia-tortoise-network-sg        0.0430    0.1450      1      0.3 horizon_re
+ENZYMES_g103                        0.0091    0.0379      0      0.2 budget_exc
+ENZYMES_g101                        0.0115    0.1135      0      0.1 budget_exc
+reptilia-tortoise-network-pv        0.0788    0.1918      0      0.4 budget_exc
+
+### tol = 0.3
+dataset                            no_surg   surgery     rm   drop x     status
+ENZYMES_g105                        0.2393    0.0361     14      6.6 horizon_re
+scc_rt_damascus                     0.2510    0.2382      4      1.1 horizon_re
+ENZYMES_g111                        0.2236    0.0023     11     95.4  saturated
+ENZYMES_g104                        0.2035    0.0586     14      3.5 budget_exc
+ENZYMES_g109                        0.1266    0.0417      7      3.0 budget_exc
+ENZYMES_g107                        0.1732    0.1736     13      1.0 budget_exc
+ENZYMES_g112                        0.0349    0.0739      5      0.5 budget_exc
+ENZYMES_g113                        0.0368    0.0865      5      0.4 budget_exc
+mammalia-primate-association        0.0200    0.2064    203      0.1 budget_exc
+scc_rt_dash                         0.9795    0.9795      0      1.0  saturated
+scc_rt_ksa                          1.0000    1.0000      0      1.0  saturated
+scc_rt_occupy                       0.2060    0.3983      1      0.5 budget_exc
+ENZYMES_g103                        0.0091    0.0632      2      0.1 budget_exc
+ENZYMES_g101                        0.0115    0.1447      1      0.1 budget_exc
+reptilia-tortoise-network-pv        0.0788    0.3476      0      0.2 budget_exc
+aves-sparrow-social-2009            0.4622    0.4716      0      1.0 budget_exc
+
+--- HEADLINE SET: removed >= 3 AND surgery arm completed ---
+dataset                            no_surg   surgery     rm   drop x
+ENZYMES_g10                         0.3603    0.0027      9    131.8
+ENZYMES_g111                        0.2236    0.0023     11     95.4
+ENZYMES_g105                        0.2393    0.0361     14      6.6
+ENZYMES_g1                          0.1740    0.0284      6      6.1
+scc_rt_damascus                     0.2510    0.2382      4      1.1
+
+  surgery arm lower in 5/5 datasets
+  one-sided exact sign test p = 0.0312 (n=5)
+  drop factor: median 6.6x, range 1.1x .. 131.8x
+  families covered: ['ENZYMES', 'scc_rt']
+  edges removed: 4..14 of 41..84 total
+
+--- excluded, and why ---
+  surgery never fired (arm identical to no-surgery): ENZYMES_g101, ENZYMES_g103, aves-sparrow-social-2009, reptilia-tortoise-network-pv, reptilia-tortoise-network-pv, scc_rt_dash, scc_rt_ksa
+  fired but < 3 edges (perturbation, not surgery): ENZYMES_g101, ENZYMES_g103, reptilia-tortoise-network-sg, scc_rt_occupy
+  surgery arm truncated by the wall-clock budget: ENZYMES_g104, ENZYMES_g107, ENZYMES_g109, ENZYMES_g112, ENZYMES_g113, mammalia-primate-association
+
+--- reading ---
+  ANSWER B. Where surgery actually removes a meaningful number of
+  edges and the arm runs to completion, the residual collapses.
+  The plateau is largely the cost of NOT doing surgery.
+
+  Consequence for the paper: the claim cannot be 'a structural
+  obstruction to Ricci flow'. It must be 'the uniformisation limit
+  of the TOPOLOGY-PRESERVING flow' - how far a graph is from
+  constant curvature if its edge set may not change. Surgery-based
+  flows (Ma-Yang 2025) destroy exactly this quantity, so the result
+  is complementary to, not in conflict with, that literature.

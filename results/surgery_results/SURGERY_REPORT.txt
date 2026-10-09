@@ -1,0 +1,45 @@
+SURGERY vs NO-SURGERY  (paired, same numerics)
+==============================================================
+
+### surgery tol = 0.1
+dataset                         no_surg  surgery removed    drop x    status
+ENZYMES_g1                       0.1740   0.0284       6       6.1 horizon_r
+ENZYMES_g10                      0.3603   0.0027       9     131.8 saturated
+reptilia-tortoise-network-sg     0.0430   0.1450       1       0.3 horizon_r
+ENZYMES_g101                     0.0115   0.1135       0       0.1 budget_ex
+ENZYMES_g103                     0.0091   0.0379       0       0.2 budget_ex
+reptilia-tortoise-network-pv     0.0788   0.1918       0       0.4 budget_ex
+  fired: 3/6   drop factor median 6.1x (range 0.3..131.8)   surgery lower in 2/3
+
+### surgery tol = 0.3
+dataset                         no_surg  surgery removed    drop x    status
+ENZYMES_g104                     0.2035   0.0586      14       3.5 budget_ex
+ENZYMES_g105                     0.2393   0.0361      14       6.6 horizon_r
+ENZYMES_g107                     0.1732   0.1736      13       1.0 budget_ex
+  fired: 3/3   drop factor median 3.5x (range 1.0..6.6)   surgery lower in 2/3
+
+datasets where surgery FIRED (all tolerances): 6
+  drop factor (no-surgery / surgery): median 4.8x, range 0.3x .. 131.8x
+  surgery arm lower in 4/6 datasets
+  edges removed: 1 .. 14 of 26 .. 84
+
+datasets where surgery did NOT fire: 3 (excluded: arm is identical to no-surgery)
+
+--- completed surgery arms only (truncated runs excluded) ---
+dataset                         no_surg  surgery removed    drop x
+ENZYMES_g1                       0.1740   0.0284       6       6.1
+ENZYMES_g10                      0.3603   0.0027       9     131.8
+reptilia-tortoise-network-sg     0.0430   0.1450       1       0.3
+ENZYMES_g105                     0.2393   0.0361      14       6.6
+  3/4 lower with surgery; median drop 6.4x (range 0.3..131.8)
+  one-sided sign test p = 0.062 (n=4) -- with n this small the sign test cannot carry the claim alone;
+  the claim rests on the effect SIZE, not on the p value.
+
+--- reading ---
+  Answer B: the plateau is largely the cost of NOT doing
+  surgery. Rewrite the claim as: 'for the topology-
+  preserving flow, the residual measures how far the graph
+  is from being uniformisable WITHOUT changing its edge
+  set'. Cite Ma-Yang 2025 as the reason it vanishes with
+  surgery, and position the residual as the quantity that
+  surgery-based flows destroy.

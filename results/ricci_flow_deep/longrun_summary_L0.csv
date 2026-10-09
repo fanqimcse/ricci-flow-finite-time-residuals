@@ -1,0 +1,2 @@
+dataset,file,status,message,steps,stop_reason,nodes,edges,components,weight_mode,weight_reason,transport_cells_per_step,horizon_planned,initial_variance,final_variance,var_ratio_final,wall_seconds
+scc_rt_oman,D:\100data\scc_rt_oman.mtx,saturated_current,,621,saturated_current,16,13,5,unweighted,not every edge has a numeric third column,160,3000,0.1074950687695533,0.01651685139980716,0.15365217761956873,30.2

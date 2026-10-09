@@ -1,0 +1,58 @@
+SHAM-FLOW CONTROL: PAIRED ANALYSIS
+==============================================================
+
+paired comparisons: 26 (datasets 25)
+
+--- per dataset (sorted by real-flow plateau) ---
+  dataset                                          real     sham sham-real
+  eco-mangwet                                    0.0001  55.7350  +55.7349
+  bn-mouse_visual-cortex_1                       0.0022   0.9219   +0.9197
+  bn-macaque-rhesus_brain_2                      0.0026   1.0561   +1.0534
+  eco-stmarks                                    0.0046   2.4627   +2.4581
+  ENZYMES_g103                                   0.0091   1.1867   +1.1776
+  ENZYMES_g101                                   0.0115   0.9919   +0.9804
+  mammalia-raccoon-proximity                     0.0153   1.2260   +1.2108
+  mammalia-primate-association                   0.0200   1.0426   +1.0227
+  ENZYMES_g112                                   0.0349   1.4571   +1.4222
+  ENZYMES_g113                                   0.0368   1.1938   +1.1570
+  reptilia-tortoise-network-sg                   0.0430   0.9973   +0.9543
+  reptilia-tortoise-network-pv                   0.0788   1.0499   +0.9711
+  ENZYMES_g109                                   0.1266   1.1933   +1.0667
+  ENZYMES_g107                                   0.1732   1.1715   +0.9982
+  ENZYMES_g1                                     0.1740   1.0873   +0.9133
+  ENZYMES_g1                                     0.1740   1.1303   +0.9564
+  ENZYMES_g104                                   0.2035   1.0172   +0.8137
+  scc_rt_occupy                                  0.2060   1.1465   +0.9406
+  ENZYMES_g111                                   0.2236   1.2612   +1.0376
+  ENZYMES_g105                                   0.2393   1.2361   +0.9969
+  scc_rt_damascus                                0.2510   1.2402   +0.9892
+  ENZYMES_g10                                    0.3603   1.1939   +0.8336
+  aves-sparrow-social-2009                       0.4622   0.9412   +0.4790
+  scc_rt_dash                                    0.9795   0.9891   +0.0095
+  scc_rt_ksa                                     1.0000   1.0000   +0.0000
+  bn-macaque-rhesus_interareal-cortical-networ   1.0001   0.9919   -0.0082
+
+--- distribution ---
+  ratio_real       min= 0.0001 p25= 0.0165 med= 0.1499 p75= 0.2353 max= 1.0001
+  ratio_sham       min= 0.9219 p25= 1.0043 med= 1.1384 p75= 1.2180 max=55.7350
+  log_ratio_real   min=-3.9679 p25=-1.7868 med=-0.8295 p75=-0.6285 max= 0.0000
+  log_ratio_sham   min=-0.0353 p25= 0.0019 med= 0.0563 p75= 0.0856 max= 1.7461
+
+--- paired tests (H1: sham plateau is HIGHER than real) ---
+  sham higher than real in 25/26 datasets
+  sign test                 p = 4.02e-07
+  Wilcoxon signed-rank      p = 4.47e-08
+  Wilcoxon on log10 ratio   p = 4.47e-08
+  median difference (sham-real) = +0.9848
+  median log10 fold change      = +0.902
+
+--- trajectory midpoint (same step count for both arms) ---
+  median ratio at half of the steps: real=0.2627  sham=1.0262
+  median lowest ratio reached:       real=0.1499  sham=0.9780
+
+--- verdict ---
+  median plateau: real=0.1499   sham=1.1384
+  => H1 supported: the sham flow barely homogenises at all.
+     Homogenisation REQUIRES the true curvature-to-edge mapping,
+     so the residual is a property of the network's geometry,
+     not an artefact of the update rule or of stopping too early.

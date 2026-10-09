@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+web-webbase-2001,0,0.0,-0.006862873100524498,0.0904311304842267,1.0,4.1589966222710685e-05,1.0,1.0,1.0,0.9824439824436082,16062,25593,1103.5617611408234,33.246803283691406,72.96456933021545,997.2959010601044

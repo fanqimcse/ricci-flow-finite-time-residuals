@@ -1,0 +1,62 @@
+FINAL PREDICTIVE AUDIT  (one declared sample)
+==============================================================
+declared sample: 93 -> 24 networks, 7 families
+  S1 flow converged             93 ->  34
+  S2 non-degenerate variance    34 ->  33
+  S3 size >= 20/20              33 ->  24
+  S4 finite ratio               24 ->  24
+
+family
+ENZYMES     11
+aves         1
+bn           3
+eco          2
+mammalia     2
+reptilia     1
+scc_rt       4
+
+--- Q1. WITHIN-FAMILY Spearman(covariate, log10 plateau) ---
+  ENZYMES    n=11  assort rho=-0.345 (p=0.298) | modul rho=-0.364 (p=0.272)
+  aves       n=1   (n<5, not estimable)
+  bn         n=3   (n<5, not estimable)
+  eco        n=2   (n<5, not estimable)
+  mammalia   n=2   (n<5, not estimable)
+  reptilia   n=1   (n<5, not estimable)
+  scc_rt     n=4   (n<5, not estimable)
+  median within-family: assort -0.345 (0/1 positive) | modul -0.364 (0/1 positive)
+
+--- Q2. BETWEEN-FAMILY (family means, n=7) ---
+  family  n  mean_y  mean_assort  mean_modul  mean_trans  mean_logn
+ ENZYMES 11  -1.063       -0.030      +0.639      +0.388     +1.590
+    aves  1  -0.335       +0.289      +0.234      +0.706     +1.491
+      bn  3  -1.747       -0.645      +0.183      +0.298     +1.797
+     eco  2  -3.155       -0.191      +0.182      +0.378     +1.860
+mammalia  2  -1.758       -0.108      +0.021      +0.913     +1.389
+reptilia  1  -1.103       +0.058      +0.500      +0.505     +1.544
+  scc_rt  4  -0.324       +0.547      +0.587      +0.623     +1.521
+  Spearman(mean_assort , mean plateau) rho=+0.857 p=0.014
+  Spearman(mean_modul  , mean plateau) rho=+0.786 p=0.036
+  Spearman(mean_trans  , mean plateau) rho=+0.321 p=0.482
+  Spearman(mean_logn   , mean plateau) rho=-0.393 p=0.383
+
+  jackknife (drop one family), assortativity:
+    drop ENZYMES    -> +0.829
+    drop aves       -> +0.771
+    drop bn         -> +0.943
+    drop eco        -> +0.886
+    drop mammalia   -> +0.886
+    drop reptilia   -> +0.829
+    drop scc_rt     -> +0.771
+    full +0.857 | range +0.771..+0.943
+
+--- Q3. LEAVE-ONE-FAMILY-OUT ---
+  M0 intercept only                  n=24  oos_R2=-0.177 oos_rho=-0.581
+  M1 assortativity                   n=24  oos_R2=+0.037 oos_rho=+0.309
+  M2 modularity                      n=24  oos_R2=-0.144 oos_rho=-0.065
+  M3 assortativity + modularity      n=24  oos_R2=-0.159 oos_rho=+0.273
+  M4 assort + modul + trans + logN   n=24  oos_R2=-1.725 oos_rho=+0.114
+
+--- VERDICT ---
+  best non-null model: M1 assortativity (oos_R2=+0.037)
+  => out-of-sample skill is positive but must be
+     reported with the per-family spread and n.

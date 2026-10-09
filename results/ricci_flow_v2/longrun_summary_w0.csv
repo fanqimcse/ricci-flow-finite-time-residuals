@@ -1,0 +1,2 @@
+dataset,file,status,message,steps,stop_reason,nodes,edges,components,weight_mode,weight_reason,transport_cells_per_step,horizon_planned,initial_variance,final_variance,var_ratio_final,wall_seconds
+aves-weaver-social-14,D:\100data\aves-weaver-social-14.edges,horizon_reached,,400,horizon_reached,11,38,1,unweighted,not every edge has a numeric third column,2756,373,0.006335830324462032,8.825209111759199e-06,0.0013929049011438823,663.35

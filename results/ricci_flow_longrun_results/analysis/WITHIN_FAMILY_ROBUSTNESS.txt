@@ -1,0 +1,61 @@
+WITHIN-FAMILY ROBUSTNESS: TRANSITIVITY INSIDE ENZYMES
+==================================================================
+networks: 11
+
+     dataset    nodes     edges  transitivity  assortativity  modularity  density  var_ratio_final
+  ENZYMES_g1 +37.0000  +84.0000       +0.5048        +0.0459     +0.6110  +0.1261          +0.1740
+ ENZYMES_g10 +32.0000  +53.0000       +0.5669        -0.1878     +0.6935  +0.1069          +0.3603
+ENZYMES_g101 +45.0000  +88.0000       +0.2590        -0.0785     +0.6413  +0.0889          +0.0115
+ENZYMES_g103 +59.0000 +115.0000       +0.2183        -0.1743     +0.6465  +0.0672          +0.0091
+ENZYMES_g104 +32.0000  +64.0000       +0.3695        -0.1477     +0.6207  +0.1290          +0.2035
+ENZYMES_g105 +33.0000  +69.0000       +0.3830        -0.0403     +0.6040  +0.1307          +0.2393
+ENZYMES_g107 +39.0000  +83.0000       +0.4700        +0.2311     +0.6259  +0.1120          +0.1732
+ENZYMES_g109 +35.0000  +70.0000       +0.4626        +0.0943     +0.6188  +0.1176          +0.1266
+ENZYMES_g111 +26.0000  +49.0000       +0.5753        -0.2506     +0.6122  +0.1508          +0.2236
+ENZYMES_g112 +51.0000  +95.0000       +0.2190        +0.0959     +0.6783  +0.0745          +0.0349
+ENZYMES_g113 +52.0000  +98.0000       +0.2388        +0.0790     +0.6771  +0.0739          +0.0368
+
+--- 1. leave-one-out jackknife, Spearman(transitivity, log10 plateau) ---
+  full sample rho=+0.782 p=0.00447
+  drop ENZYMES_g1               rho=+0.806 (p=0.00486)
+  drop ENZYMES_g10              rho=+0.733 (p=0.0158)
+  drop ENZYMES_g101             rho=+0.745 (p=0.0133)
+  drop ENZYMES_g103             rho=+0.709 (p=0.0217)
+  drop ENZYMES_g104             rho=+0.818 (p=0.00381)
+  drop ENZYMES_g105             rho=+0.879 (p=0.000814)
+  drop ENZYMES_g107             rho=+0.806 (p=0.00486)
+  drop ENZYMES_g109             rho=+0.806 (p=0.00486)
+  drop ENZYMES_g111             rho=+0.782 (p=0.00755)
+  drop ENZYMES_g112             rho=+0.733 (p=0.0158)
+  drop ENZYMES_g113             rho=+0.733 (p=0.0158)
+  range +0.709 .. +0.879; all positive: True
+
+--- 2. partial correlation, controlling for confounds ---
+  control size (log10 nodes)                 partial rho=+0.281 p=0.403 n=11
+  control density                            partial rho=+0.533 p=0.0911 n=11
+  control assortativity                      partial rho=+0.765 p=0.00613 n=11
+  control size + density                     partial rho=+0.283 p=0.398 n=11
+  control size + density + assortativity     partial rho=+0.256 p=0.447 n=11
+
+--- 3. multiple comparisons ---
+  audit 2 screened 7 covariates within this family.
+  Bonferroni-corrected p for transitivity = 0.0313
+  BH threshold at q=0.05, rank 1 of 7 = 0.0071
+
+--- 4. is one network driving it? ---
+  jackknife range width = 0.170 (a single influential point would produce a wide swing)
+  worst-case rho after dropping any single network = +0.709
+
+--- cross-check: the same test on the other covariates ---
+  assortativity  rho=-0.345 p=0.298 | jackknife -0.576..-0.152 sign-stable=True
+  modularity     rho=-0.364 p=0.272 | jackknife -0.818..-0.273 sign-stable=True
+  degree_cv      rho=-0.455 p=0.16 | jackknife -0.636..-0.273 sign-stable=True
+  log10_nodes    rho=-0.879 p=0.000362 | jackknife -0.894..-0.839 sign-stable=True
+  density        rho=+0.755 p=0.00728 | jackknife +0.673..+0.927 sign-stable=True
+  avg_path_len   rho=-0.236 p=0.484 | jackknife -0.648..-0.127 sign-stable=True
+
+--- reading ---
+Transitivity is promoted if the jackknife is sign-stable, the partial
+correlation survives size/density control, and the Bonferroni p stays
+below 0.05. If the partial correlation collapses under size control,
+report transitivity and size as not separable inside this family.

@@ -1,0 +1,10 @@
+=== run start tol=0.1 max_steps=300 budget=600.0 ===
+[1/6] starting aves-sparrow-social-2009
+=== run start tol=0.1 max_steps=200 budget=200.0 ===
+[1/3] starting ENZYMES_g103
+[1/3] ENZYMES_g103 -> status=budget_exceeded steps=119 final_ratio=0.03787 removed=0 (200s)
+[2/3] starting reptilia-tortoise-network-pv
+[2/3] reptilia-tortoise-network-pv -> status=budget_exceeded steps=99 final_ratio=0.19179 removed=0 (200s)
+[3/3] starting reptilia-tortoise-network-sg
+[3/3] reptilia-tortoise-network-sg -> status=horizon_reached steps=200 final_ratio=0.14497 removed=1 (64s)
+DONE -> D:\2026codes\2026821100data\surgery_results\w1\surgery_summary.csv

@@ -1,0 +1,54 @@
+EXPERIMENT D: TRANSITIVITY, MANIPULATED (DEGREE SEQUENCE FIXED)
+======================================================================
+cells: 7
+status: {'saturated': np.int64(4), 'horizon_reached': np.int64(3)}
+
+degree sequence held within base? True
+edges identical within base? True
+
+ base  target_T  achieved_T  transitivity  final_r  nodes  edges  var_ratio  steps          status
+    0  +0.10000    +0.12323      +0.12323 +0.00203     50    142   +0.00206    125       saturated
+    0  +0.50000    +0.46213      +0.46213 +0.14026     50    142   +0.05246    176       saturated
+    1  +0.10000    +0.12000      +0.12000 -0.01456     50    135   +0.00194    133       saturated
+    1  +0.50000    +0.42621      +0.42621 +0.10171     50    135   +0.06005    170 horizon_reached
+    2  +0.10000    +0.12192      +0.12192 -0.07726     50    137   +0.00162    121       saturated
+    2  +0.50000    +0.47896      +0.47896 +0.03949     50    137   +0.06000    170 horizon_reached
+    3  +0.50000    +0.47098      +0.47098 +0.15350     50    139   +0.05738    170 horizon_reached
+
+--- 1. within-base effect ---
+  base 0: T 0.123->0.462  plateau 0.00206 -> 0.05246  fold = 25.4x
+           assortativity 0.002 -> 0.140 (drift +0.138)
+  base 1: T 0.120->0.426  plateau 0.00194 -> 0.06005  fold = 30.9x
+           assortativity -0.015 -> 0.102 (drift +0.116)
+  base 2: T 0.122->0.479  plateau 0.00162 -> 0.06000  fold = 37.0x
+           assortativity -0.077 -> 0.039 (drift +0.117)
+  base 3: only one level, fold not estimable
+
+  median fold across bases: 30.9x  (n=3)
+  bases with fold > 1: 3/3
+
+--- 2. attribution: how much is the assortativity drift? ---
+  experiment B calibrated d log10(plateau)/d r = +0.341 (base fixed effects)
+  base 0: dr=+0.138 -> assortativity predicts 1.11x ; observed 25.4x ; share explained = 3.4%
+  base 1: dr=+0.116 -> assortativity predicts 1.10x ; observed 30.9x ; share explained = 2.7%
+  base 2: dr=+0.117 -> assortativity predicts 1.10x ; observed 37.0x ; share explained = 2.5%
+
+--- 3. magnitude: does this close the synthetic-real gap? ---
+  low transitivity  (T<=0.20): n=3 median plateau=0.00194
+  high transitivity (T>=0.35): n=4 median plateau=0.05869 (median T=0.467)
+  rise = 30.2x
+  real-network median plateau = 0.19668 (median T=0.463)
+  remaining gap after matching transitivity = 3.4x
+  share of the original ~90x gap that transitivity accounts for:
+    log10 total = 2.01, log10 explained = 1.48 -> 74%
+
+--- 4. pooled rank correlation within the experiment ---
+  Spearman(log10 plateau, transitivity  ) rho=+0.750 p=0.0522 n=7
+  Spearman(log10 plateau, final_r       ) rho=+0.714 p=0.0713 n=7
+  Spearman(log10 plateau, edges         ) rho=-0.128 p=0.784 n=7
+
+--- caveat ---
+High-transitivity cells do not reach 'saturated' within the step
+budget, so their plateau is still falling and the fold reported here
+is an UPPER bound. The 400-step run is the arbiter; until it lands,
+quote the fold as 'at a matched horizon of 170 steps'.

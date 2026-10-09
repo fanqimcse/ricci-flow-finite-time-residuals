@@ -1,0 +1,7 @@
+numpy
+scipy
+pandas
+networkx
+matplotlib
+POT>=0.9            # exact optimal transport (ot.emd)
+python-docx         # review-response documents only

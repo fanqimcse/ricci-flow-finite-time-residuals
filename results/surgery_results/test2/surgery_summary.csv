@@ -1,0 +1,2 @@
+dataset,status,steps,final_ratio,min_ratio,edges_removed,wall
+ENZYMES_g1,horizon_reached,20,0.7089569662891259,0.7089569662891259,0,51.9

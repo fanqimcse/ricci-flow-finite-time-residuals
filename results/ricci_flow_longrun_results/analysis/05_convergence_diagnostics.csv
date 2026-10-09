@@ -1,0 +1,94 @@
+dataset,steps,var_ratio_final,decay_rate_c,halving_time,still_falling,status,domain,converged
+ENZYMES_g1,223,0.173974589643673,0.04207892023836343,16.472551496889448,False,saturated,Cheminformatics,True
+ENZYMES_g10,272,0.3603033002660976,0.022540193778916934,30.751606989656114,False,saturated,Cheminformatics,True
+ENZYMES_g100,6,1.0000569735682128,-0.00018433876221215844,,False,saturated,Cheminformatics,True
+ENZYMES_g101,278,0.0114829699330509,0.22850498688750331,3.033400671037402,True,saturated,Cheminformatics,True
+ENZYMES_g102,242,0.0095289861391303,0.34345540269186764,2.0181577437050975,True,budget_exceeded,Cheminformatics,False
+ENZYMES_g103,238,0.0090808614542186,0.22272810405567442,3.1120777662915953,True,saturated,Cheminformatics,True
+ENZYMES_g104,245,0.2034762524231793,0.020410716642368144,33.959962930509,False,saturated,Cheminformatics,True
+ENZYMES_g105,250,0.23925966365516,0.019910410336068513,34.81330464115454,False,saturated,Cheminformatics,True
+ENZYMES_g106,237,0.1614474544489239,0.2018956514801868,3.433195195033549,True,saturated,Cheminformatics,True
+ENZYMES_g107,292,0.1732411765639653,0.04425184047129727,15.663691570287025,False,saturated,Cheminformatics,True
+ENZYMES_g109,276,0.1265973159459107,0.1073649591503243,6.455990725889002,True,saturated,Cheminformatics,True
+ENZYMES_g11,6,1.0,-0.0,,False,saturated,Cheminformatics,True
+ENZYMES_g110,400,0.1716459438507843,0.07321160985603778,9.46772215394443,False,horizon_reached,Cheminformatics,True
+ENZYMES_g111,236,0.223580094704014,0.06650812559742077,10.421992415718089,False,saturated,Cheminformatics,True
+ENZYMES_g112,238,0.0349102753350095,0.20014834159843922,3.463167243976557,True,saturated,Cheminformatics,True
+ENZYMES_g113,237,0.0368425980741389,0.20335075517385373,3.4086285048085636,True,saturated,Cheminformatics,True
+aves-barn-swallow-non-physical,400,0.0784971045584994,0.049484196969807694,14.007445265462474,False,horizon_reached,Animal Social Networks,True
+aves-geese-female-foraging,400,1.0,0.0005712035217235858,1213.485481441709,False,horizon_reached,Animal Social Networks,True
+aves-geese-male-foraging,400,0.3052276559865093,0.004944915762477615,140.1737084824775,False,horizon_reached,Animal Social Networks,True
+aves-hens-pecking-order,130,0.417523250122369,0.04625183384193823,14.986371846978388,False,budget_exceeded,Animal Social Networks,False
+aves-sparrow-social,97,0.1771884444510338,0.23958243461993298,2.8931469106219536,True,budget_exceeded,Animal Social Networks,False
+aves-sparrow-social-2009,96,0.4622455749495552,-0.010508352511208102,,False,saturated,Animal Social Networks,True
+aves-sparrowlyon-flock-season2,124,0.3073099994895573,0.21349144899304995,3.2467210458743487,True,budget_exceeded,Animal Social Networks,False
+aves-sparrowlyon-flock-season3,293,0.0587121026371069,0.2629609502839584,2.635931988424328,True,budget_exceeded,Animal Social Networks,False
+aves-thornbill-farine,57,0.519094417266726,0.1677805336712356,4.131272951593781,True,budget_exceeded,Animal Social Networks,False
+aves-weaver-social,45,0.6240737574809535,0.11134429288910043,6.225260070135107,True,budget_exceeded,Animal Social Networks,False
+aves-weaver-social-06,329,0.1438517917195232,0.07847718459542856,8.832467476162778,False,saturated,Animal Social Networks,True
+aves-weaver-social-08,206,0.0940014674683239,0.10773880894576535,6.433588670066594,True,budget_exceeded,Animal Social Networks,False
+aves-weaver-social-09,288,0.003777376961046,0.4667400147844687,1.485081969841448,True,saturated,Animal Social Networks,True
+aves-weaver-social-11,228,0.1279828334675667,0.07751401580812577,8.942217395570452,False,budget_exceeded,Animal Social Networks,False
+aves-weaver-social-12,384,0.1932430549011133,0.03417015672960256,20.28516246047688,False,budget_exceeded,Animal Social Networks,False
+aves-weaver-social-14,308,0.0058520142922319,0.3183574209284765,2.177260949464943,True,saturated,Animal Social Networks,True
+bio-CE-HT,116,0.196851715222581,0.09405328559445354,7.369728512714724,False,budget_exceeded,Biological Networks,False
+bio-CE-LC,78,0.3228860468602968,0.17602185674188595,3.9378472275540135,True,budget_exceeded,Biological Networks,False
+bio-DM-LC,100,0.3325617687841328,0.137859516058119,5.0279240808282495,True,budget_exceeded,Biological Networks,False
+bio-celegans,21,0.6224468188715876,0.4374349575469539,1.584571988592255,True,budget_exceeded,Biological Networks,False
+bio-celegans-dir,21,0.6224470780089026,0.43743482517598936,1.584572468095281,True,budget_exceeded,Biological Networks,False
+bio-diseasome,57,0.6961118591424257,0.09539722809456747,7.265904831876531,False,budget_exceeded,Biological Networks,False
+bio-grid-mouse,78,0.4599445013586323,0.16977593819635586,4.082717421112289,True,budget_exceeded,Biological Networks,False
+bio-grid-plant,17,0.7391489068709899,0.2552936091980703,2.715098050191162,True,budget_exceeded,Biological Networks,False
+bio-yeast,85,0.1210767345707178,0.34039151025357767,2.0363233502609366,True,budget_exceeded,Biological Networks,False
+bn-cat-mixed-species_brain_1,23,0.6719439631853598,0.3483929461384781,1.9895557250588978,True,budget_exceeded,Brain Networks,False
+bn-macaque-rhesus_brain_2,196,0.0026328514829236,0.6525318722285466,1.0622426429420038,True,saturated,Brain Networks,True
+bn-macaque-rhesus_cerebral-cortex_1,40,0.3332789770110345,0.5498379697529518,1.2606389858295597,True,budget_exceeded,Brain Networks,False
+bn-macaque-rhesus_interareal-cortical-network_2,6,1.0001128171436915,0.00035816822181179323,1935.255944968154,False,saturated,Brain Networks,True
+bn-mouse-kasthuri_graph_v4,106,0.1059002451258003,0.15910765247240527,4.356466642483841,True,budget_exceeded,Brain Networks,False
+bn-mouse_visual-cortex_1,126,0.0021786099820324,0.8074327406128152,0.8584581051715454,True,saturated,Brain Networks,True
+eco-mangwet,9,0.0001076790493066,2.8738169775943425,0.24119391943330198,True,saturated,Ecology Networks,True
+eco-stmarks,65,0.0045581974650012,0.3713203977940202,1.8667091403485183,True,saturated,Ecology Networks,True
+econ-poli,86,0.3547949491014296,0.045895949213136736,15.10257860320158,False,budget_exceeded,Economic Networks,False
+ia-enron-only,37,0.3773653811606702,0.47600584190458317,1.456173684311397,True,budget_exceeded,Interaction Networks,False
+ia-reality,34,0.266997737537096,0.6481329773961678,1.0694521104984027,True,budget_exceeded,Interaction Networks,False
+ia-southernwomen,261,0.0029919496535466,0.5816081201791486,1.1917769998576362,True,saturated,Interaction Networks,True
+ia-workplace-contacts,79,0.0532414737722221,0.4301105032087184,1.6115560428980826,True,budget_exceeded,Interaction Networks,False
+inf-euroroad,134,0.1829738725387912,0.1019418467358462,6.799437157108232,True,budget_exceeded,Infrastructure Networks,False
+inf-power,31,0.3569975777196359,0.5761331211861702,1.2031024689794974,True,budget_exceeded,Infrastructure Networks,False
+insecta-ant-trophallaxis-colony1,154,0.0168745363103282,0.2068995155551583,3.3501633810020013,True,budget_exceeded,Dynamic Networks,False
+insecta-ant-trophallaxis-colony2,189,0.0110210038034715,0.20122923131634093,3.4445650665448717,True,budget_exceeded,Dynamic Networks,False
+mammalia-primate-association,172,0.0199613279277898,0.12113187189890788,5.722252696122949,True,saturated,Dynamic Networks,True
+mammalia-raccoon-proximity,209,0.0152811246537424,0.15972111497914104,4.339734171342766,True,saturated,Dynamic Networks,True
+mammalia-voles-bhp-trapping,18,0.4593812119793069,0.614451284244453,1.1280750782582527,True,budget_exceeded,Dynamic Networks,False
+mammalia-voles-kcs-trapping,20,0.3843370366727609,0.6226771084909826,1.113172736090688,True,budget_exceeded,Dynamic Networks,False
+mammalia-voles-plj-trapping,20,0.5094974083776367,0.5301361658744623,1.3074889531760119,True,budget_exceeded,Dynamic Networks,False
+power-494-bus,171,0.0543485287116999,0.15216860198323587,4.5551261661476525,True,budget_exceeded,Power Networks,False
+power-662-bus,170,0.0399429686126232,0.18492983583995362,3.7481630663416867,True,budget_exceeded,Power Networks,False
+power-685-bus,85,0.1699364748055611,0.2553200986879272,2.714816358453494,True,budget_exceeded,Power Networks,False
+power-US-Grid,38,0.2991107350903875,0.5193897176373831,1.3345415918377357,True,budget_exceeded,Power Networks,False
+power-bcspwr09,76,0.1060743049301318,0.3832079211740025,1.8088018077403187,True,budget_exceeded,Power Networks,False
+power-bcspwr10,35,0.2974126050866089,0.6066134161337222,1.1426505944720937,True,budget_exceeded,Power Networks,False
+reptilia-tortoise-network-bsv,62,0.1966828275978945,0.38577749156693586,1.7967538171927742,True,budget_exceeded,Dynamic Networks,False
+reptilia-tortoise-network-cs,113,0.2921188143455323,0.20794119450780146,3.333380777198238,True,budget_exceeded,Dynamic Networks,False
+reptilia-tortoise-network-fi,39,0.7051605964509935,0.11730585644880304,5.908888111331955,True,budget_exceeded,Dynamic Networks,False
+reptilia-tortoise-network-hw,400,0.0641651033626596,0.14908070085623995,4.649476267410053,True,horizon_reached,Dynamic Networks,True
+reptilia-tortoise-network-mc,400,0.1786794463822131,0.10268003171461668,6.7505547961500545,True,horizon_reached,Dynamic Networks,True
+reptilia-tortoise-network-pv,238,0.0788388601849311,0.05904856465605231,11.73859491077231,False,saturated,Dynamic Networks,True
+reptilia-tortoise-network-sg,400,0.0429904260933728,0.1336600143703997,5.1858978455523,True,horizon_reached,Dynamic Networks,True
+scc2034_kilifi_all_contacts_across_households,198,0.1795416376526028,0.02451939364172541,28.269344286736168,False,saturated,Temporal Reachability Networks,True
+scc_rt_alwefaq,69,0.4214565120641518,0.3534932946462587,1.9608495862802113,True,budget_exceeded,Temporal Reachability Networks,False
+scc_rt_assad,211,0.1762109516602678,0.07970279641522367,8.696648194736996,False,budget_exceeded,Temporal Reachability Networks,False
+scc_rt_bahrain,144,0.2515026160015156,0.12962160514781787,5.347466417882221,True,budget_exceeded,Temporal Reachability Networks,False
+scc_rt_barackobama,162,0.205204720878424,0.16277273931704064,4.258373874324667,True,budget_exceeded,Temporal Reachability Networks,False
+scc_rt_damascus,276,0.2510174890218282,0.01998009723419248,34.69188224838785,False,saturated,Temporal Reachability Networks,True
+scc_rt_dash,26,0.9795385736601152,0.00046808783427105535,1480.8058014141102,False,saturated,Temporal Reachability Networks,True
+scc_rt_http,327,0.0053232008665224,0.34155426132742966,2.0293911071876876,True,saturated,Temporal Reachability Networks,True
+scc_rt_justinbieber,75,0.3690195554714744,0.2051957555628421,3.3779801081103056,True,budget_exceeded,Temporal Reachability Networks,False
+scc_rt_ksa,6,0.9999727466044996,9.997585427432472e-05,6933.145863980437,False,saturated,Temporal Reachability Networks,True
+scc_rt_occupy,357,0.205951472946085,0.01885129055601951,36.76921633031711,False,saturated,Temporal Reachability Networks,True
+scc_rt_occupywallstnyc,36,0.6152286153405048,0.2647534682473937,2.6180853650319227,True,budget_exceeded,Temporal Reachability Networks,False
+scc_rt_oman,349,0.1590042788013189,0.029321612162760875,23.639463502632992,False,saturated,Temporal Reachability Networks,True
+scc_rt_onedirection,195,0.4449776526266053,0.022091162000450172,31.37667364649358,False,budget_exceeded,Temporal Reachability Networks,False
+web-edu,40,0.5618555714716458,0.2154141839853014,3.2177415977735317,True,budget_exceeded,Web Graphs,False
+web-google,42,0.733294341405109,0.06171366798103762,11.231663960938514,False,budget_exceeded,Web Graphs,False
+web-polblogs,12,0.5986655709642237,0.8836603688497594,0.7844045121794918,True,budget_exceeded,Web Graphs,False

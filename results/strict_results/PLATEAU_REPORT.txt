@@ -1,0 +1,119 @@
+PLATEAU CLASSIFICATION (post-hoc, strict tail test)
+====================================================================
+criterion: run length >= 100 steps AND |relative move over the last 30%| < 2.0%
+
+networks analysed: 89 (from strict re-run: 16 ; from the original long run: 73)
+
+--- STRICT RE-RUN SUBSET (n=16) ---
+plateaued: 2 / 16   (families: ['ENZYMES', 'scc2034'])
+  median v_end (plateaued)      = 0.1717
+  IQR                           = 0.1690 .. 0.1744
+  median fitted asymptote Vinf  = 0.1231
+  median |tail move|            = 0.5925%
+still falling: 14
+  median v_end (UPPER bound)    = 0.0536
+  median tail move              = -45.8%
+  median fitted asymptote Vinf  = 0.0147
+
+  truncation bias check (same networks, old vs strict end value):
+    n=16 ; old median 0.1602 -> strict median 0.1100 ; median ratio 0.965
+
+--- ALL NETWORKS (v_end is an upper bound on the plateau) ---
+median v_end over all 89 networks = 0.1932
+median v_end over the previously 'converged' subset (n=38) = 0.1027
+
+--- weight dynamics at the end of the strict runs ---
+min_weight < 1e-3 in 8 / 16 strict runs
+median weight span max/min at the end: 3.45e+03
+
+--- per-network table ---
+                                        dataset       family source  steps  v_end  v_inf_fit  tail_net  plateaued
+  scc2034_kilifi_all_contacts_across_households      scc2034 strict    346 0.1771     0.1626   -0.0024       True
+                                   ENZYMES_g106      ENZYMES strict    400 0.1663     0.0837   -0.0095       True
+bn-macaque-rhesus_interareal-cortical-network_2           bn    old      6 1.0001     1.0000   -0.0000      False
+                                    scc_rt_dash       scc_rt    old     26 0.9795     0.9778   -0.0004      False
+                                 bio-grid-plant          bio    old     17 0.7391     0.6344   -0.0638      False
+                                     web-google   web-google    old     42 0.7333     0.7390   -0.0362      False
+                   reptilia-tortoise-network-fi     reptilia    old     39 0.7052     0.6892   -0.0620      False
+                                  bio-diseasome          bio    old     57 0.6961     0.7029   -0.0767      False
+                   bn-cat-mixed-species_brain_1           bn    old     23 0.6719     0.1577   -0.0994      False
+                             aves-weaver-social         aves    old     45 0.6241     0.5905   -0.0708      False
+                               bio-celegans-dir          bio    old     21 0.6224     0.2029   -0.1238      False
+                                   bio-celegans          bio    old     21 0.6224     0.2029   -0.1238      False
+                         scc_rt_occupywallstnyc       scc_rt    old     36 0.6152     0.2287   -0.1240      False
+                                   web-polblogs web-polblogs    old     12 0.5987     0.1382   -0.1250      False
+                                        web-edu      web-edu    old     40 0.5619     0.5499   -0.1108      False
+                          aves-thornbill-farine         aves    old     57 0.5191     0.4022   -0.1339      False
+                                   ENZYMES_g100      ENZYMES strict    400 0.5112     0.0000   -0.3685      False
+                    mammalia-voles-plj-trapping     mammalia    old     20 0.5095     0.3842   -0.1242      False
+                       aves-sparrow-social-2009         aves    old     96 0.4622     0.4592    0.0132      False
+                                 bio-grid-mouse          bio    old     78 0.4599     0.0866   -0.1811      False
+                    mammalia-voles-bhp-trapping     mammalia    old     18 0.4594     0.3860   -0.1449      False
+                            scc_rt_onedirection       scc_rt    old    195 0.4450     0.4661   -0.0600      False
+                                 scc_rt_alwefaq       scc_rt    old     69 0.4215     0.0000   -0.2924      False
+                    mammalia-voles-kcs-trapping     mammalia    old     20 0.3843     0.3549   -0.1443      False
+                                  ia-enron-only           ia    old     37 0.3774     0.1997   -0.2307      False
+                            scc_rt_justinbieber       scc_rt    old     75 0.3690     0.3027   -0.2020      False
+                                      inf-power    inf-power    old     31 0.3570     0.1759   -0.2300      False
+                                      econ-poli          eco    old     86 0.3548     0.3647   -0.0566      False
+            bn-macaque-rhesus_cerebral-cortex_1           bn    old     40 0.3333     0.0236   -0.2610      False
+                                      bio-DM-LC          bio    old    100 0.3326     0.2776   -0.1812      False
+                                      bio-CE-LC          bio    old     78 0.3229     0.3255   -0.1865      False
+                                    ENZYMES_g10      ENZYMES strict    400 0.3082     0.3060   -0.1429      False
+                 aves-sparrowlyon-flock-season2         aves    old    124 0.3073     0.0570   -0.3242      False
+                                  power-US-Grid        power    old     38 0.2991     0.1665   -0.2505      False
+                                 power-bcspwr10        power    old     35 0.2974     0.1376   -0.2631      False
+                   reptilia-tortoise-network-cs     reptilia    old    113 0.2921     0.0000   -0.2931      False
+                                     ia-reality           ia    old     34 0.2670     0.1585   -0.2785      False
+                                 scc_rt_bahrain       scc_rt    old    144 0.2515     0.0000   -0.2493      False
+                                scc_rt_damascus       scc_rt    old    276 0.2510     0.2225   -0.0847      False
+                                   ENZYMES_g105      ENZYMES strict    279 0.2375     0.2470   -0.0482      False
+                                   ENZYMES_g111      ENZYMES strict    400 0.2122     0.1962   -0.0474      False
+                                  scc_rt_occupy       scc_rt    old    357 0.2060     0.1691   -0.0986      False
+                             scc_rt_barackobama       scc_rt    old    162 0.2052     0.0000   -0.3217      False
+                                   ENZYMES_g104      ENZYMES    old    245 0.2035     0.2185   -0.0745      False
+                                      bio-CE-HT          bio    old    116 0.1969     0.1924   -0.1511      False
+                  reptilia-tortoise-network-bsv     reptilia    old     62 0.1967     0.1591   -0.2951      False
+                          aves-weaver-social-12         aves    old    384 0.1932     0.2083   -0.1797      False
+                                   inf-euroroad inf-euroroad    old    134 0.1830     0.1761   -0.1861      False
+                   reptilia-tortoise-network-mc     reptilia strict    400 0.1787     0.0158   -0.4586      False
+                            aves-sparrow-social         aves    old     97 0.1772     0.2032   -0.2927      False
+                                   scc_rt_assad       scc_rt    old    211 0.1762     0.0600   -0.2258      False
+                                     ENZYMES_g1      ENZYMES    old    223 0.1740     0.1323   -0.1489      False
+                                   ENZYMES_g107      ENZYMES    old    292 0.1732     0.1112   -0.1886      False
+                                   ENZYMES_g110      ENZYMES    old    400 0.1716     0.0000   -0.3450      False
+                                  power-685-bus        power    old     85 0.1699     0.1634   -0.2743      False
+                                    scc_rt_oman       scc_rt strict    400 0.1559     0.1139   -0.0887      False
+                          aves-weaver-social-06         aves    old    329 0.1439     0.0000   -0.3321      False
+                          aves-weaver-social-11         aves    old    228 0.1280     0.1171   -0.2369      False
+                                   ENZYMES_g109      ENZYMES    old    276 0.1266     0.1119   -0.3538      False
+                                      bio-yeast          bio    old     85 0.1211     0.1189   -0.3479      False
+                                 power-bcspwr09        power    old     76 0.1061     0.0889   -0.3466      False
+                     bn-mouse-kasthuri_graph_v4           bn    old    106 0.1059     0.0947   -0.2237      False
+                          aves-weaver-social-08         aves    old    206 0.0940     0.0918   -0.2836      False
+                   reptilia-tortoise-network-pv     reptilia    old    238 0.0788     0.0605   -0.1960      False
+                 aves-barn-swallow-non-physical         aves    old    400 0.0785     0.1067   -0.2581      False
+                   reptilia-tortoise-network-hw     reptilia strict    400 0.0642     0.0000   -0.5979      False
+                 aves-sparrowlyon-flock-season3         aves    old    293 0.0587     0.0000   -0.6798      False
+                                  power-494-bus        power    old    171 0.0543     0.0736   -0.3461      False
+                          ia-workplace-contacts           ia    old     79 0.0532     0.0833   -0.3895      False
+                   reptilia-tortoise-network-sg     reptilia strict    400 0.0430     0.0219   -0.5455      False
+                                  power-662-bus        power    old    170 0.0399     0.0567   -0.3792      False
+                                   ENZYMES_g113      ENZYMES    old    237 0.0368     0.0519   -0.5280      False
+                                   ENZYMES_g112      ENZYMES    old    238 0.0349     0.0465   -0.5300      False
+                                     scc_rt_ksa       scc_rt strict    400 0.0241     0.0000   -0.4567      False
+                   mammalia-primate-association     mammalia    old    172 0.0200     0.0370   -0.2684      False
+               insecta-ant-trophallaxis-colony1      insecta    old    154 0.0169     0.0388   -0.3757      False
+                                   ENZYMES_g101      ENZYMES    old    278 0.0115     0.0226   -0.6147      False
+               insecta-ant-trophallaxis-colony2      insecta    old    189 0.0110     0.0311   -0.4248      False
+                     mammalia-raccoon-proximity     mammalia strict    280 0.0105     0.0208   -0.3663      False
+                                   ENZYMES_g102      ENZYMES    old    242 0.0095     0.0257   -0.7082      False
+                                   ENZYMES_g103      ENZYMES    old    238 0.0091     0.0213   -0.5470      False
+                          aves-weaver-social-14         aves strict    295 0.0072     0.0136   -0.7535      False
+                          aves-weaver-social-09         aves    old    288 0.0038     0.0000   -0.8647      False
+                               ia-southernwomen           ia    old    261 0.0030     0.0000   -0.8956      False
+                      bn-macaque-rhesus_brain_2           bn    old    196 0.0026     0.0000   -0.8489      False
+                       bn-mouse_visual-cortex_1           bn    old    126 0.0022     0.0010   -0.7770      False
+                                    scc_rt_http       scc_rt strict    400 0.0015     0.0030   -0.8721      False
+                                    eco-stmarks          eco strict    246 0.0002     0.0043   -0.6244      False
+                                    eco-mangwet          eco strict    400 0.0000     0.0000   -0.4974      False

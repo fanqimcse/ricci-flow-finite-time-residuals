@@ -1,0 +1,82 @@
+CONVERGENCE-RATE PROBE:  rate vs spectral gap
+==================================================================
+model: V(t) = Vinf + (1-Vinf) exp(-r t);  lambda1 = 2nd smallest
+       eigenvalue of the weighted Laplacian (0 for disconnected).
+
+summary used: longrun_summary_w2.csv
+units with usable fit: 41   (of 110 datasets in the summary)
+status breakdown:
+    cached             39
+    saturated          1
+    budget_exceeded    1
+trajectory plateau test (last 25% drift < 2%): 1 / 41 converged
+
+--- PRIMARY (trajectory-converged subset, n=1) ---
+  too few converged units (n=1) for the primary test
+
+--- SECONDARY (all statuses pooled; headline must NOT use this) ---
+  Spearman(rate, lambda1_0)      rho = +0.014  p = 0.93  (n=41)
+
+--- WITHIN FAMILY (R3: is the effect ecological?) ---
+  ENZYMES      n=14  rho = -0.051  p = 0.864
+
+--- RATE DEFINITIONS x PREDICTORS (full usable sample, n=41) ---
+                      lambda1_0   lam_over_md   lam_times_n lambda1_final
+  rate_early       -0.026(0.87)  -0.079(0.62)  +0.348(0.03)           n/a
+  rate_joint       -0.061(0.70)  -0.158(0.32)  +0.320(0.04)           n/a
+  rate_per_step    +0.014(0.93)  -0.116(0.47)  +0.428(0.01)           n/a
+  (cells are Spearman rho with p in parentheses)
+
+  lambda1_0 range: 0.001856 .. 10.65   (median 0.102)
+  rate_early     range 0.002352 .. 0.2384 (median 0.02173)
+  rate_joint     range 0.004901 .. 1.747 (median 0.02832)
+  rate_per_step  range 0.0112 .. 0.3027 (median 0.02276)
+
+  partial correlations (rate_early, lambda1_0 | controls):
+     | log10_nodes                  rho = +0.331 p = 0.0345
+     | log10_md                     rho = -0.145 p = 0.365
+     | log10_nodes,log10_md         rho = +0.302 p = 0.0546
+
+  is the lambda1*n signal just size? (must be checked before quoting it)
+     Spearman(lambda1*n, log10_nodes) rho = +0.038 p = 0.814
+     partial (rate_early, lambda1*n | log10_nodes) rho = +0.377 p = 0.0151
+
+  secondary: faster decay vs lower plateau (both plateau-dependent)
+     raw    rho = -0.429 p = 0.00514
+     | log10_nodes  rho = -0.585 p = 5.97e-05
+     | nodes+degree rho = -0.630 p = 1.03e-05
+
+  within-family (ENZYMES only, guards against ecological correlation):
+     rate_early     n=14 rho = -0.209 p = 0.474
+     rate_joint     n=14 rho = -0.037 p = 0.899
+     rate_per_step  n=14 rho = -0.051 p = 0.864
+
+  POWER NOTE: with n=41, |rho| >= 0.31 is detectable at alpha=0.05;
+  a null here is informative, not merely underpowered.
+
+--- SCALING: log10(rate_early) ~ log10(lambda1_0) + log10(nodes) + log10(mean_degree) ---
+     const                beta = -2.558  se = 0.175  p = 0
+     log10 lambda1        beta = -0.104  se = 0.076  p = 0.179
+     log10 nodes          beta = +0.213  se = 0.087  p = 0.019
+     log10 mean_degree    beta = +0.695  se = 0.175  p = 0.000326
+     R2 = 0.493  (n=41)
+     => rate ~ lambda1^-0.10 * nodes^0.21 * mean_degree^0.69
+
+--- SANITY: what DOES the rate track? ---
+  (using full sample, n=41)
+  Spearman(rate_early, log10_nodes     ) rho = +0.504 p = 0.00078
+  Spearman(rate_early, log10_md        ) rho = +0.136 p = 0.396
+  Spearman(rate_early, mean_degree     ) rho = +0.136 p = 0.396
+  Spearman(rate_early, initial_variance) rho = +0.270 p = 0.0882
+  Spearman(rate_early, lambda1_0       ) rho = -0.026 p = 0.874
+  Spearman(rate_early, var_ratio_final ) rho = -0.429 p = 0.00514
+
+--- FIT QUALITY ---
+  median R2 of the decay fits: per-step 0.986 / early 0.982 / joint 0.983
+  joint-fit Vinf vs trajectory tail V: median |diff| = 0.0210
+
+--- INTERPRETATION RULE ---
+  a ~ 1 with a surviving partial correlation => convergence-rate
+  theorem route is viable (predict r from a static spectral quantity).
+  a ~ 0 or partial collapses to 0 => rate is set by something other
+  than the Laplacian gap; do NOT build the theorem on lambda1.

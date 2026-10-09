@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+ia-dnc-corecipient,0,0.0,-0.014617652810447124,0.11794297670509453,1.0,0.0,0.11884629410155893,0.23769258820311787,26.027338408241405,4.173196260630429,906,10429,96.56365585327148,0.3614003658294678,96.02185034751892,1.0251998901367188e-05

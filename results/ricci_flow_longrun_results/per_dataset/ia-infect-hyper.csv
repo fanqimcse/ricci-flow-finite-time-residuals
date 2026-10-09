@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+ia-infect-hyper,0,0.0,0.20927375904414997,0.004155191764490232,1.0,0.9986534427141035,1.0,1.0,1.0,0.41421359355786747,113,2196,212.91164445877075,0.011691808700561523,212.87743139266968,0.010736227035522461

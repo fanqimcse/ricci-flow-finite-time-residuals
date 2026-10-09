@@ -1,0 +1,59 @@
+EXPERIMENT D: TRANSITIVITY, ALL HORIZONS
+========================================================================
+
+--- 1. residual at matched horizons (V = sigma^2(t)/sigma^2(0)) ---
+  base  level    V(125)     V(250)     V(400)     V(700)     V(900)   terminal
+     0  0.10  2.063e-03 3.714e-05 9.791e-07 9.791e-07 9.791e-07   constant_curvature @381
+     0  0.50  6.335e-02 4.702e-02 9.078e-04 4.856e-06 9.970e-07   constant_curvature @884
+     1  0.10          - 2.106e-05 2.106e-05 2.106e-05 2.106e-05   horizon_reached @250
+     1  0.50  7.866e-02 3.966e-02 6.750e-05 6.750e-05 6.750e-05   horizon_reached @400
+     2  0.10  1.622e-03 1.622e-03 1.622e-03 1.622e-03 1.622e-03   saturated @121
+     2  0.50          - 6.000e-02 6.000e-02 6.000e-02 6.000e-02   horizon_reached @170
+     3  0.50          - 5.738e-02 5.738e-02 5.738e-02 5.738e-02   horizon_reached @170
+
+--- 2. per-window exponential rate (per step) ---
+  base 0 T~0.10: 125-250:-3.21e-02; 250-381:-2.78e-02
+  base 0 T~0.50: 125-250:-2.38e-03; 250-400:-2.63e-02; 400-700:-1.74e-02; 700-884:-8.60e-03
+  base 1 T~0.10: 
+  base 1 T~0.50: 125-250:-5.48e-03; 250-400:-4.25e-02
+  base 2 T~0.10: 
+  base 2 T~0.50: 
+  base 3 T~0.50: 
+
+--- 3. the fold at matched horizons ---
+  base 0 (T 0.10 vs 0.50):
+     at 125 steps: 2.063e-03 vs 6.335e-02  fold = 30.7x
+     at 250 steps: 3.714e-05 vs 4.702e-02  fold = 1.27e+03x
+     at 400 steps: 9.791e-07 vs 9.078e-04  fold = 927x
+     at 700 steps: 9.791e-07 vs 4.856e-06  fold = 4.96x
+     at 900 steps: 9.791e-07 vs 9.970e-07  fold = 1.02x
+  base 1 (T 0.10 vs 0.50):
+     at 250 steps: 2.106e-05 vs 3.966e-02  fold = 1.88e+03x
+     at 400 steps: 2.106e-05 vs 6.750e-05  fold = 3.21x
+     at 700 steps: 2.106e-05 vs 6.750e-05  fold = 3.21x
+     at 900 steps: 2.106e-05 vs 6.750e-05  fold = 3.21x
+  base 2 (T 0.10 vs 0.50):
+     at 250 steps: 1.622e-03 vs 6.000e-02  fold = 37x
+     at 400 steps: 1.622e-03 vs 6.000e-02  fold = 37x
+     at 700 steps: 1.622e-03 vs 6.000e-02  fold = 37x
+     at 900 steps: 1.622e-03 vs 6.000e-02  fold = 37x
+
+--- 4. do the arms reach the SAME terminal state? ---
+  base 0: low-T constant_curvature @381 ; high-T constant_curvature @884
+     -> BOTH reach the constant-curvature floor: transitivity
+        delays uniformisation by 2.3x in steps, it does not
+        prevent it. Any fold measured before both arms land is
+        a TIME-SCALE quantity, not a plateau ratio.
+  base 1: low-T horizon_reached @250 ; high-T horizon_reached @400
+  base 2: low-T saturated @121 ; high-T horizon_reached @170
+
+--- 5. what this licenses ---
+  LICENSED: (a) at every matched horizon up to 400 steps the high-T
+            residual exceeds the low-T one by ~10^3; (b) on base 0
+            both arms reach the constant-curvature floor; (c) the
+            delay in steps is a factor ~2.3 (381 vs 884).
+  NOT LICENSED: a plateau ratio (it is 1 on the one graph where both
+            arms finished), or 'transitivity creates the stalled branch'.
+  WITHDRAWN: the first-pass 25-37x plateau reading AND our own
+            intermediate reading ('moves the graph towards the stalled
+            branch') -- both were horizon artefacts.

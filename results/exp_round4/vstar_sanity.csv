@@ -1,0 +1,13 @@
+case,note,n,m,n_components,V_pooled,V_within,V_between,kappa_min,kappa_max
+K_6,edge-transitive,6,15,1,1.232595164407831e-32,1.232595164407831e-32,0.0,0.5999999999999999,0.5999999999999999
+K_9,edge-transitive,9,36,1,0.0,0.0,0.0,0.5625,0.5625
+K_12,edge-transitive,12,66,1,0.0,0.0,0.0,0.5454545454545454,0.5454545454545454
+C_6,edge-transitive,6,6,1,0.0,0.0,0.0,0.0,0.0
+C_12,edge-transitive,12,12,1,0.0,0.0,0.0,0.0,0.0
+C_20,edge-transitive,20,20,1,0.0,0.0,0.0,0.0,0.0
+P_6,not edge-transitive,6,5,1,0.06000000000000001,0.06000000000000001,0.0,0.0,0.5
+P_12,not edge-transitive,12,11,1,0.03719008264462809,0.03719008264462809,0.0,0.0,0.5
+S_5,not edge-transitive,5,4,1,0.0,0.0,0.0,0.25,0.25
+S_7,not edge-transitive,7,6,1,0.0,0.0,0.0,0.1666666666666673,0.1666666666666673
+C_5 + C_9,within=0 expected; pooled>0 if constants differ,14,14,2,0.014349489795918362,0.0,0.014349489795918366,0.0,0.25
+C_6 + C_20,within=0 expected; pooled>0 if constants differ,26,26,2,0.0,0.0,0.0,0.0,0.0

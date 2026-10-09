@@ -1,0 +1,2 @@
+base,target_T,rep,achieved_T,transitivity,final_r,nodes,edges,degree_seq_hash,var_ratio,steps,status,message,mean_kappa_final
+1,0.1,0,0.12,0.12,-0.014558876300814776,50,135,34980,0.0019442850862198718,133,saturated,,-0.10987424887262578

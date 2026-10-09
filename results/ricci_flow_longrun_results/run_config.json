@@ -1,0 +1,39 @@
+{
+  "cfg": {
+    "alpha": 0.5,
+    "dt": 0.05,
+    "sinkhorn_reg": 0.05,
+    "sinkhorn_max_iter": 5000,
+    "max_steps": 400,
+    "min_steps": 10,
+    "budget_seconds": 600.0,
+    "budget_slack": 1.05,
+    "tol": 0.0001,
+    "patience": 5,
+    "var_floor": 1e-06,
+    "lambda_every": 10,
+    "stop_thr": 1e-09,
+    "solver": "batched"
+  },
+  "cli": {
+    "data_dir": "D:\\100data",
+    "out_dir": "D:\\2026codes\\2026821100data\\ricci_flow_longrun_results",
+    "max_steps": 400,
+    "min_steps": 10,
+    "budget_seconds": 600.0,
+    "budget_slack": 1.05,
+    "tol": 0.0001,
+    "patience": 5,
+    "var_floor": 1e-06,
+    "lambda_every": 10,
+    "solver": "batched",
+    "only": "",
+    "exclude": "web-",
+    "overwrite": false,
+    "limit": 0,
+    "reverse": true,
+    "worker_tag": "w2"
+  },
+  "n_files": 110,
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]"
+}

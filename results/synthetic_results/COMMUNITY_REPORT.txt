@@ -1,0 +1,59 @@
+EXPERIMENT C: COMMUNITY STRUCTURE AND THE MAGNITUDE GAP
+==============================================================
+graphs: 12
+status: {'horizon_reached': 12}
+
+--- 1. manipulation check ---
+           n  achieved_mu  modularity  assortativity  transitivity  plateau
+target_mu                                                                  
+0.15       4      +0.2099     +0.5371        -0.0529       +0.2696  +0.0348
+0.45       4      +0.4772     +0.2698        -0.0619       +0.1344  +0.0133
+0.75       4      +0.7619     -0.0150        -0.0623       +0.1066  +0.0076
+  median |achieved - target| = 0.027
+
+--- 2. plateau vs community strength ---
+  Spearman(log10 plateau, target_mu     ) rho=-0.946 p=3.27e-06 n=12  (expect negative)
+  Spearman(log10 plateau, modularity    ) rho=+0.902 p=6e-05 n=12  (expect positive)
+  Spearman(log10 plateau, final_r       ) rho=+0.084 p=0.795 n=12  (expect ?)
+  Spearman(log10 plateau, transitivity  ) rho=+0.965 p=3.88e-07 n=12  (expect ?)
+  Spearman(log10 plateau, edges         ) rho=+0.125 p=0.698 n=12  (expect null)
+
+--- 3. within-base (degree sequence fixed) ---
+  base 0 n=3   rho(modularity)=+1.000 (p=0.000) | rho(mu)=-1.000 (p=0.000) | monotone_up=True
+  base 1 n=3   rho(modularity)=+1.000 (p=0.000) | rho(mu)=-1.000 (p=0.000) | monotone_up=True
+  base 2 n=3   rho(modularity)=+1.000 (p=0.000) | rho(mu)=-1.000 (p=0.000) | monotone_up=True
+  base 3 n=3   rho(modularity)=+1.000 (p=0.000) | rho(mu)=-1.000 (p=0.000) | monotone_up=True
+
+  bases with rho(modularity) > 0: 4/4
+  bases with strictly monotone increase: 4/4
+  median within-base rho = +1.000
+
+  NOTE: cells are matched-horizon (horizon_reached), not saturated.
+  A higher residual may mean slower convergence, not a higher fixed
+  point. See the saturation check before claiming the latter.
+
+--- 4. joint model with base fixed effects ---
+    term               coef        se        t          p
+    intercept       -2.4203    0.1387   -17.44   1.13e-05
+    modularity      +0.4567    0.3812    +1.20      0.285
+    final_r         -0.4659    1.3050    -0.36      0.736
+    transitivity    +2.3781    1.1867    +2.00      0.101
+    base1           +0.0767    0.1035    +0.74      0.492
+    base2           -0.0034    0.1145    -0.03      0.977
+    base3           +0.0242    0.1041    +0.23      0.826
+    R2 = 0.929  dof = 5
+  -> modularity beta=+0.457 (p=0.285); assortativity beta=-0.466 (p=0.736); transitivity beta=+2.378 (p=0.101)
+
+--- 5. magnitude: does community structure close the 92x gap? ---
+  weakest community (mu=0.75) plateau median = 0.00764  (n=4)
+  strongest community (mu=0.15) plateau median = 0.03479  (n=4)
+  fold change from weakest to strongest = 4.6x
+  real-network median plateau           = 0.19668
+  remaining gap to real networks        = 5.7x
+  (assortativity sweep synthetic median = 0.00214)
+
+--- verdict ---
+  Spearman(plateau, modularity) = +0.902 (p=6e-05)
+  If positive and the magnitude gap closes, community structure is
+  the dominant driver of the residual SIZE and the paper gains a
+  two-factor law: plateau = f(assortativity, community strength).

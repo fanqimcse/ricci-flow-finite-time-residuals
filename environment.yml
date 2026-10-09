@@ -1,0 +1,13 @@
+name: ricci-flow-audit
+channels: [conda-forge, defaults]
+dependencies:
+  - python=3.13
+  - numpy
+  - scipy
+  - pandas
+  - networkx
+  - matplotlib
+  - pot
+  - pip
+  - pip:
+      - python-docx

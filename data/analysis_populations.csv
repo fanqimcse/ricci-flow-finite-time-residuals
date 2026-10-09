@@ -1,0 +1,12 @@
+population,definition,n_networks,n_families
+C0,datasets assembled,117,
+C1,first-pass runs completed,110,
+C2,analysis set (complete record),93,17
+C3,trajectories on a common step grid,80,
+C4,extended strict re-run,16,7
+C5,exact-transport re-run,9,5
+D,disconnected networks of C2 re-run for V_within,34,
+SHAM,paired sham/real runs,25,8
+SURG,paired constraint-relaxation runs,5,2
+SYN-T,transitivity arms (base graphs),2,2
+SYN-R,assortativity/community sweeps (base graphs),4,4

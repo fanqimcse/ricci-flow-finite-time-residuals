@@ -1,0 +1,62 @@
+{
+ "scc2034_kilifi_all_contacts_across_households": {
+  "budget": 90.0,
+  "steps": 346,
+  "wall": 20.7,
+  "rc": 0
+ },
+ "eco-stmarks": {
+  "budget": 465.30841445922846,
+  "steps": 246,
+  "wall": 507.2,
+  "rc": 0
+ },
+ "mammalia-raccoon-proximity": {
+  "budget": 209.62733745574948,
+  "steps": 240,
+  "wall": 233.1,
+  "rc": 0
+ },
+ "ENZYMES_g100": {
+  "budget": 144.0,
+  "steps": 400,
+  "wall": 122.5,
+  "rc": 0
+ },
+ "scc_rt_ksa": {
+  "budget": 352.58780479431147,
+  "steps": 400,
+  "wall": 303.7,
+  "rc": 0
+ },
+ "ENZYMES_g106": {
+  "budget": 246.42735719680783,
+  "steps": 331,
+  "wall": 269.4,
+  "rc": 0
+ },
+ "reptilia-tortoise-network-sg": {
+  "budget": 401.7358016967773,
+  "steps": 400,
+  "wall": 206.0,
+  "rc": 0
+ },
+ "reptilia-tortoise-network-mc": {
+  "budget": 470.0,
+  "steps": 400,
+  "wall": 486.7,
+  "rc": 0
+ },
+ "aves-weaver-social-14": {
+  "budget": 700.0,
+  "steps": 400,
+  "wall": 677.9,
+  "rc": 0
+ },
+ "ENZYMES_g111": {
+  "budget": 643.8707399368285,
+  "steps": 400,
+  "wall": 552.3,
+  "rc": 0
+ }
+}

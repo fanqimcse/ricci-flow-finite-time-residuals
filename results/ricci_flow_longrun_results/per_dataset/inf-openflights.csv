@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+inf-openflights,0,0.0,-0.02815420942638535,0.03819321484155236,1.0,0.0,1.0,1.0,1.0,0.9999999979388464,2939,15677,582.1129996776581,1.919684648513794,580.0992300510406,6.9141387939453125e-06

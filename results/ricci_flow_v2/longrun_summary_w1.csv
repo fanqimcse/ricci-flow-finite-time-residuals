@@ -1,0 +1,2 @@
+dataset,file,status,message,steps,stop_reason,nodes,edges,components,weight_mode,weight_reason,transport_cells_per_step,horizon_planned,initial_variance,final_variance,var_ratio_final,wall_seconds
+ENZYMES_g105,D:\100data\ENZYMES_g105.edges,horizon_reached,,400,horizon_reached,33,69,1,unweighted,not every edge has a numeric third column,2014,400,0.041255937476604505,0.009783907814090005,0.2371515086680137,701.75

@@ -1,0 +1,106 @@
+LONG-HORIZON RICCI FLOW - ANALYSIS REPORT
+============================================================
+datasets in summary: 117
+trajectory rows: 14837
+
+--- outcome counts ---
+  budget_exceeded      52
+  saturated            34
+  budget_insufficient  15
+  horizon_reached      7
+  skipped_large        3
+  diverged             3
+  stopped_early        2
+  failed               1
+
+--- status reconstruction check ---
+  stopping reasons rebuilt from saved trajectories: 117
+  agreement with labels still present in summary files: 96.0% (n=50)
+  disagreements (summary label -> rebuilt label):
+    scc_rt_lebanon: saturated -> stopped_early
+    scc_rt_obama: saturated -> stopped_early
+
+--- final variance ratio var(T)/var(0) ---
+       quantity  n      min      p10      p25   median      p75      p90      max          status
+budget_exceeded 52 0.009529 0.054785 0.174642 0.315098 0.472333 0.623911 0.739149 budget_exceeded
+horizon_reached  7 0.042990 0.055695 0.071331 0.171646 0.241954 0.583137 1.000000 horizon_reached
+      saturated 34 0.000108 0.003228 0.009681 0.151428 0.235340 0.993842 1.000113       saturated
+
+--- was the 10-step result only a transient? ---
+  var_ratio at t=0.5   median=0.7806 n=88
+  var_ratio at stop    median=0.2035 n=93
+  share of drop in first 10 steps: median=0.328 p10=0.136 p90=0.706
+
+--- steps executed (among completed runs) ---
+  median=130.0 p10=20.200000000000003 p90=344.99999999999994 max=400.0
+
+--- spearman correlations with the plateau ratio ---
+  rho(var_ratio_final, log10_nodes       ) = +0.471
+  rho(var_ratio_final, initial_kappa     ) = +0.196
+  rho(var_ratio_final, initial_variance  ) = -0.059
+  rho(var_ratio_final, steps             ) = -0.597
+
+--- plateau ratio by domain (ascending) ---
+                        domain  n  median_plateau_ratio  median_steps  n_to_zero  n_plateau_above_0.5
+              Ecology Networks  2              0.002333          37.0          2                    0
+              Dynamic Networks 14              0.128759         163.0          0                    2
+                Power Networks  6              0.138005          80.5          0                    0
+          Interaction Networks  4              0.160120          58.0          1                    0
+               Cheminformatics 16              0.172444         240.0          2                    2
+        Animal Social Networks 16              0.185216         258.0          2                    3
+                Brain Networks  6              0.219590          73.0          2                    2
+Temporal Reachability Networks 14              0.251260         178.5          1                    3
+       Infrastructure Networks  2              0.269986          82.5          0                    0
+             Economic Networks  1              0.354795          86.0          0                    0
+           Biological Networks  9              0.459945          78.0          0                    4
+                    Web Graphs  3              0.598666          40.0          0                    3
+
+--- diverged runs ---
+  eco-florida: after 3 steps (t=0.15) variance ratio reached 7.07e+04
+  eco-foodweb-baywet: after 3 steps (t=0.15) variance ratio reached 7.07e+04
+  eco-foodweb-baydry: after 3 steps (t=0.15) variance ratio reached 1.26e+05
+  (the original exception text is only in the worker log; cause is weight collapse -> d -> 0 -> kappa blow-up)
+
+--- convergence diagnostics ---
+  runs that stopped on a criterion (saturated / constant / horizon): 41
+  runs cut by the wall-clock budget:                                52
+  of those, still decaying fast at the cut (c > 0.1 per unit t):     43
+    their reported plateau is an UPPER BOUND; median = 0.3073
+    median decay rate among them: c = 0.255 per unit t (halving time 2.71)
+
+--- plateau predictors, stratified by whether the run converged ---
+  (truncation is confounded with size: slow = big = cut early)
+       stratum  n        covariate  spearman
+ all completed 39      log10_nodes  0.471148
+ all completed 93    initial_kappa  0.196130
+ all completed 93 initial_variance -0.058929
+ all completed 93            steps -0.596640
+converged only 41      log10_nodes -0.123148
+converged only 41    initial_kappa  0.511695
+converged only 41 initial_variance -0.075177
+converged only 41            steps -0.103334
+truncated only 52      log10_nodes  0.261916
+truncated only 52    initial_kappa  0.265346
+truncated only 52 initial_variance -0.112183
+truncated only 52            steps -0.722196
+
+--- verdict ---
+  among all completed long runs:
+    fraction with plateau ratio < 0.05 (variance -> 0): 0.20
+    fraction with plateau ratio > 0.30 (partial only): 0.39
+    median plateau ratio: 0.2035
+
+
+  degenerate cases that cannot carry a variance-ratio claim:
+    datasets with zero/undefined initial curvature variance: 2 (scc_rt_lebanon, scc_rt_obama)
+    datasets whose ratio is NaN or exploded:               0 ()
+    these must be excluded from any 'variance shrinks' statement, not silently dropped
+
+  counterexamples to a naive 'everything homogenises' claim:
+    runs ending with variance >= 99% of the initial value: 5 (ENZYMES_g100, ENZYMES_g11, aves-geese-female-foraging, bn-macaque-rhesus_interareal-cortical-network_2, scc_rt_ksa)
+    runs ending with variance ABOVE the initial value:    0 ()
+  restricted to the 41 runs that genuinely converged:
+    fraction with plateau ratio < 0.05: 0.37
+    fraction with plateau ratio > 0.30: 0.22
+    median plateau ratio: 0.1590
+    quartiles: p25=0.0153 p75=0.2393

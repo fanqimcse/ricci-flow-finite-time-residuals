@@ -1,0 +1,2 @@
+base,target_mu,rep,achieved_mu,modularity,final_r,transitivity,nodes,edges,degree_seq_hash,var_ratio,steps,status,message,mean_kappa_final
+0,0.15,0,0.2624113475177305,0.4808862733262914,-0.026461751791079575,0.22076215505913271,50,141,15303,0.002396477791980146,147,saturated,,-0.07909116139744168

@@ -1,0 +1,79 @@
+WITHIN-FAMILY vs BETWEEN-FAMILY DECOMPOSITION
+==============================================================
+sample after exclusion chain: 76 networks / 14 families
+
+--- 1. WITHIN-FAMILY Spearman(assortativity, plateau) ---
+family          n       rho         p assort_sd   log10sd
+ENZYMES        12    -0.112     0.729     0.145     0.574
+aves            9     0.400     0.286     0.132     0.334
+bio             9     0.510     0.160     0.120     0.255
+bn              6     0.086     0.872     0.258     1.087
+eco             2  (n<5, not estimable)
+econ            1  (n<5, not estimable)
+ia              3  (n<5, not estimable)
+inf             2  (n<5, not estimable)
+insecta         2  (n<5, not estimable)
+mammalia        5     0.900     0.037     0.142     0.692
+power           6     0.600     0.208     0.095     0.338
+reptilia        5     1.000     0.000     0.184     0.426
+scc_rt         11     0.345     0.298     0.460     0.255
+web             3  (n<5, not estimable)
+  median within-family rho = +0.455 (8 families)
+  positive within-family: 7/8
+
+--- 1b. WITHIN-FAMILY Spearman(modularity, plateau) ---
+ENZYMES        12    -0.378     0.226
+aves            9    -0.083     0.831
+bio             9     0.050     0.898
+bn              6    -0.486     0.329
+mammalia        5     0.900     0.037
+power           6     0.829     0.042
+reptilia        5     0.400     0.505
+scc_rt         11    -0.064     0.853
+  median within-family rho = -0.007
+
+--- 2. BETWEEN-FAMILY (family means) ---
+  family  n  mean_log_ratio  mean_assort  mean_modul  mean_trans
+ ENZYMES 12          -1.143       -0.044      +0.639      +0.373
+    aves  9          -0.662       +0.044      +0.352      +0.616
+     bio  9          -0.403       -0.141      +0.762      +0.121
+      bn  6          -1.144       -0.459      +0.264      +0.327
+     eco  2          -3.155       -0.191      +0.182      +0.378
+      ia  3          -0.757       -0.251      +0.608      +0.243
+     inf  2          -0.592       +0.065      +0.910      +0.069
+ insecta  2          -1.865       -0.076      +0.148      +0.419
+mammalia  5          -0.912       +0.041      +0.484      +0.542
+   power  6          -0.910       -0.019      +0.884      +0.102
+reptilia  5          -0.772       +0.254      +0.644      +0.429
+  scc_rt 11          -0.428       +0.121      +0.358      +0.600
+     web  3          -0.203       -0.147      +0.806      +0.322
+  Spearman(mean_assort , mean plateau) rho=+0.291 p=0.334 n=13
+  Spearman(mean_modul  , mean plateau) rho=+0.621 p=0.024 n=13
+  Spearman(mean_trans  , mean plateau) rho=-0.198 p=0.517 n=13
+
+--- 3. JACKKNIFE on the between-family rho (drop one family) ---
+  full-sample family-level rho = +0.291 (p=0.334, n=13)
+  drop ENZYMES      -> rho=+0.273
+  drop aves         -> rho=+0.245
+  drop bio          -> rho=+0.455
+  drop bn           -> rho=+0.147
+  drop eco          -> rho=+0.161
+  drop ia           -> rho=+0.350
+  drop inf          -> rho=+0.245
+  drop insecta      -> rho=+0.308
+  drop mammalia     -> rho=+0.280
+  drop power        -> rho=+0.280
+  drop reptilia     -> rho=+0.336
+  drop scc_rt       -> rho=+0.245
+  drop web          -> rho=+0.455
+  jackknife range: +0.147 .. +0.455
+
+--- 4. where does the variance live? ---
+  ICC (fraction of log-plateau variance BETWEEN families) = 0.510
+  => 51% between-family / 49% within-family
+
+--- VERDICT RULE ---
+  Effect is usable at network level only if within-family rho
+  is consistently positive AND the LOFO oos R2 > 0. Otherwise
+  the correlation is ecological: describe it as a between-
+  family tendency over n families, and never as a predictor.

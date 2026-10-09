@@ -1,0 +1,13 @@
+stratum,n,covariate,spearman
+all completed,39,log10_nodes,0.47114801532632145
+all completed,93,initial_kappa,0.19613036066786455
+all completed,93,initial_variance,-0.058928631377537545
+all completed,93,steps,-0.5966404359538551
+converged only,41,log10_nodes,-0.12314799844516684
+converged only,41,initial_kappa,0.5116947607101209
+converged only,41,initial_variance,-0.0751774903801216
+converged only,41,steps,-0.1033342674892159
+truncated only,52,log10_nodes,0.26191645291878096
+truncated only,52,initial_kappa,0.2653461965337659
+truncated only,52,initial_variance,-0.11218304448049177
+truncated only,52,steps,-0.7221961379305596

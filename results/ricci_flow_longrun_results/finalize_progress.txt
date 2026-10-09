@@ -1,0 +1,29 @@
+[04:29:54] watcher started, waiting for longrun workers to exit
+[04:29:56] still waiting (python.exe processes seen: 4)
+[04:40:04] still waiting (python.exe processes seen: 4)
+[04:50:13] still waiting (python.exe processes seen: 4)
+[05:00:22] still waiting (python.exe processes seen: 4)
+[05:09:59] still waiting (python.exe processes seen: 4)
+[05:20:08] still waiting (python.exe processes seen: 4)
+[05:30:16] still waiting (python.exe processes seen: 4)
+[05:39:55] still waiting (python.exe processes seen: 4)
+[05:50:12] still waiting (python.exe processes seen: 4)
+[06:00:21] still waiting (python.exe processes seen: 4)
+[06:10:00] still waiting (python.exe processes seen: 4)
+[06:20:09] still waiting (python.exe processes seen: 4)
+[06:30:17] still waiting (python.exe processes seen: 4)
+[06:39:55] still waiting (python.exe processes seen: 4)
+[06:50:11] still waiting (python.exe processes seen: 4)
+[07:00:12] still waiting (python.exe processes seen: 4)
+[07:10:15] still waiting (python.exe processes seen: 4)
+[07:20:17] still waiting (python.exe processes seen: 2)
+[07:30:18] still waiting (python.exe processes seen: 2)
+[07:40:18] still waiting (python.exe processes seen: 2)
+[07:50:18] still waiting (python.exe processes seen: 2)
+[08:00:23] still waiting (python.exe processes seen: 2)
+[08:07:48] all workers finished
+[08:07:48] running analyze_longrun.py
+[08:07:53] analyze_longrun.py exit=0
+[08:07:53] running make_longrun_report.py
+[08:07:55] make_longrun_report.py exit=0
+[08:07:55] DONE

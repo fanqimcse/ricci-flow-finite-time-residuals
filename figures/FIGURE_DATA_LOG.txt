@@ -1,0 +1,80 @@
+master table: 93 rows, 28 cols
+
+[Fig 1] cross-domain homogenization + sham control
+  trajectories used: 80  (interpolated on a common 0-200 step grid)
+  median var_ratio at step 10 (t=0.5): 0.781
+  median var_ratio at step 130      : 0.294
+  median var_ratio at end of grid   : 0.214
+  plateau: n=93  median=0.2035  IQR=0.0785..0.4215
+  converged subset: n=41  median=0.1590
+  fraction below 1 (variance actually reduced): 0.957
+  sham pairs: 25 total, 21 defensible (excluded runaway/inert: eco-mangwet, bn-macaque-rhesus_interareal-cortical-network_2, scc_rt_dash, scc_rt_ksa)
+  median real = 0.0788   median sham = 1.1715
+  sham > real in 21/21 ; one-sided sign test p = 4.77e-07
+  Wilcoxon signed-rank p = 4.77e-07
+  old rule labelled 28 runs 'saturated'; tail drift over the final quarter: median -24.7%, 27/28 still falling by >2%, worst -84.9%
+  strict re-run: n=16 (4 stalled, 11 converging, 1 undecided)
+    stalled  residual median 0.1722 ; late-time rate median -1.0e-05/step
+    converging residual median 0.0241 ; late-time rate median -5.5e-03/step
+    weight span: stalled 2.76e+05 vs converging 3.90e+02 ; Mann-Whitney p=0.039
+
+[Fig 2] surgery: is the plateau the cost of keeping the edge set?
+  defensible pairs: 5
+     scc_rt_damascus        no-surgery 0.2510 -> surgery 0.2382  (1.1x, 4 edges removed)
+     ENZYMES_g1             no-surgery 0.1740 -> surgery 0.0284  (6.1x, 6 edges removed)
+     ENZYMES_g105           no-surgery 0.2393 -> surgery 0.0361  (6.6x, 14 edges removed)
+     ENZYMES_g111           no-surgery 0.2236 -> surgery 0.0023  (95.4x, 11 edges removed)
+     ENZYMES_g10            no-surgery 0.3603 -> surgery 0.0027  (131.8x, 9 edges removed)
+  surgery arm lower in 5/5 ; one-sided sign test p = 0.0312
+  median drop factor = 6.62x
+  families covered: ENZYMES, scc_rt
+
+[Fig 3] mechanism on synthetic graphs (degree sequence held fixed)
+  assortativity: n=60 cells, Spearman(plateau, r) = +0.796 (p=3.03e-14)
+     within-base rho: median +0.849, 4/4 positive
+  transitivity: n=7 cells, Spearman(plateau, T) = +0.750 (p=0.052)
+     base 0: T 0.123 -> 0.462  plateau 0.00206 -> 0.05246  (25.4x)
+     base 1: T 0.120 -> 0.426  plateau 0.00194 -> 0.06005  (30.9x)
+     base 2: T 0.122 -> 0.479  plateau 0.00162 -> 0.06000  (37.0x)
+  transitivity, all horizons (V = residual at that step):
+     base 0 T=0.10: V(125)=2.063e-03  V(250)=3.714e-05  V(400)=9.791e-07  V(700)=9.791e-07  V(900)=9.791e-07  [constant_curvature @381]
+        windows: 125-250:-3.21e-02; 250-381:-2.78e-02
+     base 0 T=0.50: V(125)=6.335e-02  V(250)=4.702e-02  V(400)=9.078e-04  V(700)=4.856e-06  V(900)=9.970e-07  [constant_curvature @884]
+        windows: 125-250:-2.38e-03; 250-400:-2.63e-02; 400-700:-1.74e-02; 700-884:-8.60e-03
+     base 1 T=0.10: V(250)=2.106e-05  V(400)=2.106e-05  V(700)=2.106e-05  V(900)=2.106e-05  [horizon_reached @250]
+        windows: nan
+     base 1 T=0.50: V(125)=7.866e-02  V(250)=3.966e-02  V(400)=6.750e-05  V(700)=6.750e-05  V(900)=6.750e-05  [horizon_reached @400]
+        windows: 125-250:-5.48e-03; 250-400:-4.25e-02
+     base 2 T=0.10: V(125)=1.622e-03  V(250)=1.622e-03  V(400)=1.622e-03  V(700)=1.622e-03  V(900)=1.622e-03  [saturated @121]
+        windows: nan
+     base 2 T=0.50: V(250)=6.000e-02  V(400)=6.000e-02  V(700)=6.000e-02  V(900)=6.000e-02  [horizon_reached @170]
+        windows: nan
+     base 3 T=0.50: V(250)=5.738e-02  V(400)=5.738e-02  V(700)=5.738e-02  V(900)=5.738e-02  [horizon_reached @170]
+        windows: nan
+     base 0 fold: 30x@125, 1266x@250, 927x@400, 4x@700, 1x@900
+        BOTH arms reach the constant-curvature floor -> delay 2.3x in steps (381 vs 884), endpoint unchanged
+     base 1 fold: 1883x@250, 3x@400, 3x@700, 3x@900
+     base 2 fold: 36x@250, 36x@400, 36x@700, 36x@900
+  community: 2 saturated cells (long_b0_m015.csv, long_b0_m075.csv), 12 matched-horizon cells
+     saturated: Q -0.001 -> 0.481  plateau 0.00178 -> 0.00240  (1.35x only)
+     matched horizon (95 steps): Q -0.025 -> 0.570  plateau 0.00860 -> 0.05277 (6.1x)
+
+[Fig 4] how far does structure predict the plateau?
+  leave-one-family-out (n=25):
+     M0 intercept only                  oos R2 = -0.169
+     M1 assortativity                   oos R2 = +0.039
+     M2 modularity                      oos R2 = -0.114
+     M3 assortativity + modularity      oos R2 = -0.170
+     M4 assort + modul + trans + logN   oos R2 = -0.793
+  best model = M1 assortativity ; baseline = -0.169 -> out-of-sample prediction is better than the intercept
+  primary subset = converged trajectories: n=41 (of 93 in the analysis set)
+  within ENZYMES (n=15): Spearman(plateau, T) = +0.725 (p=0.0022)
+                         Spearman(plateau, logN) = -0.763 (p=0.0009)
+                         partial (T | logN) = +0.250 (p=0.369)
+  family level (n=5 families): Spearman(median plateau, mean T) = +0.500 (p=0.3910)
+
+[Fig 5] dynamics: what sets the speed, and does speed predict depth?
+  n = 41 units with a usable rate
+  Spearman(rate, spectral gap lambda1) = -0.026 (p=0.874)  -> null
+  Spearman(rate, log10 plateau)        = -0.429 (p=0.00514)
+  partial (rate, plateau | size, degree) = -0.630 (p=1.03e-05)

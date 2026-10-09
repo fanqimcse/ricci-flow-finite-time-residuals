@@ -1,0 +1,142 @@
+datasets to process: 110
+[1/110] cached scc_rt_onedirection
+[2/110] cached scc_rt_oman
+[3/110] cached scc_rt_occupywallstnyc
+[4/110] running scc_rt_occupy
+    -> saturated: steps=357 var_ratio=0.20595147294608507 wall=504.46s
+[5/110] running scc_rt_obama
+    -> saturated: steps=6 var_ratio=nan wall=0.02s
+[6/110] running scc_rt_lebanon
+    -> saturated: steps=6 var_ratio=nan wall=0.01s
+[7/110] running scc_rt_ksa
+    -> saturated: steps=6 var_ratio=0.9999727466044996 wall=2.62s
+[8/110] running scc_rt_justinbieber
+    -> budget_exceeded: steps=75 var_ratio=0.3690195554714744 wall=631.86s
+[9/110] running scc_rt_islam
+    -> failed: steps=0 var_ratio=None wall=Nones
+[10/110] running scc_rt_http
+    -> saturated: steps=327 var_ratio=0.005323200866522437 wall=137.73s
+[11/110] running scc_rt_dash
+    -> saturated: steps=26 var_ratio=0.9795385736601152 wall=44.03s
+[12/110] running scc_rt_damascus
+    -> saturated: steps=276 var_ratio=0.2510174890218282 wall=173.06s
+[13/110] running scc_rt_barackobama
+    -> budget_exceeded: steps=162 var_ratio=0.20520472087842406 wall=632.56s
+[14/110] running scc_rt_bahrain
+    -> budget_exceeded: steps=144 var_ratio=0.25150261600151563 wall=632.44s
+[15/110] running scc_rt_assad
+    -> budget_exceeded: steps=211 var_ratio=0.17621095166026782 wall=631.73s
+[16/110] running scc_rt_alwefaq
+    -> budget_exceeded: steps=69 var_ratio=0.4214565120641518 wall=631.44s
+[17/110] running scc_infect-hyper
+    -> budget_insufficient: steps=1 var_ratio=1.0 wall=680.98s
+[18/110] running scc_enron-only
+    -> skipped_large: steps=0 var_ratio=None wall=Nones
+[19/110] running scc2034_kilifi_all_contacts_across_households
+    -> saturated: steps=198 var_ratio=0.1795416376526028 wall=3.94s
+[20/110] running reptilia-tortoise-network-sg
+    -> horizon_reached: steps=400 var_ratio=0.04299042609337286 wall=121.12s
+[21/110] running reptilia-tortoise-network-pv
+    -> saturated: steps=238 var_ratio=0.07883886018493115 wall=514.6s
+[22/110] running reptilia-tortoise-network-mc
+    -> horizon_reached: steps=400 var_ratio=0.1786794463822131 wall=283.39s
+[23/110] running reptilia-tortoise-network-hw
+    -> horizon_reached: steps=400 var_ratio=0.0641651033626596 wall=233.99s
+[24/110] running reptilia-tortoise-network-fi
+    -> budget_exceeded: steps=39 var_ratio=0.7051605964509935 wall=642.08s
+[25/110] running reptilia-tortoise-network-cs
+    -> budget_exceeded: steps=113 var_ratio=0.2921188143455323 wall=631.53s
+[26/110] running reptilia-tortoise-network-bsv
+    -> budget_exceeded: steps=62 var_ratio=0.1966828275978945 wall=632.6s
+[27/110] running power-eris1176
+    -> budget_insufficient: steps=1 var_ratio=1.0 wall=184.06s
+[28/110] running power-bcspwr10
+    -> budget_exceeded: steps=35 var_ratio=0.2974126050866089 wall=639.52s
+[29/110] running power-bcspwr09
+    -> budget_exceeded: steps=76 var_ratio=0.10607430493013188 wall=633.2s
+[30/110] running power-US-Grid
+    -> budget_exceeded: steps=38 var_ratio=0.29911073509038755 wall=643.32s
+[31/110] cached power-685-bus
+[32/110] cached power-662-bus
+[33/110] cached power-494-bus
+[34/110] cached mammalia-voles-plj-trapping
+[35/110] cached mammalia-voles-kcs-trapping
+[36/110] cached mammalia-voles-bhp-trapping
+[37/110] cached mammalia-raccoon-proximity
+[38/110] cached mammalia-primate-association
+[39/110] cached insecta-ant-trophallaxis-colony2
+[40/110] cached insecta-ant-trophallaxis-colony1
+[41/110] cached inf-power
+[42/110] cached inf-openflights
+[43/110] cached inf-euroroad
+[44/110] cached ia-workplace-contacts
+[45/110] cached ia-southernwomen
+[46/110] cached ia-reality
+[47/110] cached ia-infect-hyper
+[48/110] cached ia-enron-only
+[49/110] cached ia-email-univ
+[50/110] cached ia-dnc-corecipient
+[51/110] cached econ-wm3
+[52/110] cached econ-wm2
+[53/110] cached econ-wm1
+[54/110] cached econ-poli
+[55/110] running econ-mbeacxc
+    -> skipped_large: steps=0 var_ratio=None wall=Nones
+[56/110] cached econ-mahindas
+[57/110] cached eco-stmarks
+[58/110] cached eco-mangwet
+[59/110] cached eco-florida
+[60/110] cached bn-mouse_visual-cortex_1
+[61/110] running bn-mouse_brain_1
+    -> skipped_large: steps=0 var_ratio=None wall=Nones
+[62/110] cached bn-mouse-kasthuri_graph_v4
+[63/110] cached bn-macaque-rhesus_interareal-cortical-network_2
+[64/110] cached bn-macaque-rhesus_cerebral-cortex_1
+[65/110] cached bn-macaque-rhesus_brain_2
+[66/110] cached bn-macaque-rhesus_brain_1
+[67/110] cached bn-fly-drosophila_medulla_1
+[68/110] cached bn-cat-mixed-species_brain_1
+[69/110] cached bio-yeast
+[70/110] cached bio-grid-plant
+[71/110] cached bio-grid-mouse
+[72/110] cached bio-diseasome
+[73/110] cached bio-celegans
+[74/110] cached bio-celegans-dir
+[75/110] cached bio-SC-TS
+[76/110] cached bio-DM-LC
+[77/110] cached bio-CE-LC
+[78/110] cached bio-CE-HT
+[79/110] cached aves-weaver-social
+[80/110] cached aves-weaver-social-14
+[81/110] cached aves-weaver-social-12
+[82/110] cached aves-weaver-social-11
+[83/110] cached aves-weaver-social-09
+[84/110] cached aves-weaver-social-08
+[85/110] cached aves-weaver-social-06
+[86/110] cached aves-thornbill-farine
+[87/110] cached aves-sparrowlyon-flock-season3
+[88/110] cached aves-sparrowlyon-flock-season2
+[89/110] cached aves-sparrow-social
+[90/110] cached aves-sparrow-social-2009
+[91/110] cached aves-hens-pecking-order
+[92/110] cached aves-geese-male-foraging
+[93/110] cached aves-geese-female-foraging
+[94/110] cached aves-barn-swallow-non-physical
+[95/110] cached ENZYMES_g113
+[96/110] cached ENZYMES_g112
+[97/110] cached ENZYMES_g111
+[98/110] cached ENZYMES_g110
+[99/110] cached ENZYMES_g11
+[100/110] cached ENZYMES_g109
+[101/110] cached ENZYMES_g107
+[102/110] cached ENZYMES_g106
+[103/110] cached ENZYMES_g105
+[104/110] cached ENZYMES_g104
+[105/110] cached ENZYMES_g103
+[106/110] cached ENZYMES_g102
+[107/110] cached ENZYMES_g101
+[108/110] cached ENZYMES_g100
+[109/110] cached ENZYMES_g10
+[110/110] cached ENZYMES_g1
+
+DONE. summary: D:\2026codes\2026821100data\ricci_flow_longrun_results\longrun_summary_w2.csv

@@ -1,0 +1,13 @@
+domain,n,median_plateau_ratio,median_steps,n_to_zero,n_plateau_above_0.5
+Ecology Networks,2,0.0023329382571539,37.0,2,0
+Dynamic Networks,14,0.1287591532835721,163.0,0,2
+Power Networks,6,0.13800538986784644,80.5,0,0
+Interaction Networks,4,0.16011960565465905,58.0,1,0
+Cheminformatics,16,0.17244356020737478,240.0,2,2
+Animal Social Networks,16,0.18521574967607354,258.0,2,3
+Brain Networks,6,0.2195896110684174,73.0,2,2
+Temporal Reachability Networks,14,0.2512600525116719,178.5,1,3
+Infrastructure Networks,2,0.26998572512921354,82.5,0,0
+Economic Networks,1,0.3547949491014296,86.0,0,0
+Biological Networks,9,0.4599445013586323,78.0,0,4
+Web Graphs,3,0.5986655709642237,40.0,0,3

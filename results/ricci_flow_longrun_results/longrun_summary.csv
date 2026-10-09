@@ -1,0 +1,118 @@
+dataset,file,status,message,steps,stop_reason,final_variance,var_ratio_final,nodes,edges,components,weight_mode,weight_reason,transport_cells_per_step,horizon_planned,initial_variance,wall_seconds
+ENZYMES_g1,D:\100data\ENZYMES_g1.edges,cached,reused existing trajectory,223,cached,0.0102746488832678,0.173974589643673,,,,,,,,,
+ENZYMES_g10,D:\100data\ENZYMES_g10.edges,cached,reused existing trajectory,272,cached,0.0291461757856337,0.3603033002660976,,,,,,,,,
+ENZYMES_g100,D:\100data\ENZYMES_g100.edges,cached,reused existing trajectory,6,cached,0.0034706777129284,1.0000569735682128,,,,,,,,,
+ENZYMES_g101,D:\100data\ENZYMES_g101.edges,cached,reused existing trajectory,278,cached,0.0004600349482538,0.0114829699330509,,,,,,,,,
+ENZYMES_g102,D:\100data\ENZYMES_g102.edges,cached,reused existing trajectory,242,cached,0.0003376052879518,0.0095289861391303,,,,,,,,,
+ENZYMES_g103,D:\100data\ENZYMES_g103.edges,cached,reused existing trajectory,238,cached,0.0004755514211759,0.0090808614542186,,,,,,,,,
+ENZYMES_g104,D:\100data\ENZYMES_g104.edges,cached,reused existing trajectory,245,cached,0.0107832348692987,0.2034762524231793,,,,,,,,,
+ENZYMES_g105,D:\100data\ENZYMES_g105.edges,cached,reused existing trajectory,250,cached,0.0098708817244307,0.23925966365516,,,,,,,,,
+ENZYMES_g106,D:\100data\ENZYMES_g106.edges,cached,reused existing trajectory,237,cached,0.0101338106681029,0.1614474544489239,,,,,,,,,
+ENZYMES_g107,D:\100data\ENZYMES_g107.edges,cached,reused existing trajectory,292,cached,0.0102053663199033,0.1732411765639653,,,,,,,,,
+ENZYMES_g109,D:\100data\ENZYMES_g109.edges,cached,reused existing trajectory,276,cached,0.007306411044634,0.1265973159459107,,,,,,,,,
+ENZYMES_g11,D:\100data\ENZYMES_g11.edges,cached,reused existing trajectory,6,cached,6.162975822039155e-33,1.0,,,,,,,,,
+ENZYMES_g110,D:\100data\ENZYMES_g110.edges,cached,reused existing trajectory,400,cached,0.0109618225643694,0.1716459438507843,,,,,,,,,
+ENZYMES_g111,D:\100data\ENZYMES_g111.edges,cached,reused existing trajectory,236,cached,0.0147954174148972,0.223580094704014,,,,,,,,,
+ENZYMES_g112,D:\100data\ENZYMES_g112.edges,cached,reused existing trajectory,238,cached,0.0015917364516023,0.0349102753350095,,,,,,,,,
+ENZYMES_g113,D:\100data\ENZYMES_g113.edges,cached,reused existing trajectory,237,cached,0.0017046482691996,0.0368425980741389,,,,,,,,,
+aves-barn-swallow-non-physical,D:\100data\aves-barn-swallow-non-physical.edges,cached,reused existing trajectory,400,cached,0.0012284822885032,0.0784971045584994,,,,,,,,,
+aves-geese-female-foraging,D:\100data\aves-geese-female-foraging.edges,cached,reused existing trajectory,400,cached,1.0185128463791023e-32,1.0,,,,,,,,,
+aves-geese-male-foraging,D:\100data\aves-geese-male-foraging.edges,cached,reused existing trajectory,400,cached,8.818170939044166e-33,0.3052276559865093,,,,,,,,,
+aves-hens-pecking-order,D:\100data\aves-hens-pecking-order.edges,cached,reused existing trajectory,130,cached,2.1197654742739512e-32,0.417523250122369,,,,,,,,,
+aves-sparrow-social-2009,D:\100data\aves-sparrow-social-2009.edges,cached,reused existing trajectory,96,cached,0.0142922349461132,0.4622455749495552,,,,,,,,,
+aves-sparrow-social,D:\100data\aves-sparrow-social.edges,cached,reused existing trajectory,97,cached,0.0108338486468239,0.1771884444510338,,,,,,,,,
+aves-sparrowlyon-flock-season2,D:\100data\aves-sparrowlyon-flock-season2.edges,cached,reused existing trajectory,124,cached,0.0073716088296295,0.3073099994895573,,,,,,,,,
+aves-sparrowlyon-flock-season3,D:\100data\aves-sparrowlyon-flock-season3.edges,cached,reused existing trajectory,293,cached,0.0021030251113263,0.0587121026371069,,,,,,,,,
+aves-thornbill-farine,D:\100data\aves-thornbill-farine.edges,cached,reused existing trajectory,57,cached,0.0057607500633336,0.519094417266726,,,,,,,,,
+aves-weaver-social-06,D:\100data\aves-weaver-social-06.edges,cached,reused existing trajectory,329,cached,0.0057123128089992,0.1438517917195232,,,,,,,,,
+aves-weaver-social-08,D:\100data\aves-weaver-social-08.edges,cached,reused existing trajectory,206,cached,0.0019542777266611,0.0940014674683239,,,,,,,,,
+aves-weaver-social-09,D:\100data\aves-weaver-social-09.edges,cached,reused existing trajectory,288,cached,4.72150498519982e-05,0.003777376961046,,,,,,,,,
+aves-weaver-social-11,D:\100data\aves-weaver-social-11.edges,cached,reused existing trajectory,228,cached,0.0093795598313476,0.1279828334675667,,,,,,,,,
+aves-weaver-social-12,D:\100data\aves-weaver-social-12.edges,cached,reused existing trajectory,384,cached,0.0107272462549904,0.1932430549011133,,,,,,,,,
+aves-weaver-social-14,D:\100data\aves-weaver-social-14.edges,cached,reused existing trajectory,308,cached,3.707736961190821e-05,0.0058520142922319,,,,,,,,,
+aves-weaver-social,D:\100data\aves-weaver-social.edges,cached,reused existing trajectory,45,cached,0.039868373339804,0.6240737574809535,,,,,,,,,
+bio-CE-HT,D:\100data\bio-CE-HT.edges,cached,reused existing trajectory,116,cached,0.0382269149932257,0.196851715222581,,,,,,,,,
+bio-CE-LC,D:\100data\bio-CE-LC.edges,cached,reused existing trajectory,78,cached,0.0511093740328105,0.3228860468602968,,,,,,,,,
+bio-DM-LC,D:\100data\bio-DM-LC.edges,cached,reused existing trajectory,100,cached,0.0343638311647894,0.3325617687841328,,,,,,,,,
+bio-SC-TS,D:\100data\bio-SC-TS.edges,cached,reused existing trajectory,1,cached,0.0431766867286299,1.0,,,,,,,,,
+bio-celegans-dir,D:\100data\bio-celegans-dir.edges,cached,reused existing trajectory,21,cached,0.0274886225546309,0.6224470780089026,,,,,,,,,
+bio-celegans,D:\100data\bio-celegans.mtx,cached,reused existing trajectory,21,cached,0.0274886082438313,0.6224468188715876,,,,,,,,,
+bio-diseasome,D:\100data\bio-diseasome.mtx,cached,reused existing trajectory,57,cached,0.0810581937724718,0.6961118591424257,,,,,,,,,
+bio-grid-mouse,D:\100data\bio-grid-mouse.edges,cached,reused existing trajectory,78,cached,0.0598906760637586,0.4599445013586323,,,,,,,,,
+bio-grid-plant,D:\100data\bio-grid-plant.edges,cached,reused existing trajectory,17,cached,0.0681152782589927,0.7391489068709899,,,,,,,,,
+bio-yeast,D:\100data\bio-yeast.mtx,cached,reused existing trajectory,85,cached,0.0150838799664724,0.1210767345707178,,,,,,,,,
+bn-cat-mixed-species_brain_1,D:\100data\bn-cat-mixed-species_brain_1.edges,cached,reused existing trajectory,23,cached,0.0075652025994809,0.6719439631853598,,,,,,,,,
+bn-fly-drosophila_medulla_1,D:\100data\bn-fly-drosophila_medulla_1.edges,cached,reused existing trajectory,1,cached,0.0205478164368332,1.0,,,,,,,,,
+bn-macaque-rhesus_brain_1,D:\100data\bn-macaque-rhesus_brain_1.edges,cached,reused existing trajectory,1,cached,0.0087713391206664,1.0,,,,,,,,,
+bn-macaque-rhesus_brain_2,D:\100data\bn-macaque-rhesus_brain_2.edges,cached,reused existing trajectory,196,cached,9.267803342640576e-06,0.0026328514829236,,,,,,,,,
+bn-macaque-rhesus_cerebral-cortex_1,D:\100data\bn-macaque-rhesus_cerebral-cortex_1.edges,cached,reused existing trajectory,40,cached,0.0017189743997876,0.3332789770110345,,,,,,,,,
+bn-macaque-rhesus_interareal-cortical-network_2,D:\100data\bn-macaque-rhesus_interareal-cortical-network_2.edges,cached,reused existing trajectory,6,cached,0.0172452963487107,1.0001128171436915,,,,,,,,,
+bn-mouse-kasthuri_graph_v4,D:\100data\bn-mouse-kasthuri_graph_v4.edges,cached,reused existing trajectory,106,cached,0.0114564376055726,0.1059002451258003,,,,,,,,,
+bn-mouse_brain_1,D:\100data\bn-mouse_brain_1.edges,skipped_large,transport cells/step 392354693 > limit 100000000. This graph is valid but exact per-edge Sinkhorn Ricci flow is impractical under the default safety limits. Use --force_large only when you accept a potentially very long run.,0,work_limit,,,,,,,,,,,
+bn-mouse_visual-cortex_1,D:\100data\bn-mouse_visual-cortex_1.edges,cached,reused existing trajectory,126,cached,0.0001147123460292,0.0021786099820324,,,,,,,,,
+eco-florida,D:\100data\eco-florida.edges,cached,reused existing trajectory,3,cached,12777335576.056288,70678.40443738943,,,,,,,,,
+eco-foodweb-baydry,D:\100data\eco-foodweb-baydry.edges,cached,reused existing trajectory,3,cached,4107923942.540064,126083.80688359927,,,,,,,,,
+eco-foodweb-baywet,D:\100data\eco-foodweb-baywet.edges,cached,reused existing trajectory,3,cached,12777335576.056288,70678.40443738943,,,,,,,,,
+eco-mangwet,D:\100data\eco-mangwet.edges,cached,reused existing trajectory,9,cached,0.6729693680397704,0.0001076790493066,,,,,,,,,
+eco-stmarks,D:\100data\eco-stmarks.edges,cached,reused existing trajectory,65,cached,0.074646104551703,0.0045581974650012,,,,,,,,,
+econ-mahindas,D:\100data\econ-mahindas.mtx,cached,reused existing trajectory,1,cached,0.0442253506250106,1.0,,,,,,,,,
+econ-mbeacxc,D:\100data\econ-mbeacxc.mtx,skipped_large,transport cells/step 2187755670 > limit 100000000. This graph is valid but exact per-edge Sinkhorn Ricci flow is impractical under the default safety limits. Use --force_large only when you accept a potentially very long run.,0,work_limit,,,,,,,,,,,
+econ-poli,D:\100data\econ-poli.mtx,cached,reused existing trajectory,86,cached,0.0320806773543316,0.3547949491014296,,,,,,,,,
+econ-wm1,D:\100data\econ-wm1.mtx,cached,reused existing trajectory,1,cached,0.0441002333946601,1.0,,,,,,,,,
+econ-wm2,D:\100data\econ-wm2.mtx,cached,reused existing trajectory,1,cached,0.0497267214044966,1.0,,,,,,,,,
+econ-wm3,D:\100data\econ-wm3.mtx,cached,reused existing trajectory,1,cached,0.0457850387487775,1.0,,,,,,,,,
+ia-dnc-corecipient,D:\100data\ia-dnc-corecipient.edges,cached,reused existing trajectory,1,cached,0.1179429767050945,1.0,,,,,,,,,
+ia-email-univ,D:\100data\ia-email-univ.mtx,cached,reused existing trajectory,1,cached,0.0396063287849602,1.0,,,,,,,,,
+ia-enron-only,D:\100data\ia-enron-only.mtx,cached,reused existing trajectory,37,cached,0.0162710850367435,0.3773653811606702,,,,,,,,,
+ia-infect-hyper,D:\100data\ia-infect-hyper.mtx,cached,reused existing trajectory,1,cached,0.0041551917644902,1.0,,,,,,,,,
+ia-reality,D:\100data\ia-reality.mtx,budget_exceeded,,34,budget_exceeded,0.013326680769693981,0.26699773753709605,6809.0,7680.0,1.0,unweighted,not every edge has a numeric third column,3819686.0,28.0,0.049913085004483985,642.15
+ia-southernwomen,D:\100data\ia-southernwomen.edges,saturated,,261,saturated,7.617982190901088e-05,0.0029919496535466576,18.0,64.0,1.0,unweighted,not every edge has a numeric third column,5648.0,321.0,0.025461598867048886,507.31
+ia-workplace-contacts,D:\100data\ia-workplace-contacts.edges,budget_exceeded,,79,budget_exceeded,0.01251975792026309,0.053241473772222166,92.0,755.0,1.0,distance,all input weights are finite and positive; auto interpretation=distance,327040.0,77.0,0.23515047637158124,635.71
+inf-euroroad,D:\100data\inf-euroroad.edges,budget_exceeded,,134,budget_exceeded,0.013572764995626213,0.1829738725387912,1174.0,1417.0,26.0,unweighted,not every edge has a numeric third column,23059.0,120.0,0.07417870544740607,630.77
+inf-openflights,D:\100data\inf-openflights.edges,budget_insufficient,"one step costs 582.1s, the minimum horizon of 10 steps would need 5821s > budget 600s; the original 10-step result stands",1,budget_insufficient,0.03819321484155236,1.0,2939.0,15677.0,11.0,unweighted,not every edge has a numeric third column,52637700.0,10.0,0.03819321484155236,582.13
+inf-power,D:\100data\inf-power.mtx,budget_exceeded,,31,budget_exceeded,0.03012035429040891,0.3569975777196359,4941.0,6594.0,1.0,unweighted,not every edge has a numeric third column,156617.0,21.0,0.08437131277698359,645.54
+insecta-ant-trophallaxis-colony1,D:\100data\insecta-ant-trophallaxis-colony1.edges,budget_exceeded,,154,budget_exceeded,0.003792217377667899,0.0168745363103282,41.0,256.0,1.0,distance,all input weights are finite and positive; auto interpretation=distance,59337.0,400.0,0.2247301678652255,630.95
+insecta-ant-trophallaxis-colony2,D:\100data\insecta-ant-trophallaxis-colony2.edges,budget_exceeded,,189,budget_exceeded,0.0026957819789815048,0.011021003803471534,39.0,245.0,1.0,distance,all input weights are finite and positive; auto interpretation=distance,60693.0,400.0,0.2446040330856572,633.46
+mammalia-primate-association,D:\100data\mammalia-primate-association.edges,saturated,,172,saturated,0.0006011550241546055,0.0199613279277898,25.0,280.0,1.0,distance,all input weights are finite and positive; auto interpretation=distance,154811.0,221.0,0.03011598358231911,464.62
+mammalia-raccoon-proximity,D:\100data\mammalia-raccoon-proximity.edges,saturated,,209,saturated,0.0015631026616166053,0.015281124653742404,24.0,226.0,1.0,distance,all input weights are finite and positive; auto interpretation=distance,96614.0,400.0,0.10228976577543955,81.88
+mammalia-voles-bhp-trapping,D:\100data\mammalia-voles-bhp-trapping.edges,budget_exceeded,,18,budget_exceeded,0.08547233595651967,0.4593812119793069,1686.0,4623.0,31.0,distance,all input weights are finite and positive; auto interpretation=distance,547028.0,17.0,0.18605971190735118,660.43
+mammalia-voles-kcs-trapping,D:\100data\mammalia-voles-kcs-trapping.edges,budget_exceeded,,20,budget_exceeded,0.06892317710454872,0.3843370366727609,1218.0,3592.0,15.0,distance,all input weights are finite and positive; auto interpretation=distance,497342.0,19.0,0.17933004245758527,658.35
+mammalia-voles-plj-trapping,D:\100data\mammalia-voles-plj-trapping.edges,budget_exceeded,,20,budget_exceeded,0.07605858652936263,0.5094974083776367,1263.0,3380.0,40.0,distance,all input weights are finite and positive; auto interpretation=distance,397794.0,19.0,0.1492815964884917,653.02
+power-494-bus,D:\100data\power-494-bus.mtx,budget_exceeded,,171,budget_exceeded,0.004722296456919236,0.05434852871169998,494.0,586.0,1.0,unweighted,signed/zero input weights cannot be used by Dijkstra; using topology-only unit lengths,10300.0,136.0,0.0868891314789656,630.16
+power-662-bus,D:\100data\power-662-bus.mtx,budget_exceeded,,170,budget_exceeded,0.0022554223654327496,0.03994296861262329,662.0,906.0,1.0,unweighted,signed/zero input weights cannot be used by Dijkstra; using topology-only unit lengths,18482.0,76.0,0.056466067590178116,632.97
+power-685-bus,D:\100data\power-685-bus.mtx,budget_exceeded,,85,budget_exceeded,0.009446332437518636,0.16993647480556118,685.0,1282.0,1.0,unweighted,signed/zero input weights cannot be used by Dijkstra; using topology-only unit lengths,41213.0,66.0,0.05558743317658549,632.57
+power-US-Grid,D:\100data\power-US-Grid.mtx,budget_exceeded,,38,budget_exceeded,0.02523636538526458,0.29911073509038755,4941.0,6594.0,1.0,unweighted,not every edge has a numeric third column,156617.0,25.0,0.08437131277698363,631.95
+power-bcspwr09,D:\100data\power-bcspwr09.mtx,cached,reused existing trajectory,76,cached,0.0077266713787158,0.1060743049301318,,,,,,,,,
+power-bcspwr10,D:\100data\power-bcspwr10.mtx,cached,reused existing trajectory,35,cached,0.0159941198167608,0.2974126050866089,,,,,,,,,
+power-eris1176,D:\100data\power-eris1176.mtx,cached,reused existing trajectory,1,cached,0.0618921932529654,1.0,,,,,,,,,
+reptilia-tortoise-network-bsv,D:\100data\reptilia-tortoise-network-bsv.edges,cached,reused existing trajectory,62,cached,0.0123652872464784,0.1966828275978945,,,,,,,,,
+reptilia-tortoise-network-cs,D:\100data\reptilia-tortoise-network-cs.edges,cached,reused existing trajectory,113,cached,0.021470862688729,0.2921188143455323,,,,,,,,,
+reptilia-tortoise-network-fi,D:\100data\reptilia-tortoise-network-fi.edges,cached,reused existing trajectory,39,cached,0.0983470487671295,0.7051605964509935,,,,,,,,,
+reptilia-tortoise-network-hw,D:\100data\reptilia-tortoise-network-hw.edges,cached,reused existing trajectory,400,cached,0.0032831310686568,0.0641651033626596,,,,,,,,,
+reptilia-tortoise-network-mc,D:\100data\reptilia-tortoise-network-mc.edges,cached,reused existing trajectory,400,cached,0.0080661171621371,0.1786794463822131,,,,,,,,,
+reptilia-tortoise-network-pv,D:\100data\reptilia-tortoise-network-pv.edges,cached,reused existing trajectory,238,cached,0.0034180050649287,0.0788388601849311,,,,,,,,,
+reptilia-tortoise-network-sg,D:\100data\reptilia-tortoise-network-sg.edges,cached,reused existing trajectory,400,cached,0.0025147741974776,0.0429904260933728,,,,,,,,,
+scc2034_kilifi_all_contacts_across_households,D:\100data\scc2034_kilifi_all_contacts_across_households.edges,cached,reused existing trajectory,198,cached,0.014167483653792,0.1795416376526028,,,,,,,,,
+scc_enron-only,D:\100data\scc_enron-only.mtx,skipped_large,transport cells/step 186267416 > limit 100000000. This graph is valid but exact per-edge Sinkhorn Ricci flow is impractical under the default safety limits. Use --force_large only when you accept a potentially very long run.,0,work_limit,,,,,,,,,,,
+scc_infect-hyper,D:\100data\scc_infect-hyper.mtx,cached,reused existing trajectory,1,cached,0.0005447074138551,1.0,,,,,,,,,
+scc_rt_alwefaq,D:\100data\scc_rt_alwefaq.mtx,cached,reused existing trajectory,69,cached,0.0108719967850991,0.4214565120641518,,,,,,,,,
+scc_rt_assad,D:\100data\scc_rt_assad.mtx,cached,reused existing trajectory,211,cached,0.0067022295275277,0.1762109516602678,,,,,,,,,
+scc_rt_bahrain,D:\100data\scc_rt_bahrain.mtx,cached,reused existing trajectory,144,cached,0.0261950859690302,0.2515026160015156,,,,,,,,,
+scc_rt_barackobama,D:\100data\scc_rt_barackobama.mtx,cached,reused existing trajectory,162,cached,0.0118405031530397,0.205204720878424,,,,,,,,,
+scc_rt_damascus,D:\100data\scc_rt_damascus.mtx,cached,reused existing trajectory,276,cached,0.0249182544235628,0.2510174890218282,,,,,,,,,
+scc_rt_dash,D:\100data\scc_rt_dash.mtx,cached,reused existing trajectory,26,cached,0.1033060961560326,0.9795385736601152,,,,,,,,,
+scc_rt_http,D:\100data\scc_rt_http.mtx,cached,reused existing trajectory,327,cached,3.902237787234792e-05,0.0053232008665224,,,,,,,,,
+scc_rt_islam,D:\100data\scc_rt_islam.mtx,failed,DatasetFormatError('No valid edges were parsed from D:\\100data\\scc_rt_islam.mtx; examples: 0'),0,load_error,,,,,,,,,,,
+scc_rt_justinbieber,D:\100data\scc_rt_justinbieber.mtx,cached,reused existing trajectory,75,cached,0.0066998032290293,0.3690195554714744,,,,,,,,,
+scc_rt_ksa,D:\100data\scc_rt_ksa.mtx,cached,reused existing trajectory,6,cached,0.0334632629445261,0.9999727466044996,,,,,,,,,
+scc_rt_lebanon,D:\100data\scc_rt_lebanon.mtx,cached,reused existing trajectory,6,cached,0.0,,,,,,,,,,
+scc_rt_obama,D:\100data\scc_rt_obama.mtx,cached,reused existing trajectory,6,cached,0.0,,,,,,,,,,
+scc_rt_occupy,D:\100data\scc_rt_occupy.mtx,cached,reused existing trajectory,357,cached,0.0214249962539242,0.205951472946085,,,,,,,,,
+scc_rt_occupywallstnyc,D:\100data\scc_rt_occupywallstnyc.mtx,cached,reused existing trajectory,36,cached,0.0131596872796934,0.6152286153405048,,,,,,,,,
+scc_rt_oman,D:\100data\scc_rt_oman.mtx,cached,reused existing trajectory,349,cached,0.017092175884401,0.1590042788013189,,,,,,,,,
+scc_rt_onedirection,D:\100data\scc_rt_onedirection.mtx,cached,reused existing trajectory,195,cached,0.0016296160283471,0.4449776526266053,,,,,,,,,
+web-EPA,D:\100data\web-EPA.edges,budget_insufficient,"one step costs 66.6s, the minimum horizon of 10 steps would need 666s > budget 600s; the original 10-step result stands",1,budget_insufficient,0.07726398803740894,1.0,4271.0,8909.0,8.0,unweighted,not every edge has a numeric third column,2907395.0,10.0,0.07726398803740894,66.62
+web-edu,D:\100data\web-edu.mtx,budget_exceeded,,40,budget_exceeded,0.06714969437721029,0.5618555714716458,3031.0,6474.0,1.0,unweighted,not every edge has a numeric third column,1814600.0,35.0,0.11951415592681192,638.63
+web-google,D:\100data\web-google.mtx,budget_exceeded,,42,budget_exceeded,0.08715858488273537,0.733294341405109,1299.0,2773.0,1.0,unweighted,not every edge has a numeric third column,404336.0,36.0,0.11885893557520928,630.76
+web-polblogs,D:\100data\web-polblogs.mtx,budget_exceeded,,12,budget_exceeded,0.019646834056712657,0.5986655709642237,643.0,2280.0,1.0,unweighted,not every edge has a numeric third column,1086119.0,10.0,0.03281771160661376,678.78
+web-webbase-2001,D:\100data\web-webbase-2001.mtx,budget_insufficient,"one step costs 1103.6s, the minimum horizon of 10 steps would need 11036s > budget 600s; the original 10-step result stands",1,budget_insufficient,0.0904311304842267,1.0,16062.0,25593.0,1.0,unweighted,not every edge has a numeric third column,21722094.0,10.0,0.0904311304842267,1103.57

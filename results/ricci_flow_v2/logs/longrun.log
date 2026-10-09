@@ -1,0 +1,54 @@
+2026-10-06 23:12:57,412 | datasets to process: 1
+2026-10-06 23:13:00,329 | datasets to process: 1
+2026-10-06 23:13:08,674 | scc2034_kilifi_all_contacts_across_households -> saturated_current steps=346 final_ratio=0.17712110818420504
+2026-10-06 23:13:21,308 | datasets to process: 1
+2026-10-06 23:13:23,586 | scc_rt_oman -> horizon_reached steps=400 final_ratio=0.15586788248889383
+2026-10-06 23:13:37,316 | datasets to process: 1
+2026-10-06 23:17:01,173 | eco-mangwet -> horizon_reached steps=400 final_ratio=1.909858479957234e-06
+2026-10-06 23:18:27,059 | eco-stmarks -> budget_exceeded steps=212 final_ratio=0.0003218263905702838
+2026-10-06 23:19:02,394 | datasets to process: 1
+2026-10-06 23:19:02,397 | datasets to process: 1
+2026-10-06 23:22:45,304 | mammalia-raccoon-proximity -> budget_exceeded steps=240 final_ratio=0.012859677012684955
+2026-10-06 23:22:58,593 | datasets to process: 1
+2026-10-06 23:23:17,522 | scc_rt_http -> horizon_reached steps=400 final_ratio=0.0015036222086599656
+2026-10-06 23:23:30,719 | datasets to process: 1
+2026-10-06 23:24:33,216 | ENZYMES_g100 -> budget_exceeded steps=133 final_ratio=0.9857035296040992
+2026-10-06 23:24:46,308 | datasets to process: 1
+2026-10-06 23:27:50,214 | ENZYMES_g106 -> budget_exceeded steps=337 final_ratio=0.16761408316373455
+2026-10-06 23:29:36,973 | scc_rt_ksa -> horizon_reached steps=400 final_ratio=0.02407267910043692
+2026-10-06 23:30:05,304 | datasets to process: 1
+2026-10-06 23:30:05,334 | datasets to process: 1
+2026-10-06 23:34:24,924 | ENZYMES_g106 -> budget_exceeded steps=331 final_ratio=0.16780224309132452
+2026-10-06 23:34:38,233 | datasets to process: 1
+2026-10-06 23:36:33,678 | ENZYMES_g10 -> horizon_reached steps=400 final_ratio=0.30816480085740316
+2026-10-06 23:37:50,781 | reptilia-tortoise-network-sg -> horizon_reached steps=400 final_ratio=0.04299042609337286
+2026-10-06 23:38:24,187 | datasets to process: 1
+2026-10-06 23:38:24,198 | datasets to process: 1
+2026-10-06 23:44:25,536 | reptilia-tortoise-network-hw -> horizon_reached steps=400 final_ratio=0.0641651033626596
+2026-10-06 23:46:18,629 | reptilia-tortoise-network-mc -> horizon_reached steps=400 final_ratio=0.1786794463822131
+2026-10-06 23:46:57,591 | datasets to process: 1
+2026-10-06 23:46:57,600 | datasets to process: 1
+2026-10-06 23:55:11,159 | ENZYMES_g111 -> budget_exceeded steps=328 final_ratio=0.22122587431386131
+2026-10-06 23:55:12,642 | aves-weaver-social-14 -> budget_exceeded steps=295 final_ratio=0.0071939845987628375
+2026-10-06 23:55:53,291 | datasets to process: 1
+2026-10-06 23:55:53,294 | datasets to process: 1
+2026-10-07 00:04:06,925 | ENZYMES_g105 -> budget_exceeded steps=279 final_ratio=0.23753982850583552
+2026-10-07 00:04:07,340 | ENZYMES_g111 -> budget_exceeded steps=331 final_ratio=0.22107439276635119
+2026-10-07 00:05:10,785 | datasets to process: 1
+2026-10-07 00:05:11,647 | datasets to process: 1
+2026-10-07 00:11:05,426 | mammalia-raccoon-proximity -> budget_exceeded steps=280 final_ratio=0.01045811544987765
+2026-10-07 00:11:19,270 | datasets to process: 1
+2026-10-07 00:13:22,167 | eco-stmarks -> budget_exceeded steps=246 final_ratio=0.00020774130694136547
+2026-10-07 00:13:36,498 | datasets to process: 1
+2026-10-07 00:15:24,783 | ENZYMES_g100 -> horizon_reached steps=400 final_ratio=0.5112164511108782
+2026-10-07 00:15:37,667 | datasets to process: 1
+2026-10-07 00:16:26,013 | ENZYMES_g106 -> horizon_reached steps=400 final_ratio=0.16634083455057003
+2026-10-07 00:24:37,101 | ENZYMES_g111 -> horizon_reached steps=400 final_ratio=0.21224347581314662
+2026-10-07 01:03:16,310 | datasets to process: 1
+2026-10-07 01:03:16,312 | datasets to process: 1
+2026-10-07 01:09:10,618 | mammalia-raccoon-proximity -> budget_exceeded steps=276 final_ratio=0.010674542328245254
+2026-10-07 01:09:23,802 | datasets to process: 1
+2026-10-07 01:11:30,822 | eco-stmarks -> budget_exceeded steps=246 final_ratio=0.00020774130694136547
+2026-10-07 01:11:45,440 | datasets to process: 1
+2026-10-07 01:21:05,581 | ENZYMES_g105 -> horizon_reached steps=400 final_ratio=0.2371515086680137
+2026-10-07 01:22:48,813 | aves-weaver-social-14 -> horizon_reached steps=400 final_ratio=0.0013929049011438823

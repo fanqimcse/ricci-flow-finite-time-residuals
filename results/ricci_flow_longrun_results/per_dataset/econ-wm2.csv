@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+econ-wm2,0,0.0,0.14433506844597402,0.049726721404496695,1.0,0.43359843432172285,1.0,1.0,1.0,0.6066252594923529,257,2375,111.61241173744202,0.027019023895263672,111.48932075500488,0.08387017250061035

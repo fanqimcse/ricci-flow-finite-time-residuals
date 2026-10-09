@@ -1,0 +1,3 @@
+dataset,status,steps,final_ratio,min_ratio,edges_removed,wall
+ENZYMES_g10,saturated,134,0.0027339983048681915,0.0027339983048681915,9,70.7
+ENZYMES_g101,budget_exceeded,113,0.1135138237508568,0.1135138237508568,0,230.7

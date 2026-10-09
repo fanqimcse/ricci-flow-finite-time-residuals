@@ -1,0 +1,65 @@
+SHAM-FLOW CONTROL: ROBUSTNESS AUDIT
+==================================================================
+
+--- 0. coverage ---
+  requested datasets : 25
+  with a sham arm    : 25
+  never produced     : 0
+
+--- 1. step matching ---
+  arms with identical step count: 25/26
+      MISMATCH eco-mangwet seed1: real=9 sham=7
+
+--- 2. exclusions ---
+  sham runaway (ratio>5) : 1 -> eco-mangwet
+  real flow inert (>0.8) : 3 -> bn-macaque-rhesus_interareal-cortical-network_2, scc_rt_dash, scc_rt_ksa
+  analysed pairs         : 22
+
+--- 3a. ALL pairs (raw, as first reported) ---
+  n = 26   sham higher in 25
+  sign test            p = 4.02e-07
+  Wilcoxon signed-rank p = 4.47e-08
+  median real      = 0.1499
+  median sham      = 1.1384
+  median diff      = +0.9848
+
+--- 3b. DEFENSIBLE pairs (runaway + inert removed) ---
+  n = 22   sham higher in 22
+  sign test            p = 2.38e-07
+  Wilcoxon signed-rank p = 2.38e-07
+  median real      = 0.1027
+  median sham      = 1.1590
+  median diff      = +0.9930
+
+--- 3c. DEFENSIBLE, matched-step sham endpoint ---
+  n = 22   sham higher in 22
+  sign test            p = 2.38e-07
+  Wilcoxon signed-rank p = 2.38e-07
+  median real      = 0.1027
+  median sham      = 1.1590
+  median diff      = +0.9930
+
+--- 4. family level (families are the independent unit) ---
+  family                              n     real     sham sham-real
+  aves                                1   0.4622   0.9412   +0.4790
+  mouse connectome                    1   0.0022   0.9219   +0.9197
+  reptilia                            2   0.0609   1.0236   +0.9627
+  scc_rt (social media retweet)       2   0.2285   1.1934   +0.9649
+  ENZYMES                            12   0.1736   1.1900   +0.9975
+  macaque connectome                  1   0.0026   1.0561   +1.0534
+  mammalia                            2   0.0176   1.1343   +1.1167
+  ecological flow network             1   0.0046   2.4627   +2.4581
+
+  families: 8   sham higher in 8
+  sign test            p = 0.00391
+  Wilcoxon signed-rank p = 0.00391
+  median family-level diff = +0.9812
+
+--- 5. verdict ---
+  defensible median plateau: real=0.1027  sham=1.1590
+  => HOLDS after exclusions and family aggregation.
+     Randomising which edge receives which curvature at
+     every step destroys essentially all of the variance
+     reduction, at an identical number of steps. The
+     homogenisation therefore depends on the curvature-to-edge
+     mapping, i.e. on network geometry, not on the update rule.

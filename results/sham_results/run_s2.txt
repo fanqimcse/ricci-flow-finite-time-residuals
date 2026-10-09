@@ -1,0 +1,2 @@
+sham-flow control: 25 datasets, mode=sham, seeds=[2]
+[1/25] ENZYMES_g1                                      sham seed=2 steps=223 ratio=1.1303 (702.7s)

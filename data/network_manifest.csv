@@ -1,0 +1,94 @@
+dataset_id,family,domain,n_nodes,n_edges,n_components,connected,initial_mean_kappa,initial_variance,first_pass_steps,first_pass_var_ratio,first_pass_converged,alpha,solver,epsilon,dt,renormalisation,seed
+ENZYMES_g1,ENZYMES,Cheminformatics,37.0,84.0,1.0,1,0.1527188111185199,0.0590583308994257,223,0.173974589643673,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g10,ENZYMES,Cheminformatics,32.0,53.0,1.0,1,0.2133604180348338,0.0808934466159711,272,0.3603033002660976,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g100,ENZYMES,Cheminformatics,5.0,9.0,1.0,1,0.5416562016451716,0.0034704799873001,6,1.0000569735682128,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g101,ENZYMES,Cheminformatics,45.0,88.0,1.0,1,0.069320592376993,0.0400623663508659,278,0.0114829699330509,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g102,ENZYMES,Cheminformatics,42.0,82.0,1.0,1,0.0710311596410127,0.0354292978311164,242,0.0095289861391303,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g103,ENZYMES,Cheminformatics,59.0,115.0,1.0,1,-0.0197933760294906,0.0523685361321099,238,0.0090808614542186,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g104,ENZYMES,Cheminformatics,32.0,64.0,1.0,1,0.1435947870175862,0.052995053431947,245,0.2034762524231793,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g105,ENZYMES,Cheminformatics,33.0,69.0,1.0,1,0.1335826915479654,0.0412559374766045,250,0.23925966365516,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g106,ENZYMES,Cheminformatics,17.0,30.0,1.0,1,0.2483310663426036,0.062768475989251,237,0.1614474544489239,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g107,ENZYMES,Cheminformatics,39.0,83.0,1.0,1,0.1247168737898099,0.0589084334470289,292,0.1732411765639653,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g109,ENZYMES,Cheminformatics,35.0,70.0,1.0,1,0.1218950678258062,0.057713791086659,276,0.1265973159459107,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g11,ENZYMES,Cheminformatics,4.0,6.0,1.0,1,0.6666440269678415,6.162975822039155e-33,6,1.0,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g110,ENZYMES,Cheminformatics,16.0,29.0,1.0,1,0.2591906449522523,0.0638629863220003,400,0.1716459438507843,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g111,ENZYMES,Cheminformatics,26.0,49.0,1.0,1,0.2147926734363548,0.0661750207883402,236,0.223580094704014,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g112,ENZYMES,Cheminformatics,51.0,95.0,1.0,1,0.0427041802866301,0.0455950701141002,238,0.0349102753350095,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ENZYMES_g113,ENZYMES,Cheminformatics,52.0,98.0,1.0,1,0.0470869484705369,0.0462684055497217,237,0.0368425980741389,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-barn-swallow-non-physical,aves,Animal Social Networks,17.0,122.0,1.0,1,0.4259851960239543,0.0156500331497919,400,0.0784971045584994,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-geese-female-foraging,aves,Animal Social Networks,20.0,190.0,1.0,1,0.5262232481224859,1.0185128463791023e-32,400,1.0,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-geese-male-foraging,aves,Animal Social Networks,23.0,253.0,1.0,1,0.5226266834465115,2.8890471640072873e-32,400,0.3052276559865093,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-hens-pecking-order,aves,Animal Social Networks,32.0,496.0,1.0,1,0.51600782837442,5.076999840494352e-32,130,0.417523250122369,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-sparrow-social,aves,Animal Social Networks,52.0,454.0,1.0,1,0.1875698820191285,0.0611430879727481,97,0.1771884444510338,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-sparrow-social-2009,aves,Animal Social Networks,31.0,211.0,1.0,1,0.3516223151515593,0.0309191384853666,96,0.4622455749495552,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-sparrowlyon-flock-season2,aves,Animal Social Networks,46.0,348.0,1.0,1,0.2548872366901411,0.0239875332461481,124,0.3073099994895573,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-sparrowlyon-flock-season3,aves,Animal Social Networks,27.0,163.0,1.0,1,0.277678629550393,0.0358192777445723,293,0.0587121026371069,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-thornbill-farine,aves,Animal Social Networks,62.0,1151.0,1.0,1,0.359258697621121,0.0110976921957024,57,0.519094417266726,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social,aves,Animal Social Networks,445.0,1332.0,22.0,0,0.2011216018863615,0.0638840727748767,45,0.6240737574809535,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social-06,aves,Animal Social Networks,19.0,64.0,1.0,1,0.3214181989610003,0.0397097091438171,329,0.1438517917195232,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social-08,aves,Animal Social Networks,28.0,115.0,1.0,1,0.1814508945555555,0.0207898640233429,206,0.0940014674683239,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social-09,aves,Animal Social Networks,12.0,36.0,1.0,1,0.3268587236970586,0.0124994276025137,288,0.003777376961046,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social-11,aves,Animal Social Networks,39.0,99.0,2.0,0,0.1503296371178644,0.0732876400468549,228,0.1279828334675667,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social-12,aves,Animal Social Networks,33.0,92.0,2.0,0,0.1767496327016647,0.0555116780806419,384,0.1932430549011133,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+aves-weaver-social-14,aves,Animal Social Networks,11.0,38.0,1.0,1,0.3695875787566721,0.006335830324462,308,0.0058520142922319,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bn-cat-mixed-species_brain_1,bibliographic network,Brain Networks,65.0,730.0,1.0,1,0.2220200857037615,0.0112586808037057,23,0.6719439631853598,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-CE-HT,biological network,Biological Networks,2617.0,2985.0,127.0,0,-0.104125594139013,0.1941914244943328,116,0.196851715222581,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-CE-LC,biological network,Biological Networks,1387.0,1648.0,89.0,0,0.0186389049402294,0.1582891999508547,78,0.3228860468602968,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-DM-LC,biological network,Biological Networks,658.0,1129.0,55.0,0,0.0120752254291488,0.1033306723452482,100,0.3325617687841328,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-celegans,biological network,Biological Networks,453.0,2025.0,1.0,1,-0.0759164811546172,0.0441621796600463,21,0.6224468188715876,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-celegans-dir,biological network,Biological Networks,453.0,2025.0,1.0,1,-0.0759164708599401,0.0441621842656281,21,0.6224470780089026,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-diseasome,biological network,Biological Networks,516.0,1188.0,1.0,1,0.1351283109203993,0.1164442075047126,57,0.6961118591424257,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-grid-mouse,biological network,Biological Networks,1450.0,1636.0,177.0,0,0.080609474092947,0.130212831954393,78,0.4599445013586323,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-grid-plant,biological network,Biological Networks,1717.0,3098.0,131.0,0,0.0618960763335009,0.0921536616313788,17,0.7391489068709899,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bio-yeast,biological network,Biological Networks,1458.0,1948.0,1.0,1,-0.1284876534498054,0.1245811593775878,85,0.1210767345707178,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+eco-mangwet,ecological flow network,Ecology Networks,97.0,1446.0,1.0,1,-22.911583447313035,6249.770706308073,9,0.0001076790493066,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+eco-stmarks,ecological flow network,Ecology Networks,54.0,350.0,1.0,1,-1.444480321611768,16.376233176568498,65,0.0045581974650012,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+econ-poli,econ,Economic Networks,3915.0,4119.0,176.0,0,0.0236086255483879,0.0904203327459442,86,0.3547949491014296,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+inf-euroroad,inf,Infrastructure Networks,1174.0,1417.0,26.0,0,-0.1057454723834812,0.074178705447406,134,0.1829738725387912,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+inf-power,inf,Infrastructure Networks,4941.0,6594.0,1.0,1,-0.1023392782486731,0.0843713127769835,31,0.3569975777196359,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+insecta-ant-trophallaxis-colony1,insecta,Dynamic Networks,41.0,256.0,1.0,1,-0.0243282415932127,0.2247301678652255,154,0.0168745363103282,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+insecta-ant-trophallaxis-colony2,insecta,Dynamic Networks,39.0,245.0,1.0,1,0.0559469152453993,0.2446040330856572,189,0.0110210038034715,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ia-enron-only,interaction network,Interaction Networks,143.0,623.0,1.0,1,0.0211759411092035,0.043117588016946,37,0.3773653811606702,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ia-reality,interaction network,Interaction Networks,6809.0,7680.0,1.0,1,-0.0860083511823855,0.0499130850044839,34,0.266997737537096,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ia-southernwomen,interaction network,Interaction Networks,18.0,64.0,1.0,1,0.2584531359667122,0.0254615988670488,261,0.0029919496535466,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+ia-workplace-contacts,interaction network,Interaction Networks,92.0,755.0,1.0,1,-0.1007834065241919,0.2351504763715812,79,0.0532414737722221,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bn-macaque-rhesus_brain_2,macaque connectome,Brain Networks,91.0,582.0,1.0,1,0.0857790308197116,0.0035200630961337,196,0.0026328514829236,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bn-macaque-rhesus_cerebral-cortex_1,macaque connectome,Brain Networks,91.0,1401.0,1.0,1,0.1698685838417415,0.0051577642706541,40,0.3332789770110345,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bn-macaque-rhesus_interareal-cortical-network_2,macaque connectome,Brain Networks,93.0,2262.0,1.0,1,0.2244595797361459,0.0172433510031029,6,1.0001128171436915,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+mammalia-primate-association,mammalia,Dynamic Networks,25.0,280.0,1.0,1,0.33921110984573,0.0301159835823191,172,0.0199613279277898,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+mammalia-raccoon-proximity,mammalia,Dynamic Networks,24.0,226.0,1.0,1,0.0144140364874193,0.1022897657754395,209,0.0152811246537424,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+mammalia-voles-bhp-trapping,mammalia,Dynamic Networks,1686.0,4623.0,31.0,0,-0.1211644937062044,0.1860597119073511,18,0.4593812119793069,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+mammalia-voles-kcs-trapping,mammalia,Dynamic Networks,1218.0,3592.0,15.0,0,-0.0985292336401405,0.1793300424575852,20,0.3843370366727609,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+mammalia-voles-plj-trapping,mammalia,Dynamic Networks,1263.0,3380.0,40.0,0,-0.0513489384346175,0.1492815964884917,20,0.5094974083776367,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bn-mouse-kasthuri_graph_v4,mouse connectome,Brain Networks,1029.0,1559.0,20.0,0,-0.2782503772354178,0.10818140781415,106,0.1059002451258003,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+bn-mouse_visual-cortex_1,mouse connectome,Brain Networks,29.0,44.0,1.0,1,-0.0799290448743609,0.052653915558705,126,0.0021786099820324,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+power-494-bus,power grid,Power Networks,494.0,586.0,1.0,1,-0.07809473704861,0.0868891314789656,171,0.0543485287116999,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+power-662-bus,power grid,Power Networks,662.0,906.0,1.0,1,-0.1471714033127679,0.0564660675901781,170,0.0399429686126232,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+power-685-bus,power grid,Power Networks,685.0,1282.0,1.0,1,-0.1010274430668823,0.0555874331765854,85,0.1699364748055611,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+power-US-Grid,power grid,Power Networks,4941.0,6594.0,1.0,1,-0.1023392782486733,0.0843713127769836,38,0.2991107350903875,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+power-bcspwr09,power grid,Power Networks,1723.0,2394.0,1.0,1,-0.1230754453343396,0.0728420646621744,76,0.1060743049301318,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+power-bcspwr10,power grid,Power Networks,5300.0,8271.0,1.0,1,-0.1660673107087642,0.0537775452123261,35,0.2974126050866089,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-bsv,reptilia,Dynamic Networks,136.0,374.0,2.0,0,-0.0273889543552938,0.0628691757053567,62,0.1966828275978945,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-cs,reptilia,Dynamic Networks,73.0,132.0,11.0,0,0.204494138997105,0.0735004444572757,113,0.2921188143455323,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-fi,reptilia,Dynamic Networks,787.0,1197.0,104.0,0,0.1362817585018834,0.139467589740693,39,0.7051605964509935,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-hw,reptilia,Dynamic Networks,16.0,16.0,4.0,0,0.463549670684043,0.0511669255810382,400,0.0641651033626596,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-mc,reptilia,Dynamic Networks,15.0,28.0,2.0,0,0.3378663416832138,0.0451429491497467,400,0.1786794463822131,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-pv,reptilia,Dynamic Networks,35.0,66.0,3.0,0,0.1995785579118843,0.043354318630574,238,0.0788388601849311,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+reptilia-tortoise-network-sg,reptilia,Dynamic Networks,24.0,26.0,3.0,0,0.2467950643830405,0.0584961449792483,400,0.0429904260933728,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc2034_kilifi_all_contacts_across_households,scc2034 (household contact),Temporal Reachability Networks,19.0,18.0,2.0,0,0.1026936025815529,0.0789091813967124,198,0.1795416376526028,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_alwefaq,scc_rt (social media retweet),Temporal Reachability Networks,72.0,355.0,9.0,0,0.2284883551302057,0.0257962481866794,69,0.4214565120641518,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_assad,scc_rt (social media retweet),Temporal Reachability Networks,34.0,96.0,4.0,0,0.2123032792952803,0.0380352609436531,211,0.1762109516602678,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_bahrain,scc_rt (social media retweet),Temporal Reachability Networks,72.0,129.0,19.0,0,0.2736754644605438,0.1041543280363827,144,0.2515026160015156,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_barackobama,scc_rt (social media retweet),Temporal Reachability Networks,80.0,226.0,13.0,0,0.1757139946627754,0.0577009296002249,162,0.205204720878424,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_damascus,scc_rt (social media retweet),Temporal Reachability Networks,34.0,41.0,6.0,0,0.2714858441906576,0.0992689972346747,276,0.2510174890218282,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_dash,scc_rt (social media retweet),Temporal Reachability Networks,31.0,39.0,9.0,0,0.4057650499373294,0.1054640408595877,26,0.9795385736601152,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_http,scc_rt (social media retweet),Temporal Reachability Networks,5.0,6.0,1.0,1,0.4027710082259593,0.0073306228434397,327,0.0053232008665224,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_justinbieber,scc_rt (social media retweet),Temporal Reachability Networks,62.0,442.0,2.0,0,0.2148120093084072,0.0181556861409944,75,0.3690195554714744,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_ksa,scc_rt (social media retweet),Temporal Reachability Networks,21.0,23.0,8.0,0,0.6956269901098856,0.0334641749569213,6,0.9999727466044996,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_occupy,scc_rt (social media retweet),Temporal Reachability Networks,55.0,60.0,15.0,0,0.3199966494338672,0.1040293421913665,357,0.205951472946085,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_occupywallstnyc,scc_rt (social media retweet),Temporal Reachability Networks,127.0,931.0,5.0,0,0.1181111217787773,0.0213899141742782,36,0.6152286153405048,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_oman,scc_rt (social media retweet),Temporal Reachability Networks,16.0,13.0,5.0,0,0.46153846025094,0.1074950687695533,349,0.1590042788013189,True,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+scc_rt_onedirection,scc_rt (social media retweet),Temporal Reachability Networks,35.0,368.0,3.0,0,0.4941523307550872,0.0036622424041473,195,0.4449776526266053,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+web-edu,web,Web Graphs,3031.0,6474.0,1.0,1,0.0898596165867097,0.1195141559268119,40,0.5618555714716458,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+web-google,web,Web Graphs,1299.0,2773.0,1.0,1,0.1899474571937403,0.1188589355752092,42,0.733294341405109,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0
+web-polblogs,web,Web Graphs,643.0,2280.0,1.0,1,-0.0909387030596387,0.0328177116066137,12,0.5986655709642237,False,0.5,sinkhorn,0.05,0.05,mean_weight_per_step,0

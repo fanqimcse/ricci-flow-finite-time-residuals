@@ -1,0 +1,58 @@
+========================================================================
+FAMILY-CLUSTERED INFERENCE -- reviewer round 2, Experiment B
+========================================================================
+
+--- 1. SHAM CONTROL (25 pairs) ---
+  pairs=25  families=8  median d (log units) = -0.974
+  network-level sign test: 24/25 negative, p = 7.75e-07
+  network-level Wilcoxon: p = 1.79e-07
+  FAMILY-level sign test: 8/8 families negative, p = 0.00391
+  FAMILY permutation (sign-flip on 8 clusters): sum=-12.694, p = 0.003906
+  FAMILY cluster bootstrap of median d: -0.974  95% CI [-2.603, -0.694]
+  -> effect size is unchanged (median log-ratio gap 0.97, i.e. a factor of 2.6); the *evidence* is ~8 independent clusters, not 25 networks.
+  leave-one-family-out (worst case p): 0.00091552734375
+
+--- 2. CONSTRAINT-RELAXATION (surgery) CONTROL ---
+  defensible pairs=5  families=2
+  network-level sign test: 5/5, p = 0.0312
+  FAMILY-level sign test: 2/2 families negative, p = 0.25
+  per-family median log drop:
+      ENZYMES                            n=4  median drop factor = 25.14
+      scc_rt (social media retweet)      n=1  median drop factor = 1.05
+  -> with 2 families the family-level test has no power; we report the direction (consistent in every family) and the network-level p as an upper bound on the evidence.
+
+--- 3. TWO FINITE-HORIZON RELAXATION PATTERNS: weight-span separation ---
+  network level: stall span median 2.76e+05 vs converging 3.90e+02 ; Mann-Whitney p = 0.0388 (n=4 vs 11)
+  FAMILY cluster bootstrap of the median log10 span difference: 2.85 dex  95% CI [2.64, 5.25]
+  fraction of bootstrap replicates with the observed sign: 1.000
+  two-sided cluster bootstrap p (2*min tail) = 0.001
+  stalled families: ['ENZYMES', 'scc2034 (household contact)', 'scc_rt (social media retweet)']
+  converging families: ['ENZYMES', 'aves', 'ecological flow network', 'mammalia', 'reptilia', 'scc_rt (social media retweet)']
+  jackknife (drop one family at a time), network-level MW p:
+      drop ENZYMES                            n= 2 vs  9  p = 0.0727
+      drop aves                               n= 4 vs 10  p = 0.0529
+      drop ecological flow network            n= 4 vs  9  p = 0.0168
+      drop mammalia                           n= 4 vs 10  p = 0.0529
+      drop reptilia                           n= 4 vs  8  p = 0.0768
+      drop scc2034 (household contact)        n= 3 vs 11  p = 0.0632
+      drop scc_rt (social media retweet)      n= 3 vs  9  p = 0.105
+
+--- 4. CORPUS CORRELATIONS UNDER FAMILY CLUSTERING ---
+  usable units = 41, families = 11
+  rate vs residual             n=41 fam=11  rho=-0.429 (network p=0.00514) | family CI [-0.677, +0.155] | sign stable in 0.95 of replicates
+  spectral gap vs rate         n=41 fam=11  rho=-0.026 (network p=0.874) | family CI [-0.429, +0.389] | sign stable in 0.58 of replicates
+  transitivity vs residual     n=41 fam=11  rho=+0.217 (network p=0.174) | family CI [-0.302, +0.554] | sign stable in 0.88 of replicates
+  assortativity vs residual    n=41 fam=11  rho=+0.413 (network p=0.00727) | family CI [+0.179, +0.722] | sign stable in 1.00 of replicates
+
+--- 5. SYNTHETIC SWEEPS: base graph is the cluster ---
+  assortativity sweep: 60 cells, 4 bases, rho=+0.796 (network p=3e-14)
+  base-level cluster bootstrap: rho=+0.796 CI [+0.777, +0.854]
+  per-base rho: base0 +0.89 (n=15, p=9.2e-06), base1 +0.82 (n=15, p=0.0002), base2 +0.80 (n=15, p=0.00038), base3 +0.88 (n=15, p=1.4e-05)
+  base-level sign test: 4/4 bases positive, one-sided p = 0.062
+
+========================================================================
+SUMMARY FOR THE MANUSCRIPT
+========================================================================
+Every headline effect keeps its sign and magnitude under family clustering;
+what changes is the p-value, and in two cases it changes by orders of
+magnitude.  Report effect sizes at network level, inference at family level.

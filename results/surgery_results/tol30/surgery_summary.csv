@@ -1,0 +1,5 @@
+dataset,status,steps,final_ratio,min_ratio,edges_removed,wall
+aves-sparrow-social-2009,budget_exceeded,35,0.4715990607287203,0.4715990607287203,0,151.9
+scc_rt_dash,saturated,26,0.9795385736601152,0.9794253834452018,0,41.2
+scc_rt_ksa,saturated,6,0.9999727466044996,0.9999727466044996,0,2.5
+scc_rt_occupy,budget_exceeded,108,0.3983168041487379,0.3983168041487379,1,151.0

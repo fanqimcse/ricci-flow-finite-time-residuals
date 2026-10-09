@@ -1,0 +1,33 @@
+L3: FROM MECHANISM TO A QUANTITATIVE LAW
+==============================================================
+
+--- PART 1. scaling law on the controlled ensemble ---
+n = 8 graphs, matched horizon 95 steps, all '{'horizon_reached': 8}'
+  log10(plateau) = -2.164 +1.135 * Q      R2=0.778  p(Q)=0.00376
+  -> a 0.1 increase in planted modularity multiplies the residual by 1.30x
+  with base fixed effects: beta(Q) = +1.177 (p=0.0162), R2=0.808
+
+  CAVEAT: measured at a matched horizon, not at saturation, so this
+  is a relation between community strength and the residual AT EQUAL
+  FLOW TIME, not necessarily between Q and the asymptotic plateau.
+
+--- PART 2. the same two factors on real networks ---
+declared sample: 24 networks / 7 families
+  family level  Spearman(mean_assort) rho=+0.857 p=0.014 n=7
+  family level  Spearman(mean_modul) rho=+0.786 p=0.036 n=7
+  LOFO M1 assortativity                 oos_R2=+0.037  oos_rho=+0.309
+  LOFO M2 modularity                    oos_R2=-0.144  oos_rho=-0.065
+  LOFO M3 assortativity + modularity    oos_R2=-0.159  oos_rho=+0.273
+
+--- VERDICT ---
+  Experiment C establishes the causal link under a FIXED degree
+  sequence: strengthening community structure raises the residual,
+  and assortativity is flat (rho = +0.000) so the two are distinct
+  mechanisms. It also closes most of the magnitude gap (92x -> 5.7x,
+  and that residual gap is a LOWER bound because the synthetic runs
+  are not saturated).
+
+  What it does NOT establish: that either factor PREDICTS the
+  residual of a real network. The leave-one-family-out R2 stays at or
+  below zero for every model. So the paper may claim a controlled
+  causal mechanism and a between-family tendency, never a predictor.

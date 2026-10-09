@@ -1,0 +1,46 @@
+TWO FATES OF THE TOPOLOGY-PRESERVING OLLIVIER-RICCI FLOW
+======================================================================
+strict stopping rule: |V(t)-V(t-1)| / V(t) < 1e-5 for 50 consecutive steps
+fate rule: stalled if the decay rate over the last quarter of the run > -1e-03 per step AND the run is decelerating (decel < 0.70)
+
+strict re-run networks: 16
+fate
+converging    11
+stalled        4
+undecided      1
+
+  converging  n=11  median v_end=0.0241  median rate_Q4=-5.47e-03  median weight span=3.90e+02  families=['ENZYMES', 'aves', 'eco', 'mammalia', 'reptilia', 'scc_rt']
+  stalled     n= 4  median v_end=0.1722  median rate_Q4=-1.02e-05  median weight span=2.76e+05  families=['ENZYMES', 'scc2034', 'scc_rt']
+  undecided   n= 1  median v_end=0.2122  median rate_Q4=-4.24e-04  median weight span=2.52e+05  families=['ENZYMES']
+
+log10 v_end stalled vs converging: median -0.764 vs -1.618 ; Mann-Whitney p=0.08864
+weight span stalled vs converging: median 2.76e+05 vs 3.90e+02 ; Mann-Whitney p=0.03883
+
+--- does structure predict the fate / the residual? ---
+  transitivity   n=16 rho(v_end)=+0.074(p0.787) rho(rate)=-0.188(p0.485) AUC(stall>conv)=0.159(p0.056)
+  assortativity  n=16 rho(v_end)=+0.009(p0.974) rho(rate)=+0.144(p0.594) AUC(stall>conv)=0.500(p1.000)
+  modularity     n=16 rho(v_end)=+0.361(p0.170) rho(rate)=+0.272(p0.308) AUC(stall>conv)=0.682(p0.327)
+  density        n=16 rho(v_end)=-0.274(p0.305) rho(rate)=-0.406(p0.119) AUC(stall>conv)=0.227(p0.138)
+  mean_degree    n=16 rho(v_end)=-0.282(p0.289) rho(rate)=-0.235(p0.380) AUC(stall>conv)=0.273(p0.226)
+  degree_cv      n=16 rho(v_end)=-0.403(p0.122) rho(rate)=-0.038(p0.888) AUC(stall>conv)=0.591(p0.661)
+  nodes          n=16 rho(v_end)=-0.149(p0.582) rho(rate)=+0.183(p0.498) AUC(stall>conv)=0.534(p0.896)
+  n_components   n=16 rho(v_end)=-0.003(p0.990) rho(rate)=+0.044(p0.872) AUC(stall>conv)=0.557(p0.768)
+
+--- per-network ---
+                                      dataset   family  steps     v_end    rate_Q4   decel  weight_span       fate  transitivity
+                                  eco-mangwet      eco    400  1.91e-06  -0.005988  0.7815    1.631e+24 converging        0.4232
+                                  eco-stmarks      eco    402 7.409e-05  -0.005138   0.469        100.5 converging        0.3329
+                                  scc_rt_http   scc_rt    400  0.001504   -0.01731   1.027        3.753 converging        0.5455
+                   mammalia-raccoon-proximity mammalia    526   0.00279  -0.005466   1.017        389.8 converging        0.8884
+                        aves-weaver-social-14     aves    295  0.007194   -0.01592   1.006        4.364 converging        0.7649
+                                   scc_rt_ksa   scc_rt    400   0.02407  -0.004381  0.3585        270.8 converging        0.9836
+                 reptilia-tortoise-network-sg reptilia    400   0.04299  -0.006389   1.113        390.6 converging         0.439
+                 reptilia-tortoise-network-hw reptilia    400   0.06417  -0.006578  0.6286        659.2 converging        0.4286
+                 reptilia-tortoise-network-mc reptilia    400    0.1787  -0.005081   6.173    2.454e+04 converging        0.6724
+                                  ENZYMES_g10  ENZYMES    400    0.3082  -0.001502    2.13    3.267e+05 converging        0.5669
+                                 ENZYMES_g100  ENZYMES    400    0.5112  -0.004082   2.047        10.13 converging         0.875
+                                  scc_rt_oman   scc_rt    621    0.1537 -2.376e-05 0.06767    2.648e+05    stalled        0.2857
+                                 ENZYMES_g106  ENZYMES    912    0.1672  6.178e-06  0.2756    7.593e+11    stalled           0.6
+scc2034_kilifi_all_contacts_across_households  scc2034    400    0.1772  3.441e-06 0.03232    2.871e+05    stalled             0
+                                 ENZYMES_g105  ENZYMES    279    0.2375 -0.0004491  0.2103         6246    stalled         0.383
+                                 ENZYMES_g111  ENZYMES    400    0.2122 -0.0004239   1.214    2.522e+05  undecided        0.5753

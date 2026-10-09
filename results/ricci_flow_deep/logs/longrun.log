@@ -1,0 +1,6 @@
+2026-10-07 00:28:04,208 | datasets to process: 1
+2026-10-07 00:28:34,416 | scc_rt_oman -> saturated_current steps=621 final_ratio=0.15365217761956873
+2026-10-07 00:29:01,744 | datasets to process: 1
+2026-10-07 00:29:01,766 | datasets to process: 1
+2026-10-07 00:53:34,721 | mammalia-raccoon-proximity -> budget_exceeded steps=526 final_ratio=0.0027904381242169598
+2026-10-07 01:02:17,300 | eco-stmarks -> budget_exceeded steps=402 final_ratio=7.408755523850555e-05

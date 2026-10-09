@@ -1,0 +1,381 @@
+% Verification round 2026-10-09 (re-review):
+%   * All arXiv entries re-checked against the arXiv API
+%     (http://export.arxiv.org/api/query) and, for 2509.22140, against the
+%     author line of the PDF itself: authors and titles below match the
+%     primary record.
+%   * Explanatory `note' fields removed from all entries; the corresponding
+%     statements now appear in the body text with their citations.
+%   * arXiv DOIs (10.48550/arXiv.*) added to every preprint entry.
+% =============================================================================
+% References for Paper A (Communications Physics)
+% Status 2026-10-06:
+%   * The three previously unverified entries have been CHECKED and replaced
+%     with the real bibliographic data (Naama et al. 2024; Ma & Yang 2025;
+%     Liu-Bai-Lai 2026 -- note the year correction).
+%   * Added the most important missing prior art: Bai-Lin-Lu-Wang-Yau 2024,
+%     Am. J. Math. 146, 1723-1747 (existence/uniqueness of the continuous-time
+%     normalised Ollivier-Lin-Lu-Yau Ricci flow on weighted graphs).
+%   * Total: 29 entries. Journals/volumes/pages verified against publisher or
+%     arXiv metadata; arXiv-only items are marked as preprints.
+%   * 2026-10-07 revision: added Li & Muench 2026, J. Funct. Anal. 290, 111367
+%     (discrete-time Ollivier Ricci flow converges to constant curvature). This
+%     is the single most important piece of prior art for this manuscript: it
+%     invalidates the earlier framing in which "no convergence result exists",
+%     and the Introduction now distinguishes our scheme (multiplicative
+%     exponential update with per-step renormalisation, entropy-regularised
+%     transport) from theirs (first-order Euler update, exact transport,
+%     connectedness hypothesis).
+% =============================================================================
+
+% ---------------------------------------------------------------- foundations
+@article{Hamilton1982,
+  author  = {Hamilton, Richard S.},
+  title   = {Three-manifolds with positive {Ricci} curvature},
+  journal = {Journal of Differential Geometry},
+  volume  = {17}, number = {2}, pages = {255--306}, year = {1982}
+}
+
+@article{Perelman2002,
+  author  = {Perelman, Grisha},
+  title   = {The entropy formula for the {Ricci} flow and its geometric applications},
+  journal = {arXiv preprint math/0211159}, year = {2002},
+  doi     = {10.48550/arXiv.math/0211159}
+}
+
+@article{Perelman2003,
+  author  = {Perelman, Grisha},
+  title   = {{Ricci} flow with surgery on three-manifolds},
+  journal = {arXiv preprint math/0303109}, year = {2003},
+  doi     = {10.48550/arXiv.math/0303109}
+}
+
+@article{Ollivier2009,
+  author  = {Ollivier, Yann},
+  title   = {Ricci curvature of {Markov} chains on metric spaces},
+  journal = {Journal of Functional Analysis},
+  volume  = {256}, number = {3}, pages = {810--864}, year = {2009}
+}
+
+@article{LinLuYau2011,
+  author  = {Lin, Yong and Lu, Linyuan and Yau, Shing-Tung},
+  title   = {Ricci curvature of graphs},
+  journal = {Tohoku Mathematical Journal},
+  volume  = {63}, number = {4}, pages = {605--627}, year = {2011}
+}
+
+@article{LinYau2010,
+  author  = {Lin, Yong and Yau, Shing-Tung},
+  title   = {Ricci curvature and eigenvalue estimate on locally finite graphs},
+  journal = {Mathematical Research Letters},
+  volume  = {17}, number = {2}, pages = {345--358}, year = {2010}
+}
+
+@article{JostLiu2014,
+  author  = {Jost, J{\"u}rgen and Liu, Shiping},
+  title   = {Ollivier's {Ricci} curvature, local clustering and curvature-dimension
+             inequalities on graphs},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {51}, number = {2}, pages = {300--322}, year = {2014}
+}
+
+@article{Forman2003,
+  author  = {Forman, Robin},
+  title   = {Bochner's method for cell complexes and combinatorial {Ricci} curvature},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {29}, number = {3}, pages = {323--374}, year = {2003}
+}
+
+% ------------------------------------------------------- Ricci flow on graphs
+@article{BaiLinLuWangYau2024,
+  author  = {Bai, Shuliang and Lin, Yong and Lu, Linyuan and Wang, Zhiyu and
+             Yau, Shing-Tung},
+  title   = {Ollivier {Ricci}-flow on weighted graphs},
+  journal = {American Journal of Mathematics},
+  volume  = {146}, number = {6}, pages = {1723--1747}, year = {2024},
+  doi     = {10.1353/ajm.2024.a944362}
+}
+
+@article{BaiHuangLuYau2021,
+  author  = {Bai, Shuliang and Huang, An and Lu, Linyuan and Yau, Shing-Tung},
+  title   = {On the sum of {Ricci}-curvatures for weighted graphs},
+  journal = {Pure and Applied Mathematics Quarterly},
+  volume  = {17}, number = {4}, pages = {1599--1617}, year = {2021}
+}
+
+@article{MaYang2025,
+  author  = {Ma, Jicheng and Yang, Yunyan},
+  title   = {Piecewise-linear {Ricci} curvature flows on weighted graphs},
+  journal = {arXiv preprint arXiv:2505.15395}, year = {2025},
+  doi     = {10.48550/arXiv.2505.15395}
+}
+
+@article{BaiLiuLai2026,
+  author  = {Bai, Shuliang and Liu, Shuang and Lai, Xin},
+  title   = {The weighted {Forman} and {Lin}-{Lu}-{Yau} {Ricci} flow on graphs},
+  journal = {arXiv preprint arXiv:2601.02673}, year = {2026},
+  doi     = {10.48550/arXiv.2601.02673}
+}
+
+@article{BaiHuaLinLiu2025,
+  author  = {Bai, Shuliang and Hua, Bobo and Lin, Yong and Liu, Shuang},
+  title   = {On the {Ricci} flow on trees},
+  journal = {arXiv preprint arXiv:2509.22140}, year = {2025},
+  doi     = {10.48550/arXiv.2509.22140}
+}
+
+@article{BaiLiLiuLai2025,
+  author  = {Bai, Shuliang and Li, Rui and Liu, Shuang and Lai, Xin},
+  title   = {Ricci flow on weighted digraphs with balancing factor},
+  journal = {arXiv preprint arXiv:2509.19989}, year = {2025},
+  doi     = {10.48550/arXiv.2509.19989}
+}
+
+@article{LiMunch2026,
+  author  = {Li, Ruowei and M{\"u}nch, Florentin},
+  title   = {The convergence and uniqueness of a discrete-time nonlinear
+             {Markov} chain},
+  journal = {Journal of Functional Analysis},
+  volume  = {290}, number = {9}, pages = {111367}, year = {2026},
+  doi     = {10.1016/j.jfa.2026.111367}
+}
+
+@article{Naama2024,
+  author  = {Naama, Saloua and Salamatian, Kav{\'e} and Bronzino, Francesco},
+  title   = {Ironing the graphs: toward a correct geometric analysis of
+             large-scale graphs},
+  journal = {arXiv preprint arXiv:2407.21609}, year = {2024},
+  doi     = {10.48550/arXiv.2407.21609}
+}
+
+% ------------------------------------------------------------- applications
+@article{Ni2019,
+  author  = {Ni, Chien-Chun and Lin, Yu-Yao and Luo, Feng and Gao, Jie},
+  title   = {Community detection on networks with {Ricci} flow},
+  journal = {Scientific Reports}, volume = {9}, pages = {9984}, year = {2019}
+}
+
+@article{Sandhu2016,
+  author  = {Sandhu, Romeil S. and Georgiou, Tryphon T. and Tannenbaum, Allen R.},
+  title   = {Ricci curvature: an economic indicator for market fragility and
+             systemic risk},
+  journal = {Science Advances}, volume = {2}, number = {5},
+  pages   = {e1501495}, year = {2016}
+}
+
+@article{Samal2018,
+  author  = {Samal, Areejit and Sreejith, R. P. and Gu, Jiao and Liu, Shiping and
+             Saucan, Emil and Jost, J{\"u}rgen},
+  title   = {Comparative analysis of two discretizations of {Ricci} curvature for
+             complex networks},
+  journal = {Scientific Reports}, volume = {8}, pages = {8650}, year = {2018},
+  doi     = {10.1038/s41598-018-27001-3}
+}
+
+@article{GosztolaiArnaudon2021,
+  author  = {Gosztolai, Adam and Arnaudon, Alexis},
+  title   = {Unfolding the multiscale structure of networks with dynamical
+             {Ollivier--Ricci} curvature},
+  journal = {Nature Communications}, volume = {12}, pages = {4561}, year = {2021}
+}
+
+% -------------------------------------------------------- optimal transport
+@article{Sinkhorn1964,
+  author  = {Sinkhorn, Richard},
+  title   = {A relationship between arbitrary positive matrices and doubly
+             stochastic matrices},
+  journal = {The Annals of Mathematical Statistics},
+  volume  = {35}, number = {2}, pages = {876--879}, year = {1964}
+}
+
+@article{SinkhornKnopp1967,
+  author  = {Sinkhorn, Richard and Knopp, Paul},
+  title   = {Concerning nonnegative matrices and doubly stochastic matrices},
+  journal = {Pacific Journal of Mathematics},
+  volume  = {27}, number = {2}, pages = {343--348}, year = {1967}
+}
+
+@inproceedings{Cuturi2013,
+  author    = {Cuturi, Marco},
+  title     = {Sinkhorn distances: lightspeed computation of optimal transport},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {26}, pages = {2292--2300}, year = {2013}
+}
+
+@article{PeyreCuturi2019,
+  author  = {Peyr{\'e}, Gabriel and Cuturi, Marco},
+  title   = {Computational optimal transport},
+  journal = {Foundations and Trends in Machine Learning},
+  volume  = {11}, number = {5--6}, pages = {355--607}, year = {2019}
+}
+
+% --------------------------------------------------- network geometry context
+@article{Boguna2021,
+  author  = {Bogu{\~n}{\'a}, Mari{\'a}n and Bonamassa, Ivan and De Domenico,
+             Manlio and Havlin, Shlomo and Krioukov, Dmitri V. and Serrano,
+             M. {\'A}ngeles},
+  title   = {Network geometry},
+  journal = {Nature Reviews Physics}, volume = {3}, pages = {114--135}, year = {2021}
+}
+
+@article{Krioukov2010,
+  author  = {Krioukov, Dmitri and Papadopoulos, Fragkiskos and Kitsak, Maksim and
+             Vahdat, Amin and Bogu{\~n}{\'a}, Mari{\'a}n},
+  title   = {Hyperbolic geometry of complex networks},
+  journal = {Physical Review E}, volume = {82}, pages = {036106}, year = {2010}
+}
+
+% ------------------------------------------------------ structural measures
+@article{WattsStrogatz1998,
+  author  = {Watts, Duncan J. and Strogatz, Steven H.},
+  title   = {Collective dynamics of `small-world' networks},
+  journal = {Nature}, volume = {393}, pages = {440--442}, year = {1998}
+}
+
+@article{Newman2002,
+  author  = {Newman, Mark E. J.},
+  title   = {Assortative mixing in networks},
+  journal = {Physical Review Letters}, volume = {89}, number = {20},
+  pages   = {208701}, year = {2002}
+}
+
+@article{GirvanNewman2002,
+  author  = {Girvan, Michelle and Newman, Mark E. J.},
+  title   = {Community structure in social and biological networks},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {99}, number = {12}, pages = {7821--7826}, year = {2002}
+}
+
+% --------------------------------------------------- curvature taxonomy / reviews
+@article{BauerChungLinLiu2017,
+  author  = {Bauer, Frank and Chung, Fan and Lin, Yong and Liu, Yuan},
+  title   = {Curvature aspects of graphs},
+  journal = {Proceedings of the American Mathematical Society},
+  volume  = {145}, number = {5}, pages = {2033--2042}, year = {2017},
+  doi     = {10.1090/proc/13404}
+}
+
+@article{Bourne2018,
+  author  = {Bourne, David and Cushing, David and Liu, Shiping and
+             M{\"u}nch, Florentin and Peyerimhoff, Norbert},
+  title   = {{Ollivier--Ricci} idleness functions of graphs},
+  journal = {SIAM Journal on Discrete Mathematics},
+  volume  = {32}, number = {2}, pages = {1408--1424}, year = {2018},
+  doi     = {10.1137/17M1134469}
+}
+
+@article{Sreejith2016,
+  author  = {Sreejith, R. P. and Mohanraj, Karthikeyan and Jost, J{\"u}rgen and
+             Saucan, Emil and Samal, Areejit},
+  title   = {{Forman} curvature for complex networks},
+  journal = {Journal of Statistical Mechanics: Theory and Experiment},
+  volume  = {2016}, number = {6}, pages = {063206}, year = {2016},
+  doi     = {10.1088/1742-5468/2016/06/063206}
+}
+
+@article{Azarhooshang2020,
+  author  = {Azarhooshang, Nazanin and Sengupta, Prithviraj and
+             DasGupta, Bhaskar},
+  title   = {A review of and some results for {Ollivier--Ricci} network
+             curvature},
+  journal = {Mathematics}, volume = {8}, number = {9}, pages = {1416},
+  year    = {2020}, doi = {10.3390/math8091416}
+}
+
+@article{SaucanSamalJost2021,
+  author  = {Saucan, Emil and Samal, Areejit and Jost, J{\"u}rgen},
+  title   = {A simple differential geometry for complex networks},
+  journal = {Network Science}, volume = {9}, number = {S1},
+  pages   = {S106--S133}, year = {2021},
+  doi     = {10.1017/nws.2020.42}
+}
+@article{VanderHoorn2023,
+  author  = {van der Hoorn, Pim and Lippner, Gabor and Trugenberger, Carlo and
+             Krioukov, Dmitri},
+  title   = {{Ollivier} curvature of random geometric graphs converges to
+             {Ricci} curvature of their {Riemannian} manifolds},
+  journal = {Discrete \& Computational Geometry},
+  volume  = {70}, pages = {671--712}, year = {2023},
+  doi     = {10.1007/s00454-023-00507-y}
+}
+
+% ------------------------------------------------ normalized discrete Ricci flow
+@article{LaiBaiLin2022,
+  author  = {Lai, Xin and Bai, Shuliang and Lin, Yong},
+  title   = {Normalized discrete {Ricci} flow used in community detection},
+  journal = {Physica A: Statistical Mechanics and its Applications},
+  volume  = {597}, pages = {127251}, year = {2022},
+  doi     = {10.1016/j.physa.2022.127251}
+}
+
+% ---------------------------------------------- optimal transport: beyond basics
+@inproceedings{Genevay2019,
+  author    = {Genevay, Aude and Chizat, L{\'e}na{\"i}c and Bach, Francis and
+               Cuturi, Marco and Peyr{\'e}, Gabriel},
+  title     = {Sample complexity of {Sinkhorn} divergences},
+  booktitle = {Proceedings of the 22nd International Conference on Artificial
+               Intelligence and Statistics (AISTATS)},
+  volume    = {89}, pages = {1574--1583}, year = {2019}
+}
+
+@inproceedings{Feydy2019,
+  author    = {Feydy, Jean and S{\'e}journ{\'e}, Thibault and Vialard,
+               Fran{\c{c}}ois-Xavier and Amari, Shun-ichi and Trouv{\'e}, Alain
+               and Peyr{\'e}, Gabriel},
+  title     = {Interpolating between optimal transport and {MMD} using
+               {Sinkhorn} divergences},
+  booktitle = {Proceedings of the 36th International Conference on Machine
+               Learning (ICML)},
+  volume    = {97}, pages = {1958--1967}, year = {2019}
+}
+
+@article{Schmitzer2019,
+  author  = {Schmitzer, Bernhard},
+  title   = {Stabilized sparse scaling algorithms for entropy regularized
+             transport problems},
+  journal = {SIAM Journal on Scientific Computing},
+  volume  = {41}, number = {3}, pages = {A1443--A1481}, year = {2019},
+  doi     = {10.1137/16M1106018}
+}
+
+@inproceedings{Janati2020,
+  author    = {Janati, Hicham and Cuturi, Marco and Gramfort, Alexandre},
+  title     = {Debiased {Sinkhorn} barycenters},
+  booktitle = {Proceedings of the 37th International Conference on Machine
+               Learning (ICML)},
+  volume    = {119}, pages = {4692--4701}, year = {2020}
+}
+
+% ---------------------------------------------------- continuum-limit curvature
+@article{MaslovSneppen2002,
+  author  = {Maslov, Sergei and Sneppen, Kim},
+  title   = {Specificity and stability in topology of protein networks},
+  journal = {Science}, volume = {296}, number = {5569},
+  pages   = {910--913}, year = {2002}, doi = {10.1126/science.1065103}
+}
+
+% ------------------------------------------------------------ clustered inference
+@article{CameronGelbachMiller2008,
+  author  = {Cameron, A. Colin and Gelbach, Jonah B. and Miller, Douglas L.},
+  title   = {Bootstrap-based improvements for inference with clustered errors},
+  journal = {The Review of Economics and Statistics},
+  volume  = {90}, number = {3}, pages = {414--427}, year = {2008}
+}
+
+@article{MacKinnonNielsenWebb2023,
+  author  = {MacKinnon, James G. and Nielsen, Morten {\O}rregaard and
+             Webb, Matthew D.},
+  title   = {Cluster-robust inference: a guide to empirical practice},
+  journal = {Journal of Econometrics},
+  volume  = {232}, number = {2}, pages = {272--299}, year = {2023},
+  doi     = {10.1016/j.jeconom.2022.04.001}
+}
+
+% --------------------------------------------------------------- data source
+@inproceedings{RossiAhmed2015,
+  author    = {Rossi, Ryan A. and Ahmed, Nesreen K.},
+  title     = {The network data repository with interactive graph analytics and
+               visualization},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  pages     = {4292--4293}, year = {2015},
+  url       = {http://networkrepository.com}
+}

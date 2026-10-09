@@ -1,0 +1,2 @@
+dataset,file,status,message,steps,stop_reason,nodes,edges,components,weight_mode,weight_reason,transport_cells_per_step,horizon_planned,initial_variance,final_variance,var_ratio_final,wall_seconds
+mammalia-raccoon-proximity,D:\100data\mammalia-raccoon-proximity.edges,budget_exceeded,,526,budget_exceeded,24,226,1,distance,all input weights are finite and positive; auto interpretation=distance,96614,3000,0.10228976577543955,0.0002854332621370097,0.0027904381242169598,1472.91

@@ -1,0 +1,2 @@
+dataset,file,status,message,steps,stop_reason,nodes,edges,components,weight_mode,weight_reason,transport_cells_per_step,horizon_planned,initial_variance,final_variance,var_ratio_final,wall_seconds
+eco-stmarks,D:\100data\eco-stmarks.edges,budget_exceeded,,402,budget_exceeded,54,350,1,distance,all input weights are finite and positive; auto interpretation=distance,112749,3000,16.376233176568498,0.0012132750800676658,7.408755523850555e-05,1995.51

@@ -1,0 +1,47 @@
+# Configuration used for every flow run reported in the manuscript.
+# Reproducibility package -- Finite-time residuals in discrete Ollivier-Ricci flow
+
+flow:
+  curvature: ollivier             # Ollivier-Ricci, idleness alpha
+  alpha: 0.5                      # idleness parameter
+  update: multiplicative          # w_e <- w_e * exp(-dt * kappa_e)
+  dt: 0.05
+  renormalisation: mean_weight_per_step
+  horizon_first_pass: 10
+  horizon_strict: 400             # C4; extended to 912 on ENZYMES_g106
+  horizon_exact: 2000             # C5; extended to 5000 on three ENZYMES graphs
+
+transport:
+  default: sinkhorn               # entropy-regularised
+  epsilon: 0.05                   # NOTE: fixed epsilon is NOT scale invariant
+  sinkhorn_iter_max: 5000
+  sinkhorn_stop: 1.0e-9
+  variants:
+    - exact                       # network simplex (POT ot.emd, HiGHS fallback)
+    - eqreg                       # scale-equivariant: eps_t = eps_0 * s_t / s_0
+    - sinkhorn
+
+stopping:
+  legacy_rule: "|V_t - V_{t-1}| / V_0 < tol"      # UNSAFE: fires on elapsed time
+  rule_used:   "|V_t - V_{t-1}| / V_t < tol"      # operational criterion
+  tol: 1.0e-5
+  consecutive_steps: 50
+
+estimators:
+  residual_pooled: variance of all edge curvatures
+  residual_within: sum_c (m_c/m) Var[kappa | component c]
+  residual_between: sum_c (m_c/m) (mean_c - mean)^2
+  primary_for_disconnected: residual_within
+
+inference:
+  unit_of_independence: source family
+  tests: [family sign test, family sign-flip permutation, cluster bootstrap, LOFO jackknife]
+  evidence_tier_primary_min_families: 8
+  evidence_tier_exploratory_max_families: 5
+
+environment:
+  python: 3.13
+  cpu_cores: 8
+  ram_gb: 9.9
+  threads: 1                      # OMP/OPENBLAS/MKL_NUM_THREADS = 1
+  seed: 0                         # all reported runs are deterministic

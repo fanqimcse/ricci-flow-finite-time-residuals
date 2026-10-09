@@ -1,0 +1,5 @@
+step,reason,n_before,n_removed,n_after,examples
+E1,no usable trajectory (failed / diverged / skipped / insufficient),93,0,93,
+E2,initial curvature variance < 1e-10 -> ratio is 0/0 noise,93,4,89,"ENZYMES_g11, aves-geese-female-foraging, aves-geese-male-foraging, aves-hens-pecking-order"
+E3,graph too small for topological covariates (N<20 or E<20),89,13,76,"ENZYMES_g100, ENZYMES_g106, ENZYMES_g110, aves-barn-swallow-non-physical"
+E4,plateau ratio not finite,76,0,76,

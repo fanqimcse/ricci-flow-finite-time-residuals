@@ -1,0 +1,88 @@
+LEAVE-ONE-FAMILY-OUT PREDICTION TEST
+==============================================================
+source: 07_merged_with_structure.csv
+
+exclusion chain: 93 -> 25
+  E2 degenerate initial variance   93 -> 89 (-4)
+  E3 nodes >= 20                   89 -> 76 (-13)
+  E1 usable trajectory             76 -> 25 (-51)
+  E4 finite ratio                  -> 25
+
+families retained:
+family
+ENZYMES     11
+aves         1
+bn           3
+eco          2
+mammalia     2
+reptilia     2
+scc_rt       4
+
+complete-case sample: 25 networks / 7 families
+
+--- M0 intercept only ---
+  family  n_test  oos_r2  oos_rho  mae_log10
+ ENZYMES      11  -0.330      NaN     +0.560
+    aves       1     NaN      NaN     +0.937
+      bn       3  -0.222      NaN     +1.359
+     eco       2  -6.584      NaN     +2.087
+mammalia       2 -96.107      NaN     +0.569
+reptilia       2  -0.000      NaN     +0.132
+  scc_rt       4 -11.418      NaN     +1.084
+  POOLED out-of-sample: n=25 R2=-0.169 rho=-0.585 p=0.00211
+
+--- M1 assortativity ---
+  family  n_test  oos_r2  oos_rho  mae_log10
+ ENZYMES      11  -0.587   -0.345     +0.582
+    aves       1     NaN      NaN     +0.561
+      bn       3  -0.410      NaN     +1.023
+     eco       2  -5.454      NaN     +1.880
+mammalia       2 -57.299      NaN     +0.442
+reptilia       2  +0.091      NaN     +0.105
+  scc_rt       4  -1.605   +0.800     +0.436
+  POOLED out-of-sample: n=25 R2=+0.039 rho=+0.324 p=0.114
+
+--- M2 modularity ---
+  family  n_test  oos_r2  oos_rho  mae_log10
+ ENZYMES      11  -0.176   -0.364     +0.453
+    aves       1     NaN      NaN     +1.319
+      bn       3  -0.504      NaN     +1.383
+     eco       2  -5.508      NaN     +1.911
+mammalia       2  -5.347      NaN     +0.121
+reptilia       2  -5.688      NaN     +0.275
+  scc_rt       4  -8.803   -0.800     +0.935
+  POOLED out-of-sample: n=25 R2=-0.114 rho=-0.078 p=0.712
+
+--- M3 assortativity + modularity ---
+  family  n_test  oos_r2  oos_rho  mae_log10
+ ENZYMES      11  -0.557   -0.345     +0.579
+    aves       1     NaN      NaN     +0.868
+      bn       3  -1.198      NaN     +1.399
+     eco       2  -5.734      NaN     +1.927
+mammalia       2 -14.596      NaN     +0.226
+reptilia       2  -2.287      NaN     +0.180
+  scc_rt       4  -3.040   +0.400     +0.571
+  POOLED out-of-sample: n=25 R2=-0.170 rho=+0.275 p=0.184
+
+--- M4 assort + modul + trans + logN ---
+  family  n_test   oos_r2  oos_rho  mae_log10
+ ENZYMES      11   -0.027   +0.718     +0.444
+    aves       1      NaN      NaN     +1.241
+      bn       3   -3.361      NaN     +2.236
+     eco       2   -5.007      NaN     +1.569
+mammalia       2 -807.491      NaN     +1.650
+reptilia       2  -11.136      NaN     +0.340
+  scc_rt       4   -3.972   +1.000     +0.656
+  POOLED out-of-sample: n=25 R2=-0.793 rho=+0.205 p=0.327
+
+--- model comparison (pooled out-of-sample) ---
+                           model  n_pred  oos_R2  oos_rho      p
+               M0 intercept only      25  -0.169   -0.585 +0.002
+                M1 assortativity      25  +0.039   +0.324 +0.114
+                   M2 modularity      25  -0.114   -0.078 +0.712
+   M3 assortativity + modularity      25  -0.170   +0.275 +0.184
+M4 assort + modul + trans + logN      25  -0.793   +0.205 +0.327
+
+Reading rule: a model earns the word 'predictive' only if
+pooled out-of-sample R2 > 0 AND it beats M0. R2 < 0 means the
+held-out families are predicted worse than their own mean.

@@ -1,0 +1,146 @@
+datasets to process: 117
+[1/117] cached ENZYMES_g1
+[2/117] cached ENZYMES_g10
+[3/117] cached ENZYMES_g100
+[4/117] cached ENZYMES_g101
+[5/117] cached ENZYMES_g102
+[6/117] cached ENZYMES_g103
+[7/117] cached ENZYMES_g104
+[8/117] cached ENZYMES_g105
+[9/117] cached ENZYMES_g106
+[10/117] cached ENZYMES_g107
+[11/117] cached ENZYMES_g109
+[12/117] cached ENZYMES_g11
+[13/117] cached ENZYMES_g110
+[14/117] cached ENZYMES_g111
+[15/117] cached ENZYMES_g112
+[16/117] cached ENZYMES_g113
+[17/117] cached aves-barn-swallow-non-physical
+[18/117] cached aves-geese-female-foraging
+[19/117] cached aves-geese-male-foraging
+[20/117] cached aves-hens-pecking-order
+[21/117] cached aves-sparrow-social-2009
+[22/117] cached aves-sparrow-social
+[23/117] cached aves-sparrowlyon-flock-season2
+[24/117] cached aves-sparrowlyon-flock-season3
+[25/117] cached aves-thornbill-farine
+[26/117] cached aves-weaver-social-06
+[27/117] cached aves-weaver-social-08
+[28/117] cached aves-weaver-social-09
+[29/117] cached aves-weaver-social-11
+[30/117] cached aves-weaver-social-12
+[31/117] cached aves-weaver-social-14
+[32/117] cached aves-weaver-social
+[33/117] cached bio-CE-HT
+[34/117] cached bio-CE-LC
+[35/117] cached bio-DM-LC
+[36/117] cached bio-SC-TS
+[37/117] cached bio-celegans-dir
+[38/117] cached bio-celegans
+[39/117] cached bio-diseasome
+[40/117] cached bio-grid-mouse
+[41/117] cached bio-grid-plant
+[42/117] cached bio-yeast
+[43/117] cached bn-cat-mixed-species_brain_1
+[44/117] cached bn-fly-drosophila_medulla_1
+[45/117] cached bn-macaque-rhesus_brain_1
+[46/117] cached bn-macaque-rhesus_brain_2
+[47/117] cached bn-macaque-rhesus_cerebral-cortex_1
+[48/117] cached bn-macaque-rhesus_interareal-cortical-network_2
+[49/117] cached bn-mouse-kasthuri_graph_v4
+[50/117] running bn-mouse_brain_1
+    -> skipped_large: steps=0 var_ratio=None wall=Nones
+[51/117] cached bn-mouse_visual-cortex_1
+[52/117] cached eco-florida
+[53/117] cached eco-foodweb-baydry
+[54/117] cached eco-foodweb-baywet
+[55/117] cached eco-mangwet
+[56/117] cached eco-stmarks
+[57/117] cached econ-mahindas
+[58/117] running econ-mbeacxc
+    -> skipped_large: steps=0 var_ratio=None wall=Nones
+[59/117] cached econ-poli
+[60/117] cached econ-wm1
+[61/117] cached econ-wm2
+[62/117] cached econ-wm3
+[63/117] cached ia-dnc-corecipient
+[64/117] cached ia-email-univ
+[65/117] cached ia-enron-only
+[66/117] cached ia-infect-hyper
+[67/117] running ia-reality
+    -> budget_exceeded: steps=34 var_ratio=0.26699773753709605 wall=642.15s
+[68/117] running ia-southernwomen
+    -> saturated: steps=261 var_ratio=0.0029919496535466576 wall=507.31s
+[69/117] running ia-workplace-contacts
+    -> budget_exceeded: steps=79 var_ratio=0.053241473772222166 wall=635.71s
+[70/117] running inf-euroroad
+    -> budget_exceeded: steps=134 var_ratio=0.1829738725387912 wall=630.77s
+[71/117] running inf-openflights
+    -> budget_insufficient: steps=1 var_ratio=1.0 wall=582.13s
+[72/117] running inf-power
+    -> budget_exceeded: steps=31 var_ratio=0.3569975777196359 wall=645.54s
+[73/117] running insecta-ant-trophallaxis-colony1
+    -> budget_exceeded: steps=154 var_ratio=0.0168745363103282 wall=630.95s
+[74/117] running insecta-ant-trophallaxis-colony2
+    -> budget_exceeded: steps=189 var_ratio=0.011021003803471534 wall=633.46s
+[75/117] running mammalia-primate-association
+    -> saturated: steps=172 var_ratio=0.0199613279277898 wall=464.62s
+[76/117] running mammalia-raccoon-proximity
+    -> saturated: steps=209 var_ratio=0.015281124653742404 wall=81.88s
+[77/117] running mammalia-voles-bhp-trapping
+    -> budget_exceeded: steps=18 var_ratio=0.4593812119793069 wall=660.43s
+[78/117] running mammalia-voles-kcs-trapping
+    -> budget_exceeded: steps=20 var_ratio=0.3843370366727609 wall=658.35s
+[79/117] running mammalia-voles-plj-trapping
+    -> budget_exceeded: steps=20 var_ratio=0.5094974083776367 wall=653.02s
+[80/117] running power-494-bus
+    -> budget_exceeded: steps=171 var_ratio=0.05434852871169998 wall=630.16s
+[81/117] running power-662-bus
+    -> budget_exceeded: steps=170 var_ratio=0.03994296861262329 wall=632.97s
+[82/117] running power-685-bus
+    -> budget_exceeded: steps=85 var_ratio=0.16993647480556118 wall=632.57s
+[83/117] running power-US-Grid
+    -> budget_exceeded: steps=38 var_ratio=0.29911073509038755 wall=631.95s
+[84/117] cached power-bcspwr09
+[85/117] cached power-bcspwr10
+[86/117] cached power-eris1176
+[87/117] cached reptilia-tortoise-network-bsv
+[88/117] cached reptilia-tortoise-network-cs
+[89/117] cached reptilia-tortoise-network-fi
+[90/117] cached reptilia-tortoise-network-hw
+[91/117] cached reptilia-tortoise-network-mc
+[92/117] cached reptilia-tortoise-network-pv
+[93/117] cached reptilia-tortoise-network-sg
+[94/117] cached scc2034_kilifi_all_contacts_across_households
+[95/117] running scc_enron-only
+    -> skipped_large: steps=0 var_ratio=None wall=Nones
+[96/117] cached scc_infect-hyper
+[97/117] cached scc_rt_alwefaq
+[98/117] cached scc_rt_assad
+[99/117] cached scc_rt_bahrain
+[100/117] cached scc_rt_barackobama
+[101/117] cached scc_rt_damascus
+[102/117] cached scc_rt_dash
+[103/117] cached scc_rt_http
+[104/117] running scc_rt_islam
+    -> failed: steps=0 var_ratio=None wall=Nones
+[105/117] cached scc_rt_justinbieber
+[106/117] cached scc_rt_ksa
+[107/117] cached scc_rt_lebanon
+[108/117] cached scc_rt_obama
+[109/117] cached scc_rt_occupy
+[110/117] cached scc_rt_occupywallstnyc
+[111/117] cached scc_rt_oman
+[112/117] cached scc_rt_onedirection
+[113/117] running web-EPA
+    -> budget_insufficient: steps=1 var_ratio=1.0 wall=66.62s
+[114/117] running web-edu
+    -> budget_exceeded: steps=40 var_ratio=0.5618555714716458 wall=638.63s
+[115/117] running web-google
+    -> budget_exceeded: steps=42 var_ratio=0.733294341405109 wall=630.76s
+[116/117] running web-polblogs
+    -> budget_exceeded: steps=12 var_ratio=0.5986655709642237 wall=678.78s
+[117/117] running web-webbase-2001
+    -> budget_insufficient: steps=1 var_ratio=1.0 wall=1103.57s
+
+DONE. summary: D:\2026codes\2026821100data\ricci_flow_longrun_results\longrun_summary.csv

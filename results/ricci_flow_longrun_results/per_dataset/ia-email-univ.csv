@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+ia-email-univ,0,0.0,-0.19479686754114367,0.039606328784960204,1.0,0.3325603639560716,1.0,1.0,1.0,0.8000117653867367,1133,5451,149.97383832931519,0.3410005569458008,149.39656734466553,0.22024297714233398

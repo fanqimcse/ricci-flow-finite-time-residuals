@@ -1,0 +1,4 @@
+dataset,status,steps,final_ratio,min_ratio,edges_removed,wall
+ENZYMES_g103,budget_exceeded,119,0.037865194179219186,0.037865194179219186,0,200.5
+reptilia-tortoise-network-pv,budget_exceeded,99,0.19178981283883398,0.19178981283883398,0,200.2
+reptilia-tortoise-network-sg,horizon_reached,200,0.14496962551638373,0.14496962551638373,1,64.3

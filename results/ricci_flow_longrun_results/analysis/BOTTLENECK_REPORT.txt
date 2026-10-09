@@ -1,0 +1,60 @@
+BOTTLENECK HETEROGENEITY AND THE RESIDUAL PLATEAU
+====================================================================
+sample: 97 graphs ({'synthB': 60, 'real': 25, 'synthC': 12})
+
+--- 1. does the synthetic/real plateau gap match a predictor gap? ---
+         n  plateau_median   eb_cv  eb_gini  eb_top5  transitivity  degree_cv
+source                                                                       
+real    25         +0.1266 +0.9752  +0.5035  +0.1784       +0.4626    +0.2938
+synthB  60         +0.0021 +0.2924  +0.1598  +0.0859       +0.0743    +0.4042
+synthC  12         +0.0133 +0.3164  +0.1766  +0.0967       +0.1323    +0.3792
+
+plateau gap real/synthetic = 56.4x
+  eb_cv          real=+0.9752 synth=+0.2966 ratio=3.29
+  eb_gini        real=+0.5035 synth=+0.1626 ratio=3.10
+  eb_top5_share  real=+0.1784 synth=+0.0864 ratio=2.06
+  transitivity   real=+0.4626 synth=+0.0792 ratio=5.84
+  degree_cv      real=+0.2938 synth=+0.4004 ratio=0.73
+
+--- 2. pooled Spearman(log10 plateau, predictor) ---
+  eb_cv          rho=+0.672 p=5.09e-14 n=97
+  eb_gini        rho=+0.605 p=5.31e-11 n=97
+  eb_top5_share  rho=+0.627 p=6.45e-12 n=97
+  eb_mean        rho=+0.376 p=0.000146 n=97
+  eb_sd          rho=+0.641 p=1.52e-12 n=97
+  transitivity   rho=+0.821 p=7.07e-25 n=97
+  degree_cv      rho=-0.173 p=0.0898 n=97
+  assortativity  rho=+0.398 p=5.53e-05 n=97
+  nodes          rho=-0.731 p=1.76e-17 n=97
+  edges          rho=-0.513 p=7.69e-08 n=97
+
+--- 3. within real networks only (n=25) ---
+  eb_cv          rho=+0.115 p=0.583 n=25
+  eb_gini        rho=+0.108 p=0.606 n=25
+  eb_top5_share  rho=-0.038 p=0.855 n=25
+  transitivity   rho=+0.621 p=0.000929 n=25
+  degree_cv      rho=+0.074 p=0.726 n=25
+  assortativity  rho=+0.452 p=0.0235 n=25
+
+--- 4. within synthetic only (the controlled side) ---
+  eb_cv          rho=+0.650 p=6.3e-10 n=72
+  eb_gini        rho=+0.652 p=5.32e-10 n=72
+  eb_top5_share  rho=+0.655 p=4.28e-10 n=72
+  transitivity   rho=+0.736 p=1.79e-13 n=72
+  degree_cv      rho=-0.110 p=0.36 n=72
+  assortativity  rho=+0.540 p=1.01e-06 n=72
+
+--- 5. does the predictor separate real from synthetic? ---
+  eb_cv          MWU p=3.98e-09  (real median 0.9752 vs synth 0.2966)
+  eb_gini        MWU p=3.68e-07  (real median 0.5035 vs synth 0.1626)
+  eb_top5_share  MWU p=6.14e-08  (real median 0.1784 vs synth 0.0864)
+  transitivity   MWU p=2.17e-11  (real median 0.4626 vs synth 0.0792)
+  degree_cv      MWU p=0.472  (real median 0.2938 vs synth 0.4004)
+
+--- reading ---
+If eb_cv (or eb_gini) is both (a) far larger in real networks and
+(b) strongly rank-correlated with the plateau POOLED across real and
+synthetic graphs, then the 90x gap is a betweenness-heterogeneity
+effect and the paper gains a single mechanism that covers both the
+within-family causal results and the cross-family magnitude gap.
+If it is large but NOT correlated, report it as a rejected hypothesis.

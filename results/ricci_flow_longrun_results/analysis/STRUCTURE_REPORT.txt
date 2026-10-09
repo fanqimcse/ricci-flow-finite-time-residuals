@@ -1,0 +1,68 @@
+STRUCTURAL PREDICTORS OF THE RESIDUAL CURVATURE VARIANCE
+==================================================================
+
+datasets with a usable plateau: 93
+  of which converged (not budget-truncated): 41
+families represented: 15
+
+--- Spearman vs plateau ratio (higher ratio = less homogenised) ---
+
+  [all_usable]  n=93
+  covariate                      rho         p   partial
+  degree_cv                   +0.327   0.00137    +0.182
+  log10_nodes                 +0.300   0.00351    -0.089
+  n_components                +0.299    0.0036    +0.239
+  lcc_fraction                -0.260    0.0119    -0.242
+  assortativity               +0.198    0.0626    +0.200
+  initial_kappa               +0.196    0.0595    +0.668
+  density                     -0.191    0.0659    +0.085
+  transitivity                +0.138     0.188    +0.509
+  modularity                  +0.121     0.248    -0.100
+  initial_variance            -0.059     0.575    -0.243
+  avg_path_len                -0.045       0.7    -0.214
+  algebraic_connectivity      -0.045     0.688    +0.144
+  mean_degree                 +0.040     0.703    +0.082
+
+  [converged_only]  n=41
+  covariate                      rho         p   partial
+  initial_kappa               +0.512  0.000627    +0.606
+  transitivity                +0.416   0.00681    +0.421
+  assortativity               +0.341    0.0363    +0.358
+  n_components                +0.251     0.114    +0.245
+  lcc_fraction                -0.236     0.137    -0.228
+  degree_cv                   -0.190     0.234    -0.168
+  mean_degree                 -0.184     0.249    -0.157
+  log10_nodes                 -0.123     0.443    +0.002
+  algebraic_connectivity      +0.115     0.474    +0.067
+  avg_path_len                -0.104     0.518    -0.047
+  initial_variance            -0.075      0.64    -0.033
+  density                     +0.050     0.755    -0.016
+  modularity                  -0.040     0.804    +0.008
+
+--- multivariate OLS (standardised covariates, converged subset) ---
+  n = 38 (complete cases)
+  R2 = 0.363   adj R2 = 0.188
+  term                         coef       se       t         p
+  intercept                  +0.206    0.043    4.77   4.8e-05
+  initial_kappa              +0.037    0.050    0.74     0.465
+  log10_nodes                +0.029    0.058    0.49     0.627
+  degree_cv                  +0.024    0.085    0.29     0.776
+  transitivity               +0.175    0.099    1.78    0.0862
+  assortativity              -0.017    0.076   -0.23     0.823
+  modularity                 +0.037    0.163    0.23     0.822
+  algebraic_connectivity     +0.132    0.076    1.74    0.0931
+  density                    -0.141    0.186   -0.76     0.453
+
+--- family-level check (one point per source family) ---
+  families with >=2 converged datasets: 7
+  initial_kappa              rho = +0.786  p =   0.0362  (n families = 7)
+  log10_nodes                rho = -0.429  p =    0.337  (n families = 7)
+  degree_cv                  rho = +0.000  p =        1  (n families = 7)
+  transitivity               rho = +0.429  p =    0.337  (n families = 7)
+  modularity                 rho = +0.429  p =    0.337  (n families = 7)
+  algebraic_connectivity     rho = -0.214  p =    0.645  (n families = 7)
+
+--- verdict ---
+  strongest single predictor in the converged subset: initial_kappa (rho=+0.512)
+  NOTE: budget-truncated runs carry an upper-bound plateau;
+        the converged subset is the admissible primary analysis.

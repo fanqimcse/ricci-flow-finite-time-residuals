@@ -1,0 +1,72 @@
+SYNTHETIC ASSORTATIVITY SWEEP
+==============================================================
+
+graphs completed: 60 / requested 60
+status breakdown: {'saturated': np.int64(60)}
+
+--- 0. manipulation check (did rewiring hit the target?) ---
+           n  achieved_median  achieved_min  achieved_max  transitivity   plateau
+target_r                                                                         
+-0.4      12        -0.371519     -0.384683     -0.370438      0.063466  0.001484
+-0.2      12        -0.173065     -0.179050     -0.170350      0.072471  0.001859
+ 0.0      12        -0.001243     -0.029124      0.029033      0.071783  0.002212
+ 0.2      12         0.174003      0.170267      0.184038      0.082228  0.002405
+ 0.4      12         0.374154      0.370154      0.377789      0.092879  0.002610
+
+  median |achieved - target| = 0.026
+
+--- 1. plateau vs target assortativity (by base) ---
+  base     r=-0.4   r=-0.2   r=+0.0   r=+0.2   r=+0.4
+  0        0.0015   0.0019   0.0023   0.0028   0.0034
+  1        0.0018   0.0018   0.0022   0.0027   0.0024
+  2        0.0015   0.0019   0.0022   0.0021   0.0026
+  3        0.0015   0.0016   0.0018   0.0024   0.0024
+
+--- 2. correlations with the plateau ---
+  Spearman(var_ratio, final_r       ) rho = +0.796  p = 3.03e-14
+  Spearman(var_ratio, transitivity  ) rho = +0.569  p = 2.1e-06
+  Spearman(var_ratio, edges         ) rho = +0.215  p = 0.0987
+
+  within-base (base-graph effects removed):
+      base 0 n=15  rho = +0.889  p = 9.19e-06
+      base 1 n=15  rho = +0.817  p = 0.000204
+      base 2 n=15  rho = +0.796  p = 0.00038
+      base 3 n=15  rho = +0.882  p = 1.36e-05
+      median within-base rho = +0.849  (4 bases)
+
+--- 3. joint model: log10(plateau) ~ assortativity + transitivity ---
+    term                 coef         se        t          p
+    intercept         -2.7550     0.0502   -54.90   4.79e-51
+    final_r            0.2933     0.0410     7.16   1.73e-09
+    transitivity       0.9780     0.6499     1.50      0.138
+    R2 = 0.647   dof = 57
+
+--- 3b. same model WITH base fixed effects ---
+    term                 coef         se        t          p
+    intercept         -2.6357     0.0674   -39.12   2.63e-41
+    final_r            0.3413     0.0442     7.73   2.71e-10
+    transitivity      -0.2448     0.8155    -0.30      0.765
+    base1             -0.0014     0.0239    -0.06      0.955
+    base2             -0.0326     0.0248    -1.31      0.194
+    base3             -0.0709     0.0253    -2.81    0.00696
+    R2 = 0.696   dof = 54
+    -> assortativity beta = +0.341 (p = 2.71e-10) with degree sequence held fixed
+
+--- 3c. magnitude sanity check (synthetic vs real) ---
+  synthetic plateau median = 0.00214 (n=60)
+  real-network plateau med = 0.19668 (n=89)
+  ratio of medians          = 92.0x
+  => the synthetic sweep reproduces the DIRECTION of the
+     assortativity effect, but configuration-model graphs
+     homogenise far more completely than real networks.
+     Do NOT transfer the magnitude; only the sign and the
+     causal attribution carry over.
+
+--- 4. verdict ---
+  assortativity rho = +0.796 (p=3.03e-14)
+  transitivity  rho = +0.569 (p=2.1e-06)
+  joint (with base fixed effects): assortativity beta=+0.341 (p=2.71e-10), transitivity beta=-0.245 (p=0.765)
+  => assortativity survives with transitivity controlled:
+     rewiring a FIXED degree sequence towards higher
+     assortativity raises the residual plateau.
+     This is causal evidence, not just correlation.

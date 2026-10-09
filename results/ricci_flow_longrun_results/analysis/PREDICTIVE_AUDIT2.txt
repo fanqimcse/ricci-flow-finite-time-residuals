@@ -1,0 +1,63 @@
+PREDICTIVE AUDIT 2 - TRANSITIVITY ON THE DECLARED SAMPLE
+==================================================================
+sample: 25 networks, 7 families
+
+family
+ENZYMES     11
+scc_rt       4
+bn           3
+eco          2
+mammalia     2
+reptilia     2
+aves         1
+
+--- Q1. WITHIN-FAMILY Spearman(covariate, log10 plateau) ---
+  transitivity   ENZYMES n=11 rho=+0.782 (p=0.00447) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+  assortativity  ENZYMES n=11 rho=-0.345 (p=0.298) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+  modularity     ENZYMES n=11 rho=-0.364 (p=0.272) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+  degree_cv      ENZYMES n=11 rho=-0.455 (p=0.16) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+  log10_nodes    ENZYMES n=11 rho=-0.879 (p=0.000362) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+  density        ENZYMES n=11 rho=+0.755 (p=0.00728) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+  avg_path_len   ENZYMES n=11 rho=-0.236 (p=0.484) | aves n=1 (n<5) | bn n=3 (n<5) | eco n=2 (n<5) | mammalia n=2 (n<5) | reptilia n=2 (n<5) | scc_rt n=4 (n<5)
+
+--- Q2. FAMILY LEVEL (n=7) ---
+           n       y  transitivity  assortativity  modularity  degree_cv  log10_nodes  density  avg_path_len
+family                                                                                                      
+ENZYMES   11 -1.0634       +0.3879        -0.0303     +0.6390    +0.2320      +1.5904  +0.1071       +5.5503
+aves       1 -0.3351       +0.7064        +0.2886     +0.2341    +0.3735      +1.4914  +0.4538       +1.8903
+bn         3 -1.7471       +0.2978        -0.6454     +0.1831    +0.8588      +1.7966  +0.2598       +2.0934
+eco        2 -3.1545       +0.3781        -0.1914     +0.1824    +0.5610      +1.8596  +0.2776       +1.7269
+mammalia   2 -1.7578       +0.9135        -0.1076     +0.0211    +0.1440      +1.3891  +0.8761       +1.1239
+reptilia   2 -1.2349       +0.4718        +0.0372     +0.6019    +0.6058      +1.4621  +0.1026       +3.0564
+scc_rt     4 -0.3239       +0.6235        +0.5472     +0.5869    +0.8714      +1.5214  +0.0767       +1.9938
+
+  Spearman(family transitivity  , family plateau) rho=+0.321 p=0.482
+  Spearman(family assortativity , family plateau) rho=+0.857 p=0.0137
+  Spearman(family modularity    , family plateau) rho=+0.679 p=0.0938
+  Spearman(family degree_cv     , family plateau) rho=+0.321 p=0.482
+  Spearman(family log10_nodes   , family plateau) rho=-0.214 p=0.645
+  Spearman(family density       , family plateau) rho=-0.536 p=0.215
+  Spearman(family avg_path_len  , family plateau) rho=+0.429 p=0.337
+
+  jackknife transitivity: full=+0.321 range +0.029..+0.829
+  jackknife assortativity: full=+0.857 range +0.771..+0.943
+
+--- Q3. LEAVE-ONE-FAMILY-OUT ---
+  M0 intercept only                          n=25 oos_R2=-0.169 oos_rho=-0.585 (p=0.00211)
+  M1 transitivity                            n=25 oos_R2=-0.330 oos_rho=+0.338 (p=0.0988)
+  M2 assortativity                           n=25 oos_R2=+0.039 oos_rho=+0.324 (p=0.114)
+  M3 transitivity + assortativity            n=25 oos_R2=-0.211 oos_rho=+0.307 (p=0.136)
+  M4 T + assort + modul                      n=25 oos_R2=-0.106 oos_rho=+0.362 (p=0.0758)
+  M5 T + assort + modul + logN + degCV       n=25 oos_R2=-0.651 oos_rho=+0.300 (p=0.145)
+
+--- Q4. in-sample fit (for contrast only, NOT evidence) ---
+  M1 transitivity                            in-sample R2=0.198
+  M2 assortativity                           in-sample R2=0.221
+  M3 transitivity + assortativity            in-sample R2=0.297
+  M4 T + assort + modul                      in-sample R2=0.507
+  M5 T + assort + modul + logN + degCV       in-sample R2=0.547
+
+--- reading ---
+A predictor is promoted only if it survives Q1 or Q2 AND beats the
+intercept baseline in Q3. In-sample R2 is reported only to show how
+misleading it is here.

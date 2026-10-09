@@ -1,0 +1,2 @@
+dataset,step,t,mean_curvature,curvature_variance,var_ratio,lambda1,min_weight,median_weight,max_weight,max_abs_kappa,nodes,edges,step_time,distance_time,sinkhorn_time,lambda_time
+bio-SC-TS,0,0.0,0.379588154077199,0.04317668672862999,1.0,0.0,0.7618497304769969,1.012885135097808,1.0735981984246419,0.9999999995270178,636,3959,110.83147621154785,0.019948720932006836,110.79518294334412,9.775161743164062e-06
