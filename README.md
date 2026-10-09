@@ -115,3 +115,19 @@ version number in the manuscript's Code Availability statement matches this tag.
 
 Code: MIT (see `LICENSE`). Manuscript text and figures: CC BY 4.0. The network
 data are governed by the terms of the Network Data Repository.
+
+## Publishing this repository
+
+The tree is versioned locally (annotated tag `v1.0.0`). To create the public
+repository and upload everything in one step:
+
+```bash
+python push_github.py <GITHUB_TOKEN>          # classic PAT with the `repo` scope
+```
+
+The script resolves the account login from the token (so the repository URL is
+never guessed), creates the repository if needed, pushes `main` and the
+`v1.0.0` tag (falling back to the GitHub Contents REST API if `git push` cannot
+reach `github.com`), creates the GitHub Release, requests a Software Heritage
+archival, and writes the real URL back into `manuscript.tex`,
+`cover_letter.md` and `SUBMISSION_CHECKLIST.md`.
