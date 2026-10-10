@@ -1,6 +1,21 @@
 # Communications Physics 投稿自检清单（Paper A）
 
-状态截至 2026-10-10（**第六轮：二次审查逐条处理 —— 权重语义、g10 一致性、极端跨度数值可靠性**）。✅ = 已完成并从原始数据复算；⚠️ = 需作者人工完成；📋 = 建议但非阻塞。
+状态截至 2026-10-10（**第六轮：二次审查逐条处理 —— 权重语义、g10 一致性、极端跨度数值可靠性 + 参考文献三方核验**）。✅ = 已完成并从原始数据复算；⚠️ = 需作者人工完成；📋 = 建议但非阻塞。
+
+---
+
+## ✅ 零-F、参考文献三方核验（2026-10-10）—— 45 条逐条
+
+报告见 `REFERENCE_AUDIT_ROUND6.md`，机器可读总表见 `Supplementary_Table_S14_reference_audit_three_way.csv`。
+
+| 维度 | 结果 |
+|---|---|
+| 条目数 / 引文处数 | **45 / 45**，0 漏引、0 未被引、0 重复 ✅ |
+| 书目信息**已修正**的错误 | **4 条**：`SinkhornKnopp1967` 卷 27→**21**；`Feydy2019` ICML/PMLR 97:1958-1967 → **AISTATS/PMLR 89:2681-2690**；`LinYau2010` 页 345-358 → **343-356**；`BauerChungLinLiu2017` DOI 10.1090/proc/13404 → **10.1090/proc/13145** |
+| 正文论断**已修正**的过度表述 | **2 处**：surgery "deleting **or adding** edges"（Ma-Yang 只删边）；三种离散化 "**disagree**"（Samal 2018 实测高度相关，且四篇引文无一涉及 Bakry–Émery，已补 `LinYau2010`） |
+| 独立源 | 每条至少两个：Crossref DOI 解析 / Crossref 题名检索 / arXiv API / OpenAlex / PMLR 官方论文集页 / Zenodo API |
+| 全文逐句核验 | **12 篇** arXiv PDF 已下载并抽取文本（`ref_verify/pdfs/`）；其余凭权威元数据 + 摘要核验 |
+| 变音符号（Münch / Peyré / Boguñá / van der Hoorn） | 非错误，属排版差异，保留 |
 
 ---
 

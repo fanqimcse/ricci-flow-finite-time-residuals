@@ -26,6 +26,8 @@ MANUSCRIPT_FILES = [
     "Supplementary_Table_S13a_checkpoints.csv",
     "Supplementary_Table_S13b_final_probes.csv",
     "Supplementary_Table_S13c_initial_weight_perturbation.csv",
+    "Supplementary_Table_S14_reference_audit_three_way.csv",
+    "REFERENCE_AUDIT_ROUND6.md",
 ]
 CODE_FILES = [
     "exp_round6.py",
@@ -36,6 +38,11 @@ CODE_FILES = [
     "_fill_response_r6.py",
     "_fill_response_r6b.py",
     "_update_release_r6.py",
+    "_verify_refs.py",
+    "_verify_openalex.py",
+    "_verify_conf.py",
+    "_find_arxiv.py",
+    "_make_ref_audit_report.py",
 ]
 CODE_EXTRA = [
     ("paper_a", "manuscript", "_patch_r6.py"),
@@ -46,6 +53,7 @@ CODE_EXTRA = [
     ("paper_a", "manuscript", "_patch_r6f.py"),
     ("paper_a", "manuscript", "_patch_r6g.py"),
     ("paper_a", "manuscript", "_patch_r6h.py"),
+    ("paper_a", "manuscript", "_patch_refs_r6.py"),
 ]
 
 
