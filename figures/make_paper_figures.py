@@ -18,23 +18,33 @@ from scipy import stats
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-OUT = os.path.join(HERE, "figures")
+
+# The working tree keeps the raw results at the top level; the frozen
+# release bundles them under results/.  Resolve both, so this script runs
+# unchanged from a fresh Zenodo download.
+RES = ROOT
+for _cand in (ROOT, os.path.join(ROOT, "results")):
+    if os.path.isdir(os.path.join(_cand, "ricci_flow_longrun_results")):
+        RES = _cand
+        break
+# In the release this file ships inside figures/, so it writes next to itself.
+OUT = HERE if os.path.basename(HERE) == "figures" else os.path.join(HERE, "figures")
 os.makedirs(OUT, exist_ok=True)
 
-MASTER = os.path.join(ROOT, "ricci_flow_longrun_results", "analysis",
+MASTER = os.path.join(RES, "ricci_flow_longrun_results", "analysis",
                       "07_merged_with_structure.csv")
-PER_DIR = os.path.join(ROOT, "ricci_flow_longrun_results", "per_dataset")
-SHAM = os.path.join(ROOT, "sham_results", "sham_summary.csv")
-SURGERY = os.path.join(ROOT, "surgery_results", "surgery_paired_v2.csv")
-SYN = os.path.join(ROOT, "synthetic_results")
-CONV = os.path.join(ROOT, "convergence_results", "convergence_rates.csv")
-LOFO = os.path.join(ROOT, "ricci_flow_longrun_results", "analysis",
+PER_DIR = os.path.join(RES, "ricci_flow_longrun_results", "per_dataset")
+SHAM = os.path.join(RES, "sham_results", "sham_summary.csv")
+SURGERY = os.path.join(RES, "surgery_results", "surgery_paired_v2.csv")
+SYN = os.path.join(RES, "synthetic_results")
+CONV = os.path.join(RES, "convergence_results", "convergence_rates.csv")
+LOFO = os.path.join(RES, "ricci_flow_longrun_results", "analysis",
                     "16_lofo_comparison.csv")
 # strict re-run: longest available trajectory per network wins
-STRICT_DIRS = [os.path.join(ROOT, "ricci_flow_deep"),
-               os.path.join(ROOT, "ricci_flow_v2"),
-               os.path.join(ROOT, "ricci_flow_strict")]
-FATE = os.path.join(ROOT, "strict_results", "fate_table.csv")
+STRICT_DIRS = [os.path.join(RES, "ricci_flow_deep"),
+               os.path.join(RES, "ricci_flow_v2"),
+               os.path.join(RES, "ricci_flow_strict")]
+FATE = os.path.join(RES, "strict_results", "fate_table.csv")
 
 # Communications Physics: figures are single- or double-column in a
 # two-column layout; 8 pt labels, colour-blind safe palette.
@@ -147,6 +157,7 @@ def fig1(master):
     #   (e) residual against late-time decay rate, coloured by fate
     #   (f) weight spread at the end of the run, by fate
     drift = []
+    last_step = []
     for fp in sorted(glob.glob(os.path.join(PER_DIR, "*.csv"))):
         name = os.path.basename(fp)[:-4]
         row = master.loc[master["dataset"] == name]
@@ -164,11 +175,17 @@ def fig1(master):
         v = v / v[0]
         k = int(len(v) * 0.75)
         drift.append(v[-1] / v[k] - 1.0)
+        last_step.append(v[-1] / v[-2] - 1.0)
     drift = np.array(drift)
-    note("  old rule labelled %d runs 'saturated'; tail drift over the final "
-         "quarter: median %+.1f%%, %d/%d still falling by >2%%, worst %+.1f%%"
-         % (len(drift), 100 * np.median(drift), int((drift < -0.02).sum()),
-            len(drift), 100 * drift.min()))
+    last_step = np.array(last_step)
+    last_step_down = int((last_step < 0).sum())
+    note("  old rule labelled %d runs 'saturated'" % len(drift))
+    note("    net change over the final quarter: median %+.1f%%, %d/%d negative,"
+         " worst %+.1f%%, best %+.1f%%"
+         % (100 * np.median(drift), int((drift < 0).sum()), len(drift),
+            100 * drift.min(), 100 * drift.max()))
+    note("    change at the terminal step alone: %d/%d negative, median %+.2e"
+         % (last_step_down, len(last_step), np.median(last_step)))
 
     fate = pd.read_csv(FATE)
     stalled = fate[fate["fate"] == "stalled"]
@@ -223,7 +240,7 @@ def fig1(master):
         patch.set_alpha(0.6)
     ax[2].set_xticks([1, 2])
     ax[2].set_xticklabels(["real\nflow", "sham\nflow"])
-    ax[2].set_ylabel("plateau $V_\\infty$")
+    ax[2].set_ylabel("finite-horizon residual $V(T)$")
     ax[2].set_title("c  curvature-edge mapping destroyed", loc="left")
     ax[2].text(0.05, 0.93, "%d/%d pairs, $p=%.1e$" % (higher, len(keep), p_sign),
                transform=ax[2].transAxes, fontsize=7)
@@ -235,10 +252,12 @@ def fig1(master):
     ax[3].set_xlabel("variance change over final quarter (%)")
     ax[3].set_ylabel("runs labelled saturated")
     ax[3].set_title("d  old rule measured elapsed time", loc="left")
-    ax[3].text(0.05, 0.90, "median %+.1f%%\nn=%d, %d/%d still falling"
+    ax[3].text(0.05, 0.86, "median %+.1f%%\nn=%d: %d/%d falling over the\n"
+               "final quarter, %d/%d at the last step"
                % (100 * np.median(drift), len(drift),
-                  int((drift < -0.02).sum()), len(drift)),
-               transform=ax[3].transAxes, fontsize=6.5)
+                  int((drift < 0).sum()), len(drift),
+                  last_step_down, len(drift)),
+               transform=ax[3].transAxes, fontsize=6)
 
     # (e) two fates: residual against the late-time decay rate
     colors = {"stalled": ORANGE, "converging": BLUE, "undecided": GREY}
@@ -300,7 +319,7 @@ def fig2():
     ax[0].set_yscale("log")
     ax[0].set_xticks([0, 1])
     ax[0].set_xticklabels(["topology\npreserved", "surgery\n(edges removed)"])
-    ax[0].set_ylabel("plateau $V_\\infty$")
+    ax[0].set_ylabel("finite-horizon residual $V(T)$")
     ax[0].set_title("a  paired, identical numerics (n=%d)" % len(s), loc="left")
     ax[0].set_xlim(-0.3, 1.3)
 
@@ -486,7 +505,7 @@ def fig4(master):
     m = m[m["var_ratio_final"] > 0]
     note("  primary subset = converged trajectories: n=%d (of %d in the analysis set)"
          % (len(m), len(master)))
-    enz = m[m["dataset"].str.startswith("ENZYMES")]
+    enz = m[(m["dataset"].str.startswith("ENZYMES")) & (m["converged"] == True)]
     rho_t, p_t = stats.spearmanr(enz["transitivity"], np.log10(enz["var_ratio_final"]))
     rho_n, p_n = stats.spearmanr(enz["log10_nodes"], np.log10(enz["var_ratio_final"]))
     note("  within ENZYMES (n=%d): Spearman(plateau, T) = %+.3f (p=%.4f)" % (len(enz), rho_t, p_t))
@@ -528,7 +547,7 @@ def fig4(master):
                   color=BLUE, alpha=0.8)
     ax[1].set_yscale("log")
     ax[1].set_xlabel("transitivity $T$")
-    ax[1].set_ylabel("plateau $V_\\infty$")
+    ax[1].set_ylabel("finite-horizon residual $V(T)$")
     ax[1].set_title("b  within ENZYMES only (n=%d)" % len(enz), loc="left")
     ax[1].text(0.05, 0.9, "$\\rho=%+.2f$ ($p=%.3f$)\npartial$|\\log N = %+.2f$"
                % (rho_t, p_t, pr), transform=ax[1].transAxes, fontsize=6.5)
@@ -570,7 +589,7 @@ def fig5():
     ax[1].set_xscale("log")
     ax[1].set_yscale("log")
     ax[1].set_xlabel("early decay rate (per step)")
-    ax[1].set_ylabel("plateau $V_\\infty$")
+    ax[1].set_ylabel("finite-horizon residual $V(T)$")
     ax[1].set_title("b  faster flow reaches lower", loc="left")
     ax[1].text(0.05, 0.9, "$\\rho=%+.2f$\npartial $|N,\\langle k\\rangle = %+.2f$"
                % (r2, pr), transform=ax[1].transAxes, fontsize=6.5)
@@ -649,7 +668,7 @@ def fig_reg():
     """Scale invariance, estimator repair, and exact transport to 2k steps."""
     note("")
     note("[Fig 3] regularisation: scale invariance and exact transport")
-    r3 = os.path.join(ROOT, "exp_round3")
+    r3 = os.path.join(RES, "exp_round3")
     probe = pd.read_csv(os.path.join(r3, "scale_probe.csv"))
     cmp3 = pd.read_csv(os.path.join(r3, "flow_sinkhorn_exact_eqreg.csv"))
     long = pd.read_csv(os.path.join(r3, "flow_exact.csv"))
@@ -725,10 +744,10 @@ def fig_rate():
     """Fig 8: local relaxation rate r_t = -log(V_t / V_{t-1})."""
     note("")
     note("[Fig 8] local relaxation-rate trajectories")
-    strict = os.path.join(ROOT, "ricci_flow_v2", "per_dataset")
-    fate = pd.read_csv(os.path.join(ROOT, "strict_results", "fate_table.csv"))
+    strict = os.path.join(RES, "ricci_flow_v2", "per_dataset")
+    fate = pd.read_csv(os.path.join(RES, "strict_results", "fate_table.csv"))
     fate_map = dict(zip(fate["dataset"], fate["fate"]))
-    longd = os.path.join(ROOT, "exp_round4", "traj_long")
+    longd = os.path.join(RES, "exp_round4", "traj_long")
 
     fig, ax = plt.subplots(1, 2, figsize=(7.2, 2.7))
 
@@ -762,7 +781,7 @@ def fig_rate():
     a.set_xlabel("step")
     a.set_ylabel(r"local rate $r_t$ (per step)")
     a.set_title("a  $C_4$, 16 strict runs (Sinkhorn)", fontsize=8, loc="left")
-    a.text(0.98, 0.04, "red = near-plateau at horizon\nblue = still relaxing",
+    a.text(0.98, 0.04, "red = Pattern II\nblue = Pattern I",
            transform=a.transAxes, ha="right", va="bottom", fontsize=5.4,
            color="#555")
     a.tick_params(labelsize=6)

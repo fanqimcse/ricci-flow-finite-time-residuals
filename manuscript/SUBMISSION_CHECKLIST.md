@@ -1,6 +1,76 @@
 # Communications Physics 投稿自检清单（Paper A）
 
-状态截至 2026-10-10（**第六轮：二次审查逐条处理 —— 权重语义、g10 一致性、极端跨度数值可靠性 + 参考文献三方核验**）。✅ = 已完成并从原始数据复算；⚠️ = 需作者人工完成；📋 = 建议但非阻塞。
+状态截至 2026-10-11（**第八轮：四次审查逐条处理 —— 公式(2)极限修正、28/28 vs 27/28 重算、$V_\infty$/plateau 标签清理、摘要因果拆分、归档真实复现验证**）。✅ = 已完成并从原始数据复算；⚠️ = 需作者人工完成；📋 = 建议但非阻塞。
+
+
+---
+
+## ✅ 零-D、第七轮修订（2026-10-11）——"3 次审查"逐条处理
+
+逐条回应见 `RESPONSE_TO_REVIEW_ROUND7.md`。审查意见共 9 条（2 条实质性阻断 + 7 条收紧）；结论是"暂时不要投稿"，首要原因是**停止规则统计存在可检验的内部矛盾**。本轮处理如下。
+
+| # | 意见 | 处理 |
+|---|---|---|
+| **1（阻断）** | 停止判据 $\|V_t-V_{t-1}\|/V_t<10^{-5}$ 连续 50 步，与"末 50 步率中位 $4.7\times10^{-3}$、14/16 超 $10^{-4}$、窗口变化 21%"不相容 | 从 `ricci_flow_v2/per_dataset` 逐步重算（新脚本 `_r7_stop.py`），新增 **Supplementary Table S15**。判据在 $C_4$ 上**只触发 1/16**（`kilifi`，分量间项 100%；其 345 步中恰 50 步低于容差且正好是最后 50 步）；其余 15 个被地平线（245–400 步）或 700 s 预算终止，其中 **11 个一步都没进入容差**；让判据在它们终止窗口触发所需容差中位 **$5.1\times10^{-3}$**（≈500×）。Methods「Convergence」段重写；术语三分（rule- / horizon- / budget-terminated + still falling），*near-plateau* 只用于 S16 的三个 5,000 步运行；全稿删除 "operationally stopped" 作为运行标签 |
+| 2 | 修正后判据不能普遍区分正极限与零极限（$\lambda$ 可小到 $1-e^{-\lambda}<10^{-5}$） | 删除"fires on … not on …"的强结论，改为"局部诊断"；式（2）分子下标 $e^{-\lambda t}\to e^{-\lambda(t-1)}$ |
+| 3 | "三网络达到平台"须与停止规则区分 | 摘要 "barely decays over 5,000 steps" → **"moves <0.2% from 2,000 to 5,000 steps"**（并保留"终值高于运行内最小值"）；Results 明写"只关于观测到的 2,000–5,000 步窗口，与 $t\to\infty$ 无关" |
+| 4 | exact-transport 0.1 h 需用原始日志复核 | **复核通过**：9×2,000 步 173.4 s + 3×5,000 步 213.5 s = 386.9 s = **0.107 h**；并补上原因（$C_5$ 只有 5–33 节点 / 6–69 边，单步 5–21 ms，与语料库中位 3.3 s 不可比）。同段另修正两处：**首轮 13 h → 34 h**、**严格重跑 0.6 h → 1.5 h**；34 个断连网络重跑未按运行计时，已声明不报告 |
+| 5 | 极端跨度数值稳定性须保持克制 | Methods 新增：这些控制只界定三种失效模式，**没有**证明残差不含数值误差；参考图检查不作用于被研究网络；两个优化器失败 ≠ 全局最优。只主张"已测试的控制无法解释该残差" |
+| 6 | 权重语义不能再扩展解释 | 摘要 "geometric infimum $V_G^*$" 与正文 Eq.(1) 定义严格对齐（not computed / 不作下界）；摘要末句改为 "the **tested** descriptors" |
+| 7 | 摘要首句过宽 | → "**Certain discrete Ollivier–Ricci flows converge to constant curvature under assumptions; finite computations need a separate reading.**" |
+| 8 | "Homogenisation itself is not in doubt" 过绝对 | → "The variance reduction we observe is **associated with** the curvature–edge correspondence **under the intervention we tested** … evidence of association, **not a proof that the correspondence is necessary**" |
+| 9 | 合成/跨家族结论不要超样本 | 摘要 "structure" → "the tested descriptors"；讨论传递性加 "**in the synthetic design we tested**" |
+
+### 本轮硬数字（全部可从原始数据复算）
+
+- 判据触发：**1/16**；从未进入容差的运行 **11/15**；所需容差中位 **$5.1\times10^{-3}$/步**（范围 $4.2\times10^{-5}$–$1.7\times10^{-2}$）
+- 三个 5,000 步精确传输运行：最长连续满足段 **3,920 / 4,241 / 3,938** 步；末 50 步最大相对步长 $1.3\times10^{-7}$ / $8.9\times10^{-11}$ / $1.1\times10^{-13}$（新表 **S16**）
+- 终止窗口统计（重算复核，与 S10 一致，未改动）：中位 $r_t=4.7\times10^{-3}$，范围 $-3.3\times10^{-5}$–$1.7\times10^{-2}$，14/16 超 $10^{-4}$，2 个负率，末 50 步 $\|\Delta V\|$ 中位 21%、最大 58%
+- 编译：**0 error / 0 undefined / 27 页 / 主文 5,000 词 / 摘要 150 词 / 10 display items / 45 条参考文献 / 补充表 S1–S16**
+
+### 仍待作者完成（需 token）
+
+1. 推送 `github_release` 并发 v1.0.1（本地已同步 S15/S16、`_r7_stop.py` 与最新稿件）。
+2. 向 Zenodo 申请新版本 DOI（稿件 DOI 仍指向 v1.0.0，S15–S16 未进归档）。
+3. SWH 归档完成后补 SWHID。
+
+
+---
+
+## ✅ 零-G、第八轮修订（2026-10-11）——"4 次审查"逐条处理
+
+逐条回应见 `RESPONSE_TO_REVIEW_ROUND8.md`；归档复现日志见 `ARCHIVE_REPRODUCTION_CHECK.md`。审查含 8 条实质/理论意见 + 格式项，结论仍为"暂时不要投稿"，阻断项为第 1–3 条。
+
+| # | 意见 | 处理 |
+|---|---|---|
+| **1（数学错误）** | 式(2) 中 $V_\infty=0$ 时极限应为 $e^{\lambda}-1$，$1-e^{-\lambda}$ 属 $V_{t-1}$ 分母 | **算错的是我们，已改**：式(2) 并列给出两个分母、说明分子相同而分母不同、分别给出极限（$V_\infty=0	o e^{\lambda}-1$ 而非 0；$V_\infty>0$ 时按 $e^{-\lambda t}/V_\infty$ 衰减）；下游条件改为 $\lambda<\ln(1+10^{-5})$。$1-e^{-\lambda}$ 仅保留在**旧规则**（分母 $V_0$）的分析处，且不再与 $R_t$ 混同 |
+| **2（数字不一致）** | 摘要 28/28 与图 2d 的 27/28 冲突，且不得直接二选一 | **回原始轨迹重算两个统计**：末四分之一净变化为负 **27/28**（中位 $-24.7\%$，最大 $-84.9\%$）；末一步下降 **26/28**（两个末步上升者幅度仅 $8.0\times10^{-5}$ 与 $1.7\times10^{-4}$，即 $<0.02\%$；其中 `aves-sparrow-social-2009` 整段上升 $+1.1\%$，另一 `ENZYMES_g106` 整段降 $-39.7\%$）。**新表 S17**（28 行，含 `last_step_down`/`q4_net`/`q4_monotone`/`end_over_q4min`）。摘要/结果/讨论/方法/图内标注/图注六处统一为"27/28 末四分之一，26/28 末一步" |
+| **3（$V_\infty$ 标签）** | 图 2/4/5/6 仍标 plateau $V_\infty$，与"有限时间非渐近"论点冲突 | 采用审查者术语表全稿清理：轴标签与图内标注 → **finite-horizon residual $V(T)$**；达到阈值 → **reached the operational threshold**；小末段变化 → **near-plateau over the observed window**；本研究的规则 → **operational stopping criterion**。已用 `pdftotext` 抽 8 图文本层复核：**无 $V_\infty$/plateau/converge 轴标签残留**；$V_\infty$ 仅存于式(2)解析模型 |
+| 4 | 摘要把"步长稳定性"与"延长运行时长"混写 | 拆为两句：**at matched physical time the residual is stable to step size**; **extending three runs from 2,000 to 5,000 steps moves it by <0.2%**，两者各带"仅限所测轨迹"限定 |
+| 5 | "任何衰减轨迹都会通过旧规则"过宽 | → "with $V_0$ fixed … **any run whose increment tends to zero may eventually satisfy it — exponential decay is the textbook case**"，并写明机制（分母恒定、分子衰减） |
+| 6 | Methods 与标注中 "converged" 未统一 | "41 runs satisfy the convergence criterion" → **operational stopping criterion … neither count is a convergence claim**；$V\le10^{-6}V_0$ → **reached the operational threshold**（3 处）；全稿无运行被称 "converged" |
+| 7 | 极端跨度数值可靠性不得扩大 | 维持上限，只主张"**the tested numerical controls do not** account for the residual"，并紧接列出**未**建立的三件事（非无伪影、非全局最优、未测控制未必失败）。未加强任何方向 |
+| **8（可复现性）** | 要求实际验证 DOI、归档包与关键结果 | **已实际执行**：DOI 双源解析成功；从 DOI 下载 10.79 MB / 603 条目包到空目录；用归档自带结果重建**全部 8 图**，数据日志 **84 行逐字节一致**。**检查发现真实缺陷**：发布脚本 4 处路径仍指向包根而非 `results/`，干净环境**跑到第 3 图即 `FileNotFoundError`**（工作树不可见）；已修（改用既有 `RES`），重跑通过并加断言禁止回归。另发现归档只含 S1–S10 而正文引 S1–S17、且缺 S15/S17 生成脚本 —— 已补齐 |
+
+### 格式项
+
+- 摘要压至 **145 词**（目标 140–145）；标题改为 **"What finite-time computations reveal about graph curvature flows"**（9 词、无冒号、无术语堆砌，直接陈述贡献）
+- 展示材料 8 图 + 2 表 = **10 项**，在期刊区间内；可编辑 LaTeX 源 + 独立 PDF/PNG 图文件均在发布包内
+- 45 条参考文献第六轮已三方核验；本轮复查 **0 漏引 / 0 未被引 / 0 重复**
+
+### 本轮硬数字
+
+- 式(2)：$R_tig|_{V_\infty=0}=e^{\lambda}-1$；旧规则 $R_t^{(0)}	o1-e^{-\lambda}$；判定条件 $\lambda<\ln(1+10^{-5})$
+- S17：末四分之一下降 **27/28**（中位 $-24.7\%$，最强 $-84.9\%$）；末一步下降 **26/28**；两个末步上升者幅度 $8.0\times10^{-5}$ / $1.7\times10^{-4}$（$<0.02\%$），其中一条整段上升 $+1.1\%$、另一条整段降 $-39.7\%$
+- 归档复现：**8/8 图重建，84/84 行数字一致**；缺陷 4 处路径，已修并复验
+- 编译：**0 error / 0 undefined / 27 页 / 主文 4,998 词 / 摘要 145 词 / 10 display items / 45 条参考文献 / 补充表 S1–S17**
+
+### 仍待作者完成（需 token / 外部服务）
+
+1. 推送 `github_release`（已含修正脚本、S15–S17、`_r7_stop.py`/`_r8_tail.py`）并发 **v1.0.1**。
+2. **投稿前必须**：以修正后的包重新归档申请新 Zenodo 版本 DOI，并更新稿件中的 DOI —— 当前稿件引用的 v1.0.0 归档早于 S11–S17 且含上述路径缺陷。
+3. SWH 归档完成后补 SWHID。
+4. 撤下此前在项目中泄露的个人访问令牌。
 
 ---
 

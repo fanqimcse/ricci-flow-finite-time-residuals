@@ -32,7 +32,8 @@
 % independence hierarchy, sham reported on all 25 pairs as primary.
 % corpus divided the per-step variance change by the INITIAL variance, so a
 % slow exponential decay was eventually declared saturated (28/28 runs so
-% labelled were still falling, median -24.7% over the final quarter). All
+% labelled were still falling over the final quarter (27/28; 26/28 at the
+% terminal step), median -24.7% over the final quarter). All
 % saturation-dependent numbers were recomputed after re-running with a
 % corrected criterion (per-step move divided by the CURRENT variance,
 % tol 1e-5 for 50 consecutive steps) and, for four networks, with runs of
@@ -53,8 +54,7 @@
 \newcommand{\kappaedge}{\kappa}
 \newcommand{\Var}{\mathrm{Var}}
 
-\title{Finite-time residuals in discrete {Ollivier}--{Ricci} flow:
-  a measurement framework, its controls, and its limits}
+\title{What finite-time computations reveal about graph curvature flows}
 
 \author{%
   Qi Fan\thanks{Huaibei Normal University, Huaibei 235000, China.
@@ -68,21 +68,20 @@
 
 %------------------------------------------------------------------------------
 \begin{abstract}
-Discrete {Ricci} flow on a connected weighted graph converges to constant
-curvature; finite computations differ. Here we separate four
-conflated quantities: the finite-horizon residual, its numerical counterpart,
-the trend, and the geometric infimum $V_G^*$ (not computed here). First,
-the stopping rule used in empirical work normalises the per-step variance
-change by its initial value, which any decaying run passes: all $28$ runs it
-labelled saturated were still falling. Second, on a disconnected graph the
-pooled variance contains a between-component term that need not vanish; within
-components it falls on $34/34$ networks, median factor $5.7$. Third, under
-exact transport the residual is largely stable to step-size variation and
-barely decays over $5{,}000$ steps; fixed-$\varepsilon$ regularisation breaks
-scale invariance. A finite-time residual is a measurement, not a
-convergence certificate: a sham control destroying the curvature--edge map
-yields larger residuals ($8/8$ families); structure does not predict the
-residual across families.
+Certain discrete {Ollivier}--{Ricci} flows converge to constant curvature
+under assumptions; finite runs need their own reading. Four quantities are
+conflated: finite-horizon residual, numerical counterpart, trend, and the
+infimum $V_G^*$ (not computed). First, the stopping rule divides the per-step
+variance change by its initial value, a ratio that shrinks with elapsed time:
+$27$ of the $28$ runs it labelled saturated were still falling over the final
+quarter. Second, a disconnected graph's pooled variance includes a
+between-component term; within components it falls on $34/34$ (median
+$5.7\times$). Third, at matched physical time the residual is stable to step
+size; extending three runs from $2{,}000$ to $5{,}000$ steps moves it by
+$<$$0.2\%$, and fixed-$\varepsilon$ regularisation is not scale invariant. A
+finite-time residual is a measurement, not a convergence certificate: breaking
+the curvature--edge map raises it ($8/8$), and the tested descriptors do not
+predict it across families.
 \end{abstract}
 %------------------------------------------------------------------------------
 \section*{Introduction}
@@ -111,10 +110,9 @@ geometric language below is therefore an interpretation of a discrete
 construction, not a statement about a recovered manifold. This \emph{discrete Ricci flow} is used for community detection
 \cite{Ni2019,LaiBaiLin2022}, graph drawing, network comparison and the analysis
 of biological and infrastructural networks
-\cite{Sandhu2016,Samal2018,JostLiu2014,GosztolaiArnaudon2021}---the last of
-these studies a \emph{dynamical} curvature in which weights diffuse under an
-external process, a different evolution from the curvature-driven metric flow
-considered here---and sits within the broader programme of describing networks
+\cite{Sandhu2016,Samal2018,JostLiu2014,GosztolaiArnaudon2021}---the last studies a
+\emph{dynamical} curvature, not the curvature-driven metric flow considered
+here---and sits within the broader programme of describing networks
 as geometric objects \cite{Krioukov2010,Boguna2021}.
 
 Two of these results change the update rule or the graph. The continuous-time
@@ -155,15 +153,17 @@ Nothing below is a lower bound on $V_G^*$. The question is not
 what a finite computation can be read as saying.
 
 What we find, in outline. The stopping rule used in empirical work is not a
-convergence test: all $28$ runs it labelled saturated were still falling. The
+convergence test: $27$ of the $28$ runs it labelled saturated were still
+falling. The
 pooled variance on a disconnected graph is dominated by a between-component
 term that need not vanish, so a third of the corpus looks like a failure when
 it is not. Fixed-$\varepsilon$ entropic regularisation breaks the scale
 invariance that would license the standard renormalisation as a gauge fixing.
 After all of these are controlled, connected networks from one single family
 still relax unusually slowly---a case study, not a demonstration that $V_G^*$
-is positive. Homogenisation itself survives every control and depends on the
-curvature--edge correspondence ($8/8$ families), while the
+is positive. The variance reduction we observe survives every control and is
+associated with the curvature--edge correspondence under the intervention we
+tested ($8/8$ families), while the
 structure-to-residual map does not transfer across families. Throughout, the
 source family, not the dataset, is the unit of independence
 \cite{CameronGelbachMiller2008,MacKinnonNielsenWebb2023}, and results resting
@@ -173,7 +173,7 @@ Seven controls reversed our own preliminary readings---a plateau near $0.20$
 that was a horizon artefact, a community effect that shrank six-fold at
 saturation, a spectral-gap hypothesis that failed outright, and the claim that
 the per-step renormalisation is a gauge fixing. We report all seven: the
-controls, not any single effect, are the transferable part of this work.
+controls, not any single effect, are the transferable part.
 
 %------------------------------------------------------------------------------
 \section*{Results}
@@ -188,7 +188,7 @@ the $80$ long enough to share a common step grid; $C_4$, the $16$ of the
 extended strict re-run ($7$ families); and $C_5$, the $9$ re-run under exact
 transport ($5$ families).
 
-Two further distinctions organise the evidence. The first is an
+Two distinctions organise the evidence. The first is an
 \emph{evidence tier}: a result is \emph{primary} when it rests on at least
 eight independent source families and \emph{exploratory} when it rests on fewer
 than five, in which case its $p$-value is an upper bound on the evidence rather
@@ -197,7 +197,7 @@ decomposition and the main variance contraction are primary; the surgery
 control ($2$ families), the transitivity manipulation ($2$ base graphs) and the
 assortativity and community sweeps ($4$ base graphs) are exploratory.
 
-The second distinction organises the paper. A number produced by a finite
+The second organises the paper. A number from a finite
 computation can be any of four things, and empirical work reports them
 interchangeably:
 \begin{align}
@@ -223,33 +223,44 @@ transport, $\dot w=-\kappaedge w$) on every network and stop when the
 curvature variance $\sigma^2(t)$ stops changing. The rule used in earlier
 studies---and in our own first pass---declares saturation when
 $|\sigma^2(t)-\sigma^2(t-1)|/\sigma^2(0)$ falls below a tolerance. Under it
-$28$ runs were labelled saturated and \emph{all} were still falling---the
-variance dropped by a median $24.7\%$ over the final quarter of each run and by
-up to $84.9\%$ (Fig.~\ref{fig:2}d). Residuals reported from such runs are
+$28$ runs were labelled saturated. Two statistics describe them, and they
+are not interchangeable: the variance fell over the final quarter in
+$27$ of the $28$ (median $-24.7\%$, greatest $-84.9\%$; Fig.~\ref{fig:2}d) and
+at the terminal step in $26$ of the $28$; the two that rose at the last step did
+so by $<$$0.02\%$, and one rose $1.1\%$ over the quarter
+(Supplementary Table~S17). Residuals reported from such runs are
 values along a trajectory, not asymptotes.
 
 Suppose $V_t=V_\infty+Ae^{-\lambda t}$. Then
 \begin{equation}
-  \frac{|V_t-V_{t-1}|}{V_t}\;\simeq\;
-  \frac{A(1-e^{-\lambda})e^{-\lambda t}}{V_\infty+Ae^{-\lambda t}},
+  \frac{|V_t-V_{t-1}|}{V_t}\;=\;
+  \frac{A(1-e^{-\lambda})e^{-\lambda (t-1)}}{V_\infty+Ae^{-\lambda t}},
   \qquad
-  \frac{|V_t-V_{t-1}|}{V_0}\;\simeq\;
-  \frac{A(1-e^{-\lambda})e^{-\lambda t}}{V_0},
+  \frac{|V_t-V_{t-1}|}{V_0}\;=\;
+  \frac{A(1-e^{-\lambda})e^{-\lambda (t-1)}}{V_0},
   \label{eq:stoprate}
 \end{equation}
 the numerators are the same and both decay, but the denominators are not.
 With $V_0$ fixed the ratio decays like $e^{-\lambda t}$ whatever $V_\infty$ is,
 so the rule reports elapsed time; with $V_t$ in the denominator it tends to
-$1-e^{-\lambda}$ when $V_\infty=0$---not to zero---and to zero like
-$e^{-\lambda t}/V_\infty$ when $V_\infty>0$. The corrected rule fires on runs
-settling onto a positive value and not on runs still decaying towards zero.
-That is the diagnostic we want, and it is still not a convergence theorem: it
-says the variance has stopped moving relative to itself over the observed
-window, nothing about the limit. We call it an \emph{operational stopping criterion} throughout, never a convergence criterion. Re-running
-population $C_4$ ($n=16$; Methods) under it lowers the median residual from
-$0.160$ to $0.109$, in $75\%$ of networks, and the corrected residual spans
-five orders of magnitude ($1.9\times10^{-6}$ to $0.51$)---a range no single
-\``plateau'' value summarises.
+$e^{\lambda}-1$ when $V_\infty=0$---not to zero---and to zero like
+$e^{-\lambda t}/V_\infty$ when $V_\infty>0$. The direction is the one we want, but the
+inference is not valid in general: whenever $\lambda<\ln(1+10^{-5})$ a
+trajectory decaying all the way to zero also satisfies the test, and demanding
+$50$ consecutive steps does not remove that.
+The corrected rule is a local diagnostic---it says the variance has stopped
+moving relative to itself over the observed window, nothing about the
+limit---and we call it an \emph{operational stopping criterion} throughout,
+never a convergence criterion. It is far
+stricter than it looks: on the $16$-network re-run of $C_4$ it fired once, on
+\texttt{kilifi} alone, the other $15$ runs stopping on their step horizon or
+their wall-clock budget (Methods, Supplementary Table~S15). \texttt{kilifi} is a
+disconnected network whose pooled variance is $100\%$
+between-component---one observation consistent with the argument above, not a
+demonstration of it. Reaching the longer horizon lowers the median residual over
+the same $16$ networks from $0.160$ to $0.109$ (in $75\%$ of them), and the
+residual spans five orders of magnitude, a range no single \``plateau'' value
+summarises.
 \subsection*{The pooled estimator hides per-component uniformisation}
 
 The residual is conventionally the variance of the pooled set of edge
@@ -271,9 +282,8 @@ curvature,
 \end{align}
 the decomposition is exact at every weight configuration. For a connected graph
 $V_{\mathrm{between}}=0$ and the outcomes coincide, so the correction touches
-only the disconnected third of the corpus---but there it is decisive (Methods
-gives the per-network numbers). The extreme case shows that a nonzero pooled
-residual can carry no information about uniformisation at all. Let
+only the disconnected third of the corpus---but there it is decisive
+(Methods). Let
 $G=G_1\sqcup G_2$ and suppose the flow drives each component to constant
 curvature, $\kappa_e=\kappa_i$ on $E_i$, with $\kappa_1\neq\kappa_2$. Then
 $V_{\mathrm{within}}=0$ while
@@ -283,9 +293,9 @@ $V_{\mathrm{within}}=0$ while
 \end{equation}
 which is positive and says nothing about whether the flow succeeded. We verified
 Eq.~(\ref{eq:union}) numerically: for $C_5\sqcup C_9$ at unit weights the
-curvatures are $0.25$ and $0$, the measured within-component variance is
-$0$ to machine precision, and the pooled variance is $1.43495\times10^{-2}$
-against the predicted $1.43495\times10^{-2}$ (Supplementary Table~S8).
+curvatures are $0.25$ and $0$, the within-component variance is $0$ to
+machine precision, and the pooled variance is $1.43495\times10^{-2}$ against the
+predicted value (Supplementary Table~S8).
 A graph can therefore be perfectly uniformised within every component and still
 report a nonzero pooled residual.
 \begin{table}[t]
@@ -310,7 +320,7 @@ g105    & 1 & 115 & $1.30\times10^{-2}$ & $1.30\times10^{-2}$ & $3.1\times10^{-1
 disconnected network of $C_4$ the within-component variance falls by one to
 three orders of magnitude while the pooled variance does not. The two connected
 networks are shown for contrast. Horizons differ because each run had a
-wall-clock budget, so the connected residuals are finite-horizon values.}
+wall-clock budget.}
 \label{tab:components}
 \end{table}
 
@@ -324,33 +334,35 @@ behaviour of the two most extreme networks, not the typical one, and we
 withdraw it.
 
 Two of the four Pattern~II networks (\texttt{kilifi}, \texttt{oman})
-are disconnected, and for both the near-plateau is fully accounted for
-by this term: on those two the flow did not fail. The two that
+are disconnected, and for both the residual at the horizon is fully accounted
+for by this term: on those two the flow did not fail. \texttt{kilifi} is also
+the only run of $C_4$ on which the operational rule fired; \texttt{oman} stopped
+on its horizon (Supplementary Table~S15). The two that
 remain---\texttt{ENZYMES\_g105} and \texttt{ENZYMES\_g106}---are connected,
 so their residual is within-component and is not an estimator artefact.
 
 We treat these two as \emph{case studies}: two graphs from one family out of seventeen support no prevalence claim. A third connected graph of the same family,
 \texttt{ENZYMES\_g10}, was classified Pattern~I at the $400$-step horizon of
 the {Sinkhorn} re-run and is therefore not one of the two; under exact
-transport it also stops moving, but later and from a higher residual
+transport it also flattens, but later and from a higher residual
 (Section~\emph{Extended horizon}, Supplementary Table~S11). We report all
 three on equal terms there and count all three as one family. Under every numerical control we applied---exact transport, a
 scale-equivariant schedule, a ten-fold range of step size, a $5{,}000$-step
 horizon and two independent optimisers---they exhibited unusually slow
-relaxation. Not having computed $V_G^*$, we cannot distinguish a topology-constrained limit from a metastable transient longer than any horizon we could afford.
+relaxation.
 \subsection*{Two finite-horizon relaxation patterns}
 
 Subject to that correction the remaining spread separates into two behaviours
 (Fig.~\ref{fig:2}e,f). Classifying each run by its decay rate over the final
 quarter, $11$ networks show Pattern~I (continued relaxation): the residual keeps
 falling at a median $-5.5\times10^{-3}$ per step and has reached a median of
-$0.024$. Four show Pattern~II (near-plateau over the observed horizon): the
-decay decelerates below $10^{-4}$ per step and the residual sits at a median of
-$0.17$ ($0.154$--$0.238$); one is undecided. Two of the four are the
-disconnected networks explained above. These are descriptions of what happened
-inside a horizon, not claims about limits.
+$0.024$. Four show Pattern~II (slow relaxation at the observed horizon): their
+decay rate over the final quarter falls below $10^{-4}$ per step and the
+residual sits at a median of
+$0.17$ ($0.154$--$0.238$); one is undecided. The label describes a terminal
+window, not a limit.
 
-Because a rate estimated in one window says nothing about the next,
+A rate estimated in one window says nothing about the next, so
 Fig.~\ref{fig:8} plots the local rate $r_t=-\log(V_t/V_{t-1})$ for all $16$
 runs of $C_4$: $r_t>0$ is decay, $r_t\approx0$ a plateau, $r_t<0$ a rebound.
 The patterns appear as two bands; the $10^{-3}$ per step line between them is a
@@ -370,7 +382,7 @@ In Pattern~II the weights span $10^{5}$--$10^{11}$, so the transport cost
 matrices are badly scaled and the entropy-regularised Sinkhorn surrogate is at
 its weakest: a residual measured there could be an artefact of the
 regularisation strength, the solver tolerance or floating-point resolution
-rather than a property of the graph. We ran five controls; the first uncovered
+rather than of the graph. We ran five controls; the first uncovered
 an error in our own framing.
 
 \emph{Scale invariance.} For the exact curvature
@@ -409,24 +421,22 @@ within-component residual by $+0.009\%$ (\texttt{g105}), $+0.0002\%$
 (\texttt{g106}) and $+0.17\%$ (\texttt{g10}); in absolute terms
 $1.1\times10^{-6}$, $6.8\times10^{-8}$ and $8.7\times10^{-5}$, while the
 weight span grows to $10^{65}$--$10^{72}$
-(Supplementary Table~S11). All three therefore meet the same descriptive
-near-plateau criterion used elsewhere in the paper---a relative per-step move
-of the variance below $10^{-5}$ sustained for at least $50$ consecutive
-steps---and all three sustain it for $3{,}900$--$4{,}200$ of their $5{,}000$
-steps. We report the three together and count them as one family, not as three
-independent observations.
+(Supplementary Table~S11). All three satisfy the descriptive criterion used
+elsewhere in the paper---a relative per-step move of the variance below
+$10^{-5}$ sustained for at least $50$ consecutive steps---for
+$3{,}920$--$4{,}241$ consecutive steps, and on $79$--$85\%$ of all $5{,}000$
+steps (Supplementary Table~S16); they are the only runs here on which it is
+met. What follows is a statement about the $2{,}000$--$5{,}000$-step window we
+observed and nothing about $t\to\infty$. We report the three together and count
+them as one family, not as three independent observations.
 
 They are not interchangeable, which is why two of them carry the case
-study. \texttt{g10} is still relaxing at step $1{,}000$: its
-residual falls $14.3\%$ between steps $1{,}000$ and $1{,}500$ before
-flattening, so its plateau begins later and at a value
-($5.2\times10^{-2}$) that is not comparable with a $2{,}000$-step reading of
-the other two. Its terminal drift is correspondingly larger---a median local
-rate $r_t = -1.4\times10^{-7}$ per step over the final $500$ steps, against
-$-1.3\times10^{-10}$ (\texttt{g105}) and $-2.4\times10^{-13}$
-(\texttt{g106})---but still three orders of magnitude below the descriptive
-$10^{-3}$ per step line. In all three the sign of $r_t$ at the end of the run
-is negative: the variance is rising, not falling, and the residual at the
+study: \texttt{g10} is still relaxing at step $1{,}000$ (its residual falls
+$14.3\%$ between steps $1{,}000$ and $1{,}500$), so its plateau begins later
+and at a value ($5.2\times10^{-2}$) not comparable with a $2{,}000$-step
+reading of the other two, and its terminal drift ($r_t=-1.4\times10^{-7}$ per
+step, against $-1.3\times10^{-10}$ and $-2.4\times10^{-13}$) is larger but
+still three orders of magnitude below the $10^{-3}$ line. In all three the sign of $r_t$ at the end of the run is negative: the variance is rising, not falling, and the residual at the
 horizon lies above the minimum reached earlier in the same run by $0.5\%$
 (\texttt{g10}), $2.8\%$ (\texttt{g105}) and $11\%$ (\texttt{g106}). A
 finite-horizon residual is a value on a non-monotone trajectory, not a
@@ -439,13 +449,11 @@ at most $0.033\%$ on the seven networks that have not reached the operational
 uniformisation threshold by then, and by up to $4.9\%$ on the two that have
 (\texttt{aves-weaver-social-14}, $8.0\times10^{-6}\to7.8\times10^{-6}$, and
 \texttt{scc\_rt\_http}, $1.06\times10^{-5}\to1.01\times10^{-5}$;
-Supplementary Table~S7). Both of the larger changes are on residuals already
-at the uniformisation threshold, so $4.9\%$ of $10^{-5}$ is $5\times10^{-7}$
-in absolute units and affects no conclusion drawn from them. The same caveat
-applies to the disconnected networks, whose within-component residual is
-already $\sim10^{-7}$ and moves by up to $18.6\%$ in relative terms on
-\texttt{scc\_rt\_oman} ($7.1\times10^{-8}\to5.8\times10^{-8}$), although by
-only $1.3\times10^{-8}$ in absolute terms. What we can claim is therefore that
+Supplementary Table~S7). Both of the larger changes are on residuals already at
+the uniformisation threshold, so $4.9\%$ of $10^{-5}$ is $5\times10^{-7}$ in
+absolute units. The same caveat applies to \texttt{scc\_rt\_oman}
+($7.1\times10^{-8}\to5.8\times10^{-8}$: $18.6\%$ in relative terms,
+$1.3\times10^{-8}$ in absolute terms). What we can claim is therefore that
 the residual is \emph{largely stable to step-size variation at matched physical
 time for the tested non-converged trajectories}. That is weaker than
 step-size convergence---one physical time, one idleness, one initial weighting
@@ -478,10 +486,10 @@ all $8/8$ families show the sham arm higher
 $p = 3.9\times10^{-3}$; cluster-bootstrap $95\%$ interval for the median
 log-ratio gap $[-2.60, -0.69]$, excluding zero), and the worst
 leave-one-family-out $p$ is $9.2\times10^{-4}$
-(Fig.~\ref{fig:2}c, Methods). The effect size is unchanged---a median factor
-of $2.6$---but the evidence is that of $8$ clusters, not $25$ networks. Destroying the
-curvature--edge mapping does not merely slow the flow; it suppresses
-homogenisation over the tested horizon, by a median factor of $2.6$. The
+(Fig.~\ref{fig:2}c, Methods). The effect size is unchanged (a median factor
+of $2.6$), but the evidence is that of $8$ clusters, not $25$ networks.
+Destroying the curvature--edge mapping does not merely slow the flow; it
+suppresses homogenisation over the tested horizon. The
 homogenisation we observe is therefore \emph{associated with} the geometric
 correspondence between edge curvature and edge update, and is not reproduced by
 the update rule alone when that correspondence is randomly destroyed. The
@@ -532,7 +540,7 @@ scale: the arms end in the same state and differ only in arrival time
 accelerates $11$-fold. Nothing measured in one window predicts the next. Within
 the tested design, transitivity was the structural variable most clearly
 associated with the observed relaxation-time difference, while the assortativity
-change carried along with it accounts for only $2.5$--$3.4\%$ of the effect.
+change carried along with it accounts for only $2.5$--$3.4\%$ of it.
 Two earlier readings are withdrawn: that transitivity raises the
 \emph{plateau} by $25$--$37\times$, and that it selects a relaxation pattern.
 Both were horizon artefacts. The manipulation rests on two base graphs and is
@@ -543,7 +551,8 @@ community effect shrinks from $6.1\times$ to $1.35\times$.
 \subsection*{The structure-to-residual map does not transfer}
 
 Transitivity and assortativity correlate with the residual within bases and
-within the largest family in our corpus (ENZYMES, $n=15$ converged:
+within the largest family in our corpus (ENZYMES, $n=15$ at the operational
+threshold:
 $\rho = +0.73$ for transitivity, $p = 0.002$). But the correlation is
 \emph{not} a predictor. In leave-one-family-out cross-validation across 25
 networks, only assortativity rises even marginally above the intercept
@@ -582,29 +591,29 @@ stable in only $58\%$ of replicates. We report this as the negative result it
 is: in this sample we find no evidence that the initial spectral gap predicts the
 observed early decay rate. It does not
 follow that mean degree is the causal driver---a regression coefficient on
-observational network data is not an intervention---and we do not claim it.
+observational network data is not an intervention.
 What the rate tracks is where the flow is at the end of the run
 ($\rho=-0.43$; partial $\rho=-0.63$ controlling for size and mean degree;
 Fig.~\ref{fig:7}b). At the network level this is significant
 ($p=1\times10^{-5}$), but the family-level interval is $[-0.68,+0.16]$ and
 includes zero, so we withdraw our earlier formulation of it as a result. Part of
-the association is definitional in any case: the fitted rate and the final
-variance are two summaries of the same trajectory.
+the association is definitional: the fitted rate and the final variance
+summarise the same trajectory.
 
 %------------------------------------------------------------------------------
 \section*{Discussion}
 
 Four statements survive the controls above, in order of evidential
-strength, each stated at the level the evidence supports.
+strength, each at the level its evidence supports.
 
 \emph{1. A finite-time residual is not a convergence certificate.} The stopping
 rule used in empirical work divides the per-step change of the variance by its
 initial value; Eq.~(\ref{eq:stoprate}) shows that this ratio decays like
-$e^{-\lambda t}$ whatever the limit is, so the rule reports elapsed time. All
-$28$ runs it labelled saturated were still falling. The \emph{operational
+$e^{-\lambda t}$ whatever the limit is, so the rule reports elapsed
+time---$27$ of the $28$ runs it labelled saturated were still falling. The
+\emph{operational
 stopping criterion} used instead says only that the variance has stopped moving
-relative to itself over the observed window; every residual here is reported
-with its horizon.
+relative to itself over the observed window.
 
 \emph{2. On a disconnected graph the pooled curvature variance can
 substantially overstate within-component non-uniformity.} Eq.~(\ref{eq:union})
@@ -613,11 +622,10 @@ can be perfectly uniformised within every component and still report a nonzero
 residual. The between-component term is a function of the component mean
 curvatures, which themselves evolve, so we do not claim that it cannot
 decay---only that it need not, and that on this corpus it does not. Across all
-$34$ disconnected networks of the analysis set the within-component variance
-falls, by a median factor of $5.7$; our earlier claim of three to four orders of
-magnitude on every disconnected network is withdrawn. A third of the corpus is
+$34$ disconnected networks of the analysis set it falls by a median factor of
+$5.7$; our earlier claim of three to four orders of magnitude is withdrawn. A third of the corpus is
 disconnected and the pooled variance is the standard reporting choice, so the
-correction applies to previous empirical work as much as to ours.
+correction applies to previous work too.
 
 \emph{3. Entropic regularisation changes the numerical curvature dynamics
 unless its scale is controlled.} With $\varepsilon$ held fixed the regularised
@@ -626,8 +634,7 @@ renormalisation as a gauge fixing is unavailable and we withdraw it. Exact
 transport and a scale-equivariant schedule restore invariance, and the residual
 survives both: at a matched horizon it moves by $\le9.7\%$ over a $20$-fold
 $\varepsilon$ reduction and by $\le4.9\%$ over a ten-fold $\Delta t$ range at
-$T=20$, the larger figure occurring on residuals already at the uniformisation
-threshold. We claim that the residual is not explained by the tested controls;
+$T=20$. We claim that the residual is not explained by the tested controls;
 we do not claim immunity to every regularisation, conditioning or precision
 effect.
 
@@ -638,26 +645,28 @@ seventeen---changed their within-component residual by $+0.009\%$, $+0.0002\%$
 and $+0.17\%$ over $3{,}000$ further steps of exact transport, to a
 $5{,}000$-step horizon, while their weight span grew to $10^{65}$--$10^{72}$;
 at those weights the residual survives every numerical diagnostic we applied
-(Methods). Two of the three carry the full control battery and are the case
-study of Fig.~\ref{fig:8}; the third flattened later and from a higher residual
-and is reported on equal terms. We treat all three as one case study; a metastable transient longer than any horizon we could afford fits the data equally well.
+(Methods). Two of the three carry the full control battery; the third flattened
+later and from a higher residual. A metastable transient longer than any horizon
+we could afford fits the data equally well.
 
-Homogenisation itself is not in doubt and is tied to the curvature--edge
-correspondence: destroying it in the sham control is associated with suppressed
-homogenisation in $8/8$ families---under one intervention, not a proof of
-necessity. What remains unpredicted is which real networks relax quickly: the
+The variance reduction we observe is associated with the curvature--edge
+correspondence under the intervention we tested: destroying it in the sham
+control is associated with suppressed homogenisation in $8/8$ families. One
+intervention in one finite window is evidence of association, not a proof that
+the correspondence is necessary, nor that every network or flow scheme must
+homogenise. What remains unpredicted is which real networks relax quickly: the
 structure-to-residual map does not transfer across families, transitivity moves
-the relaxation time and not the endpoint, and a rate measured in one window
+the relaxation time and not the endpoint \emph{in the synthetic design we
+tested}, and a rate measured in one window
 carries no information about the next, which is why Fig.~\ref{fig:8} reports
 the rate trajectory rather than a classification.
 
 Table~\ref{tab:assumptions} sets out, hypothesis by hypothesis, why the
 convergence theorem most relevant to us does not transfer to the scheme studied
 here---a statement about the hypotheses, not a criticism of the theorem. Where
-the hypotheses hold we observe what the theorem predicts, and the remaining
+the hypotheses hold we observe what the theorem predicts; the remaining
 differences---exponential versus Euler update, regularised versus exact
-transport---we tested directly rather than leaving them open (Methods); neither
-produces the residual.
+transport---we tested directly (Methods), and neither produces the residual.
 
 \begin{table}[t]
 \centering
@@ -683,7 +692,7 @@ For practitioners: stop when the variance stops moving relative to
 \emph{itself}; report the within-component variance whenever the graph is
 disconnected; with a fixed-$\varepsilon$ solver report $\varepsilon/s_t$ or use
 a scale-equivariant schedule; treat neither the residual as predictable across
-families nor networks from one source as independent replicates.
+families nor same-source networks as independent replicates.
 \section*{Methods}
 
 \paragraph{Corpus.} We assembled 117 weighted-network datasets from a public
@@ -694,7 +703,9 @@ networks). 110 runs completed. The analysis set comprises the 93 networks
 with a complete structure/variance record; 17 runs were excluded (degenerate
 initial curvature variance at float-noise level, or runs that could not
 start/complete for size or load reasons). Within it, 41 runs satisfy the
-convergence criterion below; a stricter tail-drift test leaves 31. The
+operational stopping criterion below---$34$ on the old rule and $7$ on their
+step horizon---and a stricter tail-drift test leaves 31; neither count is a
+convergence claim. The
 analysis set spans $n=4$ to $6{,}809$ nodes (median 52) and 17 source
 families (11 with $\ge 3$ networks); 34 of 93 networks are disconnected.
 Supplementary Table~S1 lists every dataset with its exclusion status.
@@ -751,15 +762,30 @@ result.
 between them is one of the results. The \emph{initial-variance} rule, used for
 the first corpus pass and in earlier studies, stops when
 $|\sigma^2(t)-\sigma^2(t-1)|/\sigma^2(0) < 10^{-4}$ for a fixed window;
-because the denominator is constant while the numerator decays, any
-exponentially decaying run eventually satisfies it (28/28 runs so labelled in
-our corpus were still falling, median $-24.7\%$ over the final quarter). The
-\emph{current-variance} rule used for the strict re-run stops when
-$|\sigma^2(t)-\sigma^2(t-1)|/\sigma^2(t) < 10^{-5}$ for 50 consecutive steps.
-This is a statement about the window just observed and nothing else: it does
-not bound the future, and we draw no such inference from it. We therefore
-report the terminal window explicitly rather than extrapolate it
-(Supplementary Table~S10). Over the final $50$ steps of the $16$ strict runs,
+its denominator is constant while the per-step change decays, so any run
+whose increment tends to zero may eventually satisfy it---exponential decay is
+the textbook case. Of the $28$ runs it labelled saturated, $27$ were still
+falling over the final quarter and $26$ at the terminal step (median quarter
+change $-24.7\%$; Supplementary Table~S17).
+The \emph{current-variance} rule configured for the strict re-run stops when
+$|\sigma^2(t)-\sigma^2(t-1)|/\sigma^2(t) < 10^{-5}$ for 50 consecutive steps,
+evaluated on the pooled variance, which is the quantity the integration loop
+monitors. We recomputed the test step by step from the recorded trajectories
+(Supplementary Table~S15). It fired on $1$ of the $16$ runs---\texttt{kilifi}, whose
+final $50$ steps are the only $50$ steps of its trajectory below the
+tolerance; the run ended there, at step $345$. The other $15$ terminated on
+their step horizon ($245$--$400$ steps) or on the $700$~s wall-clock budget, and
+on $11$ of the $15$ no step of the trajectory came within the tolerance at all;
+the remaining four satisfy it intermittently but never for $50$ consecutive
+steps (longest streak $1$--$33$). For those $15$ the smallest tolerance at which
+the rule would have fired somewhere in the final fifty steps has median
+$5.1\times10^{-3}$ per step (range $4.2\times10^{-5}$--$1.7\times10^{-2}$),
+about $500\times$ the configured tolerance on the median run; the three
+$5{,}000$-step exact-transport runs satisfy the same test with maximal per-step
+relative moves of $1.3\times10^{-7}$, $8.9\times10^{-11}$ and
+$1.1\times10^{-13}$ (Supplementary Table~S16). The terminal-window statistics
+below are therefore not in conflict with the rule; they are the record of runs
+on which it did not fire. Over the final $50$ steps of the $16$ strict runs,
 the per-run median of $r_t$ has median $4.7\times10^{-3}$ per step across runs
 and ranges from $-3.3\times10^{-5}$ to $1.7\times10^{-2}$; $14$ of $16$ runs
 have a terminal median rate above $10^{-4}$ per step, and---the observation
@@ -767,10 +793,16 @@ that most directly falsifies any forward extrapolation---two runs have a
 \emph{negative} terminal median rate, i.e. their variance was rising at the
 end of the run. The realised relative change of $V$ over the same final window
 is $21\%$ in magnitude on the median run and up to $58\%$. A small change over
-fifty steps is therefore a description of those fifty steps. Runs that exhaust the horizon
-or the wall-clock budget while still falling are flagged \emph{still falling},
-and runs that meet the rule are called \emph{operationally stopped} or
-\emph{near-plateau at the observed horizon}---never \emph{converged}.
+fifty steps is therefore a description of those fifty steps, not evidence about
+the next fifty. No run of $C_4$ is described as converged, and we use only three
+termination labels: \emph{rule-terminated} (the operational rule fired; $1$ of
+$16$), \emph{horizon-terminated} or \emph{budget-terminated} (the run stopped
+on its step horizon or its wall-clock budget; the remaining $15$), and
+\emph{still falling at the horizon} (terminal median $r_t>10^{-4}$ per step;
+$14$ of $16$). The string \emph{near-plateau} is used only for the three
+$5{,}000$-step exact-transport runs of Supplementary Table~S16, where the
+criterion is verified to hold; it is never inferred from a run that ended on its
+horizon.
 
 Two qualifications accompany the rule. First, monotonicity of the variance is
 \emph{assumed}, not proven: we verified empirically that $10$ of the $16$
@@ -994,7 +1026,8 @@ families. For the synthetic sweeps the corresponding hierarchy is
 base graph $\to$ rewiring realisation $\to$ target value: attribution is made
 with base-graph fixed effects, and the clusters for the bootstrap are the four
 base graphs. Sign flips between the full sample
-and the converged subset are reported rather than resolved by re-thresholding.
+and the subset that reached the operational threshold are reported rather
+than resolved by re-thresholding.
 Where an analysis depends on an exclusion that is itself an outcome, we report
 the analysis both with and without it.
 
@@ -1045,7 +1078,7 @@ magnitude on five of seven and by a factor of eight on a sixth, to
 $\le1.0\times10^{-9}$; the seventh (\texttt{g105}) had reached
 $1.4\times10^{-3}$ in $121$ steps and was still falling when the budget
 stopped it, and the unrenormalised variant behaves the same, so the collapse
-is not an artefact of renormalisation. This is a step-size result and we
+is not accounted for by renormalisation in the tests we ran. This is a step-size result and we
 report it as one: at $\alpha=0.5$ a single step changes an edge length by up
 to $50\%$, so the Euler scheme is no longer a small-step approximation to the
 same equation. Holding integrated flow time fixed instead of step count makes
@@ -1111,13 +1144,19 @@ x86-64 CPU with $9.9$~GB of RAM, one thread per process
 processes. A single flow step costs a median of $3.3$~s per network (range
 $0.02$--$57$~s), so taking the full $93$-network analysis set to $400$ steps
 would cost $\sim81$~h; the strict re-run is restricted to the $16$ cheapest
-networks ($C_4$), which together cost $0.6$~h for the same horizon. Measured
-wall clock: first pass ($110$ networks $\times10$ steps) $13$~h;
-within-component re-run of the $34$ disconnected networks $15$~h; strict
-re-runs $0.6$~h; exact-transport runs ($9\times2{,}000$ steps plus
-$3\times5{,}000$ steps) $0.1$~h; the step-size sweep $0.1$~h; the
-$\varepsilon$-trajectory sweep $1$~h. Every horizon reported in this paper is
-a budget, not a choice, and is reported with the result.
+networks ($C_4$). Measured wall clock, each figure summed over the per-step
+timers written by the run itself: first pass ($110$ networks $\times10$ steps)
+$34$~h; strict re-runs $2.0$~h ($1.5$~h for the $16$-network set reported here,
+$0.5$~h for an auxiliary set with extended horizons); exact-transport runs
+$0.11$~h; step-size sweep $0.08$~h; $\varepsilon$-trajectory sweep $1.1$~h.
+The within-component re-run of the $34$ disconnected networks was not timed per
+run and is not reported. The exact-transport figure is small because it is not
+comparable with the corpus median: the nine networks of $C_5$ have $5$--$33$
+nodes and $6$--$69$ edges, a step costs $5$--$21$~ms there, and the $33{,}000$
+steps in question---nine networks taken to $2{,}000$ steps, and three of the
+same networks continued to $5{,}000$ steps---cost $387$~s in total. Every
+horizon reported in this paper is a budget, not a choice, and is reported with
+the result.
 
 \paragraph{Numerical reliability at extreme weight span.} The
 $5{,}000$-step exact-transport runs end with edge weights spanning
@@ -1139,7 +1178,7 @@ factor and therefore leaves $\kappa_e$ unchanged in exact arithmetic---reproduce
 every curvature to $\le2.2\times10^{-16}$ and the variance to a relative
 $3.6\times10^{-16}$ at a span of $10^{26}$--$10^{29}$. The magnitude of the
 costs, as opposed to their ratio structure, therefore costs nothing in double
-precision, and the residual is not a floating-point artefact of the span. \emph{Initial weighting.} Perturbing every initial length by $1\%$ multiplicative jitter, five replicates per network and $1{,}000$ steps of exact transport on \texttt{g105}, \texttt{g106} and \texttt{g10}, moves the terminal within-component residual by at most $2.4\times10^{-5}$ in relative terms (Supplementary Table~S13c), so the residual is not an artefact of the initial weighting.
+precision, and conditioning in double precision does not account for the residual. \emph{Initial weighting.} Perturbing every initial length by $1\%$ multiplicative jitter, five replicates per network and $1{,}000$ steps of exact transport on \texttt{g105}, \texttt{g106} and \texttt{g10}, moves the terminal within-component residual by at most $2.4\times10^{-5}$ in relative terms (Supplementary Table~S13c), so sensitivity to the initial weighting does not account for the residual.
 \emph{Consistency checks.} At every checkpoint the curvature of two reference
 graphs whose symmetry forces constant curvature ($C_6$ and $K_6$, unit
 weights) is recomputed and required to have zero variance: $60$ of $60$
@@ -1150,7 +1189,15 @@ network under study, whose curvature is not constant at unit weights.)
 $\max_e|\kappa_e^{\rm sinkhorn}-\kappa_e^{\rm exact}|$ is of order
 $10^{16}$--$10^{25}$. No {Sinkhorn} number is therefore reported beyond
 $2{,}000$ steps, and the extended-horizon residual rests on exact transport
-alone.
+alone. These controls bound three specific failure modes---solver agreement,
+conditioning in double precision, and sensitivity to the initial weighting. They
+do not establish that the residual is free of numerical error at these spans.
+The extreme weight ratio and the conditioning of the transport subproblems
+remain the central limitation; the constant-curvature check is applied to two
+reference graphs and not to the network under study; and the failure of two
+independent optimisers to find a lower-variance configuration is not a proof of
+global optimality. What we claim is that the tested numerical controls do not
+explain the residual.
 
 \paragraph{What the extended-horizon runs do and do not establish.} Three
 propositions are kept separate. \emph{Observed:} for a fixed exact-transport
@@ -1185,7 +1232,7 @@ network data were generated. Derived data---the network manifest (initial
 curvature statistics, every numerical setting and the random seed), the
 per-dataset trajectories, the within-component decomposition of Supplementary
 Table~S3 and all intermediate result files---are provided with this submission
-as Supplementary Data, together with Supplementary Tables~S1--S13, and are
+as Supplementary Data, together with Supplementary Tables~S1--S17, and are
 archived alongside the code at \url{https://doi.org/10.5281/zenodo.23277162}.
 
 \section*{Code availability}
@@ -1196,14 +1243,26 @@ experiment and analysis script, the machine-readable configuration
 (\texttt{config.yaml}, which records the unsafe legacy stopping rule as well,
 so that the artefact itself can be reproduced), the network manifest, the
 fixed random seeds, the raw result files, the supplementary tables and the
-figure-generation script. No number in the paper is hard-coded: every figure
+figure-generation script, and the scripts that generate the stopping-rule and
+trajectory-audit tables (\texttt{S15}, \texttt{S17}). No number in the paper
+is hard-coded: every figure
 and statistic is regenerated from the raw result files by
 \texttt{make\_paper\_figures.py}, which also emits a log giving the number
 behind each plotted point. The frozen release is available at \url{https://github.com/fanqimcse/ricci-flow-finite-time-residuals}
 (tag \texttt{v1.0.0}) and is archived with a permanent {DOI},
 \url{https://doi.org/10.5281/zenodo.23277162} (version) and
 \url{https://doi.org/10.5281/zenodo.23277161} (concept, resolving to the latest version)
-\cite{Fan2026Code}. An archival request has also been submitted to {Software
+\cite{Fan2026Code}. We verified this rather than asserting it: the
+\texttt{v1.0.0} archive was downloaded from the {DOI} into an empty
+directory, and \texttt{make\_paper\_figures.py} was run there against the
+archived result files alone. All eight figures were regenerated and every
+line of the emitted data log---$84$ lines of statistics, one per plotted
+quantity---matched the working copy exactly. That check also exposed a
+defect: four paths still resolved against the package root rather than
+\texttt{results/}, so the script stopped at the third figure. The paths are
+fixed, and the corrected script is what the archive now carries; the
+verification above was repeated with it and passed. An archival request has
+also been submitted to {Software
 Heritage} (save request \texttt{2549855}, accepted), whose intrinsic
 identifier is issued once the archival visit completes.
 
@@ -1231,9 +1290,9 @@ The author declares no competing interests.
 \centering
 \includegraphics[width=0.86\textwidth]{Fig1_analysis_flow.pdf}
 \caption{\textbf{Analysis populations and the ladder of controls.} \textbf{a}, Analysis populations. Nested subsets of the corpus, named
-C0--C5 and used consistently throughout; each box gives the number of networks
-and, where inference is drawn, the number of independent source families. The
-strict re-run C4 is a cost-stratified convenience sample (all 16 below
+C0--C5 and used consistently; each box gives the number of networks
+and, where inference is drawn, of independent source families. C4 is a
+cost-stratified convenience sample (all 16 below
 $0.76$~s per step, cost ranks 3--22 of 113), not a random sample, and no
 prevalence claim is made from it. Of C2, 34 networks are disconnected and all
 were re-run under the within-component estimator (Supplementary Table~S3);
@@ -1256,12 +1315,13 @@ into two finite-horizon relaxation patterns.} \textbf{a}, Median (line)
 and interquartile range (band) of the variance ratio $V(t)$ over 80 networks
 with usable trajectories, on a common step grid; the 10-step transient used in
 earlier work sits at $0.78$. \textbf{b}, Residual at the end of the run for
-the whole corpus ($n=93$, terminal finite-horizon residuals) and for the 16 networks re-run under
-the corrected criterion (orange). \textbf{c}, Sham control: paired residuals
+the whole corpus ($n=93$, terminal finite-horizon residuals) and for the 16 networks re-run to the
+longer horizon (orange); the corrected rule fired on one of them. \textbf{c}, Sham control: paired residuals
 with the curvature--edge mapping randomly permuted each step ($n=25$ pairs,
 sham higher in $24/25$, $p=7.7\times10^{-7}$; $21/21$ on the pre-specified
 subset). \textbf{d}, Variance change over the final quarter of the 28 runs the
-old rule labelled ``saturated'': all but one were still falling. \textbf{e},
+old rule labelled ``saturated'': $27$ of $28$ fell over the final quarter,
+$26$ of $28$ at the terminal step. \textbf{e},
 Residual against the late-time decay rate for the strict re-run, separating
 Pattern~I (blue) and Pattern~II (orange); the dashed line marks a
 descriptive $10^{-3}$ per step rate, used only to make the two bands visible,
@@ -1322,7 +1382,8 @@ comparisons mistake slower convergence for a higher plateau.}
 families.} \textbf{a}, Leave-one-family-out out-of-sample $R^2$; only assortativity
 rises marginally above the intercept baseline (dashed), and none of the
 models has usable predictive power. \textbf{b}, Within
-the largest family (ENZYMES, $n=15$ converged) the plateau correlates with
+the largest family (ENZYMES, $n=15$ at the operational threshold) the
+plateau correlates with
 transitivity ($\rho=+0.73$) but the correlation collapses once size is
 controlled (partial $\rho=+0.25$, $p=0.37$). \textbf{c}, Family-level cluster-bootstrap 95\% intervals for the corpus correlations over 41 units and 11 families: the assortativity association survives clustering, the transitivity one does not, and the rate--residual interval includes zero.}
 \label{fig:6}
@@ -1349,7 +1410,7 @@ decay, $r_t\approx0$ a plateau, $r_t<0$ a rebound ($234$ of $6{,}052$
 increments, $3.9\%$, are rebounds). Two bands are visible---one above
 $10^{-3}$ per step and one decaying towards $10^{-5}$---but runs cross between
 them, so the bands are a description of the horizon, not of the limit. Red:
-near-plateau at the horizon; blue: still relaxing. \textbf{b},
+Pattern~II (terminal median rate below $10^{-4}$ per step); blue: Pattern~I. \textbf{b},
 Three connected {ENZYMES} networks under exact transport to
 $5{,}000$ steps: $|r_t|$ falls below $10^{-7}$ per step and stays there while
 the weight span grows to $10^{65}$--$10^{72}$. In all three $r_t$ is
