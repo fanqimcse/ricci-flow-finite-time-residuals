@@ -1,0 +1,33 @@
+{
+  "title": "Finite-time residuals in discrete Ollivier-Ricci flow: reproducibility package",
+  "description": "Code and raw results accompanying the study of finite-time residuals in discrete Ollivier-Ricci flow: a measurement framework separating the finite-horizon residual, its numerical counterpart, the dynamical trend and the geometric infimum, with controls for the stopping rule, the estimator, the transport solver and the network topology. The corpus is 93 weighted networks from the Network Data Repository (http://networkrepository.com).",
+  "creators": [
+    {
+      "name": "Fan, Qi",
+      "affiliation": "Huaibei Normal University",
+      "orcid": "0000-0003-3591-3363"
+    }
+  ],
+  "license": "mit",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "discrete Ricci flow",
+    "Ollivier-Ricci curvature",
+    "optimal transport",
+    "network geometry",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/fanqimcse/ricci-flow-finite-time-residuals",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "http://networkrepository.com",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    }
+  ]
+}

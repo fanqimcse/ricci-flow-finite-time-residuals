@@ -16,7 +16,8 @@ authors:
 version: 1.0.0
 date-released: "2026-10-09"
 license: MIT
-repository-code: "https://github.com/fanqimai/ricci-flow-finite-time-residuals"
+repository-code: "https://github.com/fanqimcse/ricci-flow-finite-time-residuals"
+url: "https://github.com/fanqimcse/ricci-flow-finite-time-residuals"
 keywords:
   - discrete Ricci flow
   - Ollivier-Ricci curvature
