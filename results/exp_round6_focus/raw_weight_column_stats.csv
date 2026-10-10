@@ -1,0 +1,9 @@
+dataset,n_values,raw_min,raw_max,raw_median,raw_cv,raw_distinct,all_integer,year_like
+reptilia-tortoise-network-hw,22,2009.0,2012.0,2011.0,0.000649381954572362,3,True,True
+reptilia-tortoise-network-mc,45,2012.0,2013.0,2012.0,0.000246915633557839,2,True,True
+reptilia-tortoise-network-sg,29,1999.0,2000.0,1999.0,0.00020262069656020023,2,True,True
+eco-stmarks,356,0.001,265.03,0.2800004,3.993482988875953,283,False,False
+mammalia-raccoon-proximity,1997,1.0,604800.0,166.0,3.9451248471857485,973,True,False
+eco-mangwet,1492,5.64561e-09,720.0,9.0316075e-05,10.118412204740457,1439,False,False
+aves-barn-swallow-non-physical,122,1.0,52.0,5.0,0.9681946885360011,22,True,False
+mammalia-primate-association,1340,0.0079145231,10.113774,0.5287298524499999,1.2248537425557349,489,False,False

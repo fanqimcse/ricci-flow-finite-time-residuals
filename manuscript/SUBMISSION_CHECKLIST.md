@@ -1,6 +1,47 @@
 # Communications Physics 投稿自检清单（Paper A）
 
-状态截至 2026-10-09（**第五轮：重新审查后的文献核查 + 强断言限定 + 复现材料**）。✅ = 已完成并从原始数据复算；⚠️ = 需作者人工完成；📋 = 建议但非阻塞。
+状态截至 2026-10-10（**第六轮：二次审查逐条处理 —— 权重语义、g10 一致性、极端跨度数值可靠性**）。✅ = 已完成并从原始数据复算；⚠️ = 需作者人工完成；📋 = 建议但非阻塞。
+
+---
+
+## ✅ 零-E、第六轮修订（2026-10-10）——"二次审查"逐条处理
+
+逐条回应见 `RESPONSE_TO_REVIEW_ROUND6.md`。审查意见共 13 条，分五组；结论是"暂时不要直接提交"，其中两条为最高优先级科学问题。本轮处理如下。
+
+| # | 意见 | 处理 |
+|---|---|---|
+| 1 | "组分间方差**不能**衰减" 措辞过强 | 全稿（摘要/引言/讨论）改为 "need not vanish even when the within-component variance approaches zero"；Discussion 增补 "we do not claim that it cannot decay" ✅ |
+| 2 | g10 的 5,000 步结果与"两张网络"案例不一致 | **报告三张网络**，g10 与 g105/g106 并列；给出 2,000→5,000 步绝对变化、末段局部速率、最长平台段、是否同满足描述性近平台判据（新表 S11）✅ |
+| 3 | "step-size converged" 过强 | 改为 "largely stable to step-size variation at matched physical time for the tested non-converged trajectories"，并点名 4.9% 的网络与绝对量级 ✅ |
+| 4 | "已排除正则化/离散化伪影" | 全稿统一为 "not explained by the tested numerical controls" ✅ |
+| 5 | 正权重是否都能解释为"距离" | **审查意见成立且比预想严重**：28 个带权数据集**无一**被来源文档记为距离；7 个 tortoise 的第三列是年份（1996–2015），1 个（bio-DM-LC）是常数。新增三约定（as-is / reciprocal / unit）对照，**28/28 数据集全部跑完、83 次运行成功**：$ 跨约定中位差 7.9 倍，但 **83/83 次运行末方差都低于初值**（≥20 步的 30 次亦为 30/30）→ 方向性结论对读法不敏感。S1 增加 17 列权重来源 + S12 逐数据集语义表 ✅ |
+| 6 | 统计证据层级 | 接受，无改动需要（家族为独立单元、C0–C5、L1–L4 已在稿中）✅ |
+| 7 | 极端权重跨度（10⁶⁵–10⁷²）数值可靠性 | 新增四项：求解器交叉验证、代价矩阵条件化探针、Sinkhorn 在该跨度不可用、**1% 初值扰动**（残余变化 ≤2.4×10⁻⁵）；60/60 对称性检查通过（S13a/b/c）✅ |
+| 8 | 关键文献复核 | 7 条 arXiv 改为 "Preprint at arXiv:…"；逐条复核作者/卷期页；**审查意见自身一处笔误**（Bai–Hua–Lin–Liu 末位作者是 Shuang Liu，非 Shuliang Liu），已在回应中说明 ✅ |
+| 9 | 引用格式 | natbib `[numbers]`、按首次引用顺序、单一 References 标题、45 条、0 重复 0 漏引 ✅ |
+| 10 | 绝无虚假引用 | 逐条可回溯；未采信任何未经核实的条目 ✅ |
+| 11 | Funding 声明 | 新增独立 `\section*{Funding}`："This work received no external funding."，并从 Acknowledgements 删除重复句 ✅ |
+| 12 | 代码与数据可用性 | GitHub tag v1.0.0 + Zenodo 版本/概念 DOI + SWH 归档请求 2549855（已接受）已在稿中；本轮 S11–S13 随修订稿提交 ✅ |
+| 13 | 其他合规项 | 主文 **4,998** 词（≤5,000）、摘要 148 词（≤150）、display items 10（≤10）、Results 小标题 ≤55 字符且无句号、Discussion 无小标题 ✅ |
+
+### 本轮新增实验与材料
+
+| 文件 | 内容 |
+|---|---|
+| `exp_round6.py` | 三约定敏感性扫描 / 极端跨度数值可靠性 / 1% 初值扰动 / g10 长程诊断 |
+| `make_supplementary_r6.py` | 生成 S11–S13（合并 exp_round6 / _focus / _rest 三个扫描目录） |
+| `exp_round6_rest/` | 补齐 12 个大数据集的三约定扫描（250 步目标 / 45 s 预算） |
+| `_update_release_r6.py` | 把本轮产物暂存进 `github_release/`，只拷贝不提交 |
+| `Supplementary_Table_S11_long_horizon_three_networks.csv` | 三张连通 ENZYMES 网络 5,000 步逐网络诊断 |
+| `Supplementary_Table_S12_weight_semantics.csv` | 28 个带权数据集第三列语义 + 三约定结果 |
+| `Supplementary_Table_S13a/b/c_*.csv` | 检查点自检 / 末权重探针 / 初值扰动 |
+| `_patch_r6*.py`、`_patch_r6g.py`、`_patch_r6h.py` | 全部正文改动（可重跑、幂等、可审计）；`_patch_r6h.py` 只刷新权重语义数字 |
+
+### 需要作者人工完成（⚠️）
+
+1. 把本轮新增的 S1（含权重来源列）、S11–S13 与 `exp_round6.py` 上传到 GitHub 并发布 v1.0.1，向 Zenodo 申请新版本 DOI（稿件中的 DOI 仍指向 v1.0.0）。
+2. Software Heritage 归档访问完成后，把 SWHID 写入稿件 Code availability。
+3. 撤下此前泄露的 GitHub PAT（安全事项，与稿件无关）。
 
 ---
 

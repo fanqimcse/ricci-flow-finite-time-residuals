@@ -1,0 +1,9 @@
+{
+  "python": "3.13.14",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "networkx": "3.7",
+  "pandas": "3.0.6",
+  "POT": "0.9.7.post1",
+  "platform": "Windows-11-10.0.22631-SP0"
+}

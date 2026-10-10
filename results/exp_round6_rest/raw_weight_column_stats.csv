@@ -1,0 +1,13 @@
+dataset,n_values,raw_min,raw_max,raw_median,raw_cv,raw_distinct,all_integer,year_like
+bio-SC-TS,3959,2.5128133424368,3.54105510509071,3.34080485955691,0.07939374049590153,1180,False,False
+ia-dnc-corecipient,12085,1.0,792.0,3.0,1.8418619306723734,156,True,False
+ia-workplace-contacts,9827,28820.0,1016440.0,643900.0,0.628849631835607,7104,True,False
+insecta-ant-trophallaxis-colony1,308,4.0,940.0,50.0,1.4174443674551553,118,True,False
+insecta-ant-trophallaxis-colony2,330,2.0,794.0,44.0,1.3907665717695108,101,True,False
+mammalia-voles-bhp-trapping,5324,1.0,57.0,1.0,1.1984128353260826,19,True,False
+mammalia-voles-kcs-trapping,4258,1.0,47.0,1.0,1.055238811393887,17,True,False
+mammalia-voles-plj-trapping,3863,1.0,17.0,1.0,0.7702904397349284,15,True,False
+reptilia-tortoise-network-bsv,554,1996.0,1999.0,1998.0,0.0003771667091516307,4,True,True
+reptilia-tortoise-network-cs,258,2006.0,2015.0,2010.0,0.0013005503146375332,10,True,True
+reptilia-tortoise-network-fi,1713,2005.0,2013.0,2009.0,0.0009641260166990333,9,True,True
+reptilia-tortoise-network-pv,104,2005.0,2013.0,2011.0,0.001224528843394241,7,True,True
