@@ -13,8 +13,8 @@ authors:
     orcid: "https://orcid.org/0000-0003-3591-3363"
     affiliation: "Huaibei Normal University"
     email: "8073592@qq.com"
-version: 1.0.0
-date-released: "2026-10-09"
+version: 1.0.1
+date-released: "2026-10-11"
 license: MIT
 repository-code: "https://github.com/fanqimcse/ricci-flow-finite-time-residuals"
 url: "https://github.com/fanqimcse/ricci-flow-finite-time-residuals"

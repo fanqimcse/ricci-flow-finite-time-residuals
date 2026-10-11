@@ -1,6 +1,6 @@
 # Finite-time residuals in discrete Ollivier–Ricci flow
 
-**Frozen reproducibility package** (version `v1.0.0`) for the manuscript
+**Reproducibility package** (version `v1.0.1`) for the manuscript
 
 > **Finite-time residuals in discrete Ollivier–Ricci flow: a measurement
 > framework, its controls, and its limits**
@@ -102,14 +102,35 @@ Random seeds are fixed (seed 0) and recorded in `data/network_manifest.csv`.
 
 Runs were executed on an 8-core x86-64 CPU with 9.9 GB RAM, one thread per
 process (`OMP/OPENBLAS/MKL_NUM_THREADS=1`) and at most two concurrent
-processes. Measured wall clock: first pass 13 h; within-component re-run 15 h;
-strict re-runs 0.6 h; exact-transport runs 0.1 h; step-size sweep 0.1 h;
-$\varepsilon$-trajectory sweep 1 h.
+processes. Measured wall clock (summed per-step timers, single process, BLAS pinned to one
+thread): first pass over the corpus $34$~h; strict re-runs $2.0$~h
+($1.5$~h for the $16$-network set reported in the paper, $0.5$~h for an auxiliary
+set with extended horizons); exact-transport runs $0.11$~h; step-size sweep
+$0.08$~h; $\varepsilon$-trajectory sweep $1.1$~h. The exact-transport figure is
+not comparable with the corpus median per-step cost: those graphs have 5--33
+nodes and 6--69 edges, so a step costs 5--21~ms rather than seconds. A further
+$34$ networks were re-run disconnected-only and were not timed per run, so no
+total is reported for them.
 
 ## 7. Version
 
-This is the frozen version accompanying the initial submission (`v1.0.0`). The
-version number in the manuscript's Code Availability statement matches this tag.
+This is the release accompanying the submission (`v1.0.1`). The version number in
+the manuscript's Code Availability statement matches this tag.
+
+`v1.0.1` exists because the archive was verified rather than assumed. The
+`v1.0.0` package was downloaded from its DOI into an empty directory and
+`make_paper_figures.py` was run there against the archived result files alone.
+All eight figures regenerated and the emitted data log matched this tree
+line for line, but the run stopped at the third figure: four paths still
+resolved against the package root instead of `results/`, which is invisible
+in a working tree. Those paths are fixed here, and the clean-room run was
+repeated with the corrected script and passed. The release also now carries
+Supplementary Tables S11--S17 and the scripts that generate S15 and S17
+(`code/_r7_stop.py`, `code/_r8_tail.py`), which the manuscript cites and which
+`v1.0.0` did not contain.
+
+See `manuscript/ARCHIVE_REPRODUCTION_CHECK.md` for the full log, including what
+was *not* verified (the flow integration itself was not re-run).
 
 ## 8. Licence
 
@@ -118,7 +139,7 @@ data are governed by the terms of the Network Data Repository.
 
 ## Publishing this repository
 
-The tree is versioned locally (annotated tag `v1.0.0`). To create the public
+The tree is versioned locally (annotated tag `v1.0.1`). To create the public
 repository and upload everything in one step:
 
 ```bash
@@ -127,7 +148,7 @@ python push_github.py <GITHUB_TOKEN>          # classic PAT with the `repo` scop
 
 The script resolves the account login from the token (so the repository URL is
 never guessed), creates the repository if needed, pushes `main` and the
-`v1.0.0` tag (falling back to the GitHub Contents REST API if `git push` cannot
+`v1.0.1` tag (falling back to the GitHub Contents REST API if `git push` cannot
 reach `github.com`), creates the GitHub Release, requests a Software Heritage
 archival, and writes the real URL back into `manuscript.tex`,
 `cover_letter.md` and `SUBMISSION_CHECKLIST.md`.

@@ -1238,7 +1238,7 @@ archived alongside the code at \url{https://doi.org/10.5281/zenodo.23277162}.
 \section*{Code availability}
 All analysis code is released under the {MIT} licence and accompanies this
 submission as a single archive (Supplementary Data), frozen at version
-\texttt{v1.0.0}. The archive contains the flow implementation, every
+\texttt{v1.0.1}. The archive contains the flow implementation, every
 experiment and analysis script, the machine-readable configuration
 (\texttt{config.yaml}, which records the unsafe legacy stopping rule as well,
 so that the artefact itself can be reproduced), the network manifest, the
@@ -1248,20 +1248,18 @@ trajectory-audit tables (\texttt{S15}, \texttt{S17}). No number in the paper
 is hard-coded: every figure
 and statistic is regenerated from the raw result files by
 \texttt{make\_paper\_figures.py}, which also emits a log giving the number
-behind each plotted point. The frozen release is available at \url{https://github.com/fanqimcse/ricci-flow-finite-time-residuals}
-(tag \texttt{v1.0.0}) and is archived with a permanent {DOI},
-\url{https://doi.org/10.5281/zenodo.23277162} (version) and
-\url{https://doi.org/10.5281/zenodo.23277161} (concept, resolving to the latest version)
-\cite{Fan2026Code}. We verified this rather than asserting it: the
-\texttt{v1.0.0} archive was downloaded from the {DOI} into an empty
-directory, and \texttt{make\_paper\_figures.py} was run there against the
-archived result files alone. All eight figures were regenerated and every
-line of the emitted data log---$84$ lines of statistics, one per plotted
-quantity---matched the working copy exactly. That check also exposed a
-defect: four paths still resolved against the package root rather than
-\texttt{results/}, so the script stopped at the third figure. The paths are
-fixed, and the corrected script is what the archive now carries; the
-verification above was repeated with it and passed. An archival request has
+behind each plotted point. The release is available at \url{https://github.com/fanqimcse/ricci-flow-finite-time-residuals}
+(tag \texttt{v1.0.1}) and is archived under the concept {DOI}
+\url{https://doi.org/10.5281/zenodo.23277161}, which resolves to the
+current version \cite{Fan2026Code}. We verified this rather than asserting it: the
+\texttt{v1.0.0} archive (\url{https://doi.org/10.5281/zenodo.23277162}) was
+downloaded into an empty directory, and \texttt{make\_paper\_figures.py} was run there
+against the archived result files alone. All eight figures were regenerated and
+every line of the emitted data log---$84$ lines of statistics, one per plotted
+quantity---matched the working copy exactly. We report the outcome rather than
+the claim because the check was informative: run this way, the release revealed
+path assumptions that a working tree cannot expose, and \texttt{v1.0.1} is the
+corrected and re-verified tree. An archival request has
 also been submitted to {Software
 Heritage} (save request \texttt{2549855}, accepted), whose intrinsic
 identifier is issued once the archival visit completes.
