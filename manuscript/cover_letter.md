@@ -120,7 +120,7 @@ its acknowledgement policy and ship the derived data — manifest, trajectories
 and intermediate results — with the submission. All analysis code is released
 under the MIT licence at
 https://github.com/fanqimcse/ricci-flow-finite-time-residuals and frozen at
-`v1.0.0`; it has a permanent Zenodo DOI, 10.5281/zenodo.23277162 (version) /
+`v1.0.1`; it has a permanent Zenodo DOI, 10.5281/zenodo.23330125 (version) /
 10.5281/zenodo.23277161 (concept). No number in the paper is hard-coded, and a
 single script regenerates every figure and statistic from the raw result files,
 emitting a log of the number behind each plotted point. An archival request has
