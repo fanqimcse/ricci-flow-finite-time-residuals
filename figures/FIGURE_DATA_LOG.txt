@@ -1,5 +1,10 @@
 master table: 93 rows, 28 cols
 
+[Fig 1] analysis populations + ladder of controls
+
+[Fig 8] local relaxation-rate trajectories
+  C4 increments with r_t>0: 5818, r_t<0: 234
+
 [Fig 1] cross-domain homogenization + sham control
   trajectories used: 80  (interpolated on a common 0-200 step grid)
   median var_ratio at step 10 (t=0.5): 0.781
@@ -12,11 +17,18 @@ master table: 93 rows, 28 cols
   median real = 0.0788   median sham = 1.1715
   sham > real in 21/21 ; one-sided sign test p = 4.77e-07
   Wilcoxon signed-rank p = 4.77e-07
-  old rule labelled 28 runs 'saturated'; tail drift over the final quarter: median -24.7%, 27/28 still falling by >2%, worst -84.9%
+  old rule labelled 28 runs 'saturated'
+    net change over the final quarter: median -24.7%, 27/28 negative, worst -84.9%, best +1.1%
+    change at the terminal step alone: 26/28 negative, median -8.36e-04
   strict re-run: n=16 (4 stalled, 11 converging, 1 undecided)
     stalled  residual median 0.1722 ; late-time rate median -1.0e-05/step
     converging residual median 0.0241 ; late-time rate median -5.5e-03/step
     weight span: stalled 2.76e+05 vs converging 3.90e+02 ; Mann-Whitney p=0.039
+
+[Fig 3] regularisation: scale invariance and exact transport
+  scale probe: max over networks and phases of max_e|dkappa| -- exact 4.4e-16 | eqreg 1.1e-15 | fixed-eps 3.86
+  eqreg vs fixed-eps at 200 steps: median -4.6%, max +13.9%
+  exact 2000-step within-component variance: ENZYMES_g105 1.18e-02, ENZYMES_g106 3.85e-02, scc2034_kilifi_all 4.16e-13, scc_rt_oman 3.17e-31, scc_rt_ksa 8.04e-33, reptilia-tortoise- 1.39e-03, aves-weaver-social 9.16e-12, scc_rt_http 3.22e-18, ENZYMES_g10 5.21e-02
 
 [Fig 2] surgery: is the plateau the cost of keeping the edge set?
   defensible pairs: 5

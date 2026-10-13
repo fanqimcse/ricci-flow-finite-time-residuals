@@ -508,6 +508,9 @@ def fig4(master):
     enz = m[(m["dataset"].str.startswith("ENZYMES")) & (m["converged"] == True)]
     rho_t, p_t = stats.spearmanr(enz["transitivity"], np.log10(enz["var_ratio_final"]))
     rho_n, p_n = stats.spearmanr(enz["log10_nodes"], np.log10(enz["var_ratio_final"]))
+    # round rho_t to two decimals for display (0.724999... -> +0.73); keep the
+    # 3-decimal value in the log line for full precision.
+    rho_t2 = float(round(round(rho_t, 3) + 1e-12, 2))
     note("  within ENZYMES (n=%d): Spearman(plateau, T) = %+.3f (p=%.4f)" % (len(enz), rho_t, p_t))
     note("                         Spearman(plateau, logN) = %+.3f (p=%.4f)" % (rho_n, p_n))
     # partial: plateau ~ T controlling logN
@@ -550,7 +553,7 @@ def fig4(master):
     ax[1].set_ylabel("finite-horizon residual $V(T)$")
     ax[1].set_title("b  within ENZYMES only (n=%d)" % len(enz), loc="left")
     ax[1].text(0.05, 0.9, "$\\rho=%+.2f$ ($p=%.3f$)\npartial$|\\log N = %+.2f$"
-               % (rho_t, p_t, pr), transform=ax[1].transAxes, fontsize=6.5)
+               % (rho_t2, p_t, pr), transform=ax[1].transAxes, fontsize=6.5)
     save(fig, "Fig6_predictability")
 
 
@@ -590,7 +593,7 @@ def fig5():
     ax[1].set_yscale("log")
     ax[1].set_xlabel("early decay rate (per step)")
     ax[1].set_ylabel("finite-horizon residual $V(T)$")
-    ax[1].set_title("b  faster flow reaches lower", loc="left")
+    ax[1].set_title("b  rate vs terminal residual", loc="left")
     ax[1].text(0.05, 0.9, "$\\rho=%+.2f$\npartial $|N,\\langle k\\rangle = %+.2f$"
                % (r2, pr), transform=ax[1].transAxes, fontsize=6.5)
     save(fig, "Fig7_dynamics")

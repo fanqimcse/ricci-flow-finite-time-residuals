@@ -76,8 +76,9 @@ variance change by its initial value, a ratio that shrinks with elapsed time:
 $27$ of the $28$ runs it labelled saturated were still falling over the final
 quarter. Second, a disconnected graph's pooled variance includes a
 between-component term; within components it falls on $34/34$ (median
-$5.7\times$). Third, at matched physical time the residual is stable to step
-size; extending three runs from $2{,}000$ to $5{,}000$ steps moves it by
+$5.7\times$). Third, at matched physical time the residual is largely stable to
+step size for the tested non-converged trajectories; extending three runs from
+$2{,}000$ to $5{,}000$ steps moves it by
 $<$$0.2\%$, and fixed-$\varepsilon$ regularisation is not scale invariant. A
 finite-time residual is a measurement, not a convergence certificate: breaking
 the curvature--edge map raises it ($8/8$), and the tested descriptors do not
@@ -702,10 +703,13 @@ brain, power, interaction, web, ecology, infrastructure and economic
 networks). 110 runs completed. The analysis set comprises the 93 networks
 with a complete structure/variance record; 17 runs were excluded (degenerate
 initial curvature variance at float-noise level, or runs that could not
-start/complete for size or load reasons). Within it, 41 runs satisfy the
-operational stopping criterion below---$34$ on the old rule and $7$ on their
-step horizon---and a stricter tail-drift test leaves 31; neither count is a
-convergence claim. The
+start/complete for size or load reasons). Within it, 41 runs terminate by the
+operational stopping criterion defined below: $34$ reached the current-variance
+threshold (``saturated'') and $7$ reached their step horizon, so these $41$
+form the converged subset; a stricter tail-drift test leaves 31. These counts
+describe how each run \emph{ended}, not convergence: the earlier first-pass rule
+(denominator $\sigma^2(0)$) had labelled $28$ runs saturated even though $27$
+of them were still falling (Results; Supplementary Table~S17). The
 analysis set spans $n=4$ to $6{,}809$ nodes (median 52) and 17 source
 families (11 with $\ge 3$ networks); 34 of 93 networks are disconnected.
 Supplementary Table~S1 lists every dataset with its exclusion status.
@@ -933,7 +937,7 @@ conventions with identical numerics and a matched step horizon:
 or a flow) and \emph{unit} ($l_e = 1$, topology only). The three conventions
 give the same topology and the same flow, and differ only in the initial
 metric. For each network we compare the initial curvature variance $V_0$, the
-residual at the matched horizon and the late-window decay rate. The outcome is summarised in Results and given per dataset in Supplementary Table~S12. No convention is designated correct: the control bounds how much of the corpus result is a property of the data rather than of the reading we gave them. 8 of the twenty-eight have a raw third column with a coefficient of variation below $2\times10^{-3}$---the seven \texttt{reptilia-tortoise-network-*} graphs, whose entries run from $1996$ to $2015$ with two to ten distinct values, and \texttt{bio-DM-LC}, whose column is constant---so for them the three conventions differ in the input metric by less than one part in five hundred and the control is close to vacuous: on the 8 of them that were run the measured $V_0$ agrees to within 0.05\%. On the 20 datasets with a genuinely varying column the conventions are different inputs and $V_0$ differs across them by a median factor of 7.9 (range 1.0--$1.2\times10^{13}$, the largest on the heaviest-tailed column, \texttt{eco-mangwet}). The qualitative outcome does not move with the reading: the within-component variance at the horizon lies below its initial value in all 83 completed convention$\times$dataset runs (one aborted run excluded), with medians $0.63$ (as-is), $0.52$ (reciprocal) and $0.83$ (unit), and a largest ratio of $0.99$. Many of these runs are short, so the comparison was repeated on the 30 runs that reached at least 20 steps: the variance again lies below its initial value in 30 of 30, with medians $0.10$, $0.13$ and $0.49$ and a largest ratio of $0.72$. Horizons are not equal across datasets---each run had a fixed wall-clock budget---so these ratios compare conventions within a dataset, not datasets with each other. Only 3 datasets reached the $250$-step target under all three conventions, and they agree to three significant figures (\texttt{hw} $0.1751$, $0.1745$, $0.1747$; \texttt{mc} $0.3897$, $0.3898$, $0.3897$; \texttt{sg} $0.007589$, $0.007595$, $0.007591$); on every other dataset the budget cut at least one convention short, so those comparisons are not step-matched. One run, \texttt{eco-mangwet} (recip), aborted on the overflow guard because the reciprocal of a column spanning nine decades produces lengths whose curvatures are large enough to overflow the update; it is excluded rather than repaired. All 28 of the 28 datasets have all three runs.
+residual at the matched horizon and the late-window decay rate. The outcome is summarised in Results and given per dataset in Supplementary Table~S12. No convention is designated correct: the control bounds how much of the corpus result is a property of the data rather than of the reading we gave them. All twenty-eight datasets were run under all three conventions, giving $84$ convention$\times$dataset runs of which $83$ completed (one aborted on a numerical overflow, \texttt{eco-mangwet} under the reciprocal convention; Supplementary Table~S12). Eight of the twenty-eight have a raw third column with a coefficient of variation below $2\times10^{-3}$---the seven \texttt{reptilia-tortoise-network-*} graphs, whose entries run from $1996$ to $2015$ with two to ten distinct values, and \texttt{bio-DM-LC}, whose column is constant---so for them the three conventions differ in the input metric by less than one part in five hundred and the control is close to vacuous: for these eight the measured $V_0$ agrees across conventions to within $0.05\%$. On the 20 datasets with a genuinely varying column the conventions are different inputs and $V_0$ differs across them by a median factor of 7.9 (range 1.0--$1.2\times10^{13}$, the largest on the heaviest-tailed column, \texttt{eco-mangwet}). The qualitative outcome does not move with the reading: the within-component variance at the horizon lies below its initial value in all 83 completed convention$\times$dataset runs (the one aborted run excluded), with medians $0.63$ (as-is), $0.52$ (reciprocal) and $0.83$ (unit), and a largest ratio of $0.99$. Many of these runs are short, so the comparison was repeated on the 30 runs that reached at least 20 steps: the variance again lies below its initial value in 30 of 30, with medians $0.10$, $0.13$ and $0.49$ and a largest ratio of $0.72$. Horizons are not equal across datasets---each run had a fixed wall-clock budget---so these ratios compare conventions within a dataset, not datasets with each other. Only 3 datasets reached the $250$-step target under all three conventions, and they agree to three significant figures (\texttt{hw} $0.1751$, $0.1745$, $0.1747$; \texttt{mc} $0.3897$, $0.3898$, $0.3897$; \texttt{sg} $0.007589$, $0.007595$, $0.007591$); on every other dataset the budget cut at least one convention short, so those comparisons are not step-matched. One run, \texttt{eco-mangwet} (recip), aborted on the overflow guard because the reciprocal of a column spanning nine decades produces lengths whose curvatures are large enough to overflow the update; it is excluded rather than repaired. All 28 of the 28 datasets therefore contribute all three convention runs except this single aborted one.
 
 \paragraph{Sham flow.} Identical numerics, but at each step the vector of
 curvature values is randomly permuted across edges before the weight update.
@@ -1251,15 +1255,20 @@ and statistic is regenerated from the raw result files by
 behind each plotted point. The release is available at \url{https://github.com/fanqimcse/ricci-flow-finite-time-residuals}
 (tag \texttt{v1.0.1}) and is archived under the concept {DOI}
 \url{https://doi.org/10.5281/zenodo.23277161}, which resolves to the
-current version \cite{Fan2026Code}. We verified this rather than asserting it: the
+current version \cite{Fan2026Code}. We verified this rather than asserting it. The
 \texttt{v1.0.0} archive (\url{https://doi.org/10.5281/zenodo.23277162}) was
-downloaded into an empty directory, and \texttt{make\_paper\_figures.py} was run there
+first downloaded into an empty directory, and \texttt{make\_paper\_figures.py} was run there
 against the archived result files alone. All eight figures were regenerated and
 every line of the emitted data log---$84$ lines of statistics, one per plotted
-quantity---matched the working copy exactly. We report the outcome rather than
-the claim because the check was informative: run this way, the release revealed
-path assumptions that a working tree cannot expose, and \texttt{v1.0.1} is the
-corrected and re-verified tree. An archival request has
+quantity---matched the working copy exactly. That check was informative rather
+than ceremonial: run this way, the release revealed path assumptions that a
+working tree cannot expose. The same clean-room procedure was then repeated on
+the corrected \texttt{v1.0.1} tree (tag \texttt{v1.0.1}, version DOI
+\url{https://doi.org/10.5281/zenodo.23330125}) that this submission freezes:
+copied into an empty directory and run against its archived result files alone,
+\texttt{make\_paper\_figures.py} again regenerated all eight figures and emitted
+a $93$-line data log identical line for line to the working copy. We report
+these outcomes rather than a bare reproducibility claim. An archival request has
 also been submitted to {Software
 Heritage} (save request \texttt{2549855}, accepted), whose intrinsic
 identifier is issued once the archival visit completes.
@@ -1381,7 +1390,7 @@ families.} \textbf{a}, Leave-one-family-out out-of-sample $R^2$; only assortativ
 rises marginally above the intercept baseline (dashed), and none of the
 models has usable predictive power. \textbf{b}, Within
 the largest family (ENZYMES, $n=15$ at the operational threshold) the
-plateau correlates with
+finite-horizon residual is associated with
 transitivity ($\rho=+0.73$) but the correlation collapses once size is
 controlled (partial $\rho=+0.25$, $p=0.37$). \textbf{c}, Family-level cluster-bootstrap 95\% intervals for the corpus correlations over 41 units and 11 families: the assortativity association survives clustering, the transitivity one does not, and the rate--residual interval includes zero.}
 \label{fig:6}
@@ -1393,8 +1402,8 @@ controlled (partial $\rho=+0.25$, $p=0.37$). \textbf{c}, Family-level cluster-bo
 \caption{\textbf{Speed and depth are coupled; the spectral gap is not the
 clock.} \textbf{a}, Early decay rate versus initial Laplacian spectral gap
 across 41 units ($\rho=-0.03$, n.s.; cluster-bootstrap interval [-0.43,+0.39]); the gap does not set the rate.
-\textbf{b}, Faster decay reaches a lower plateau ($\rho=-0.43$; partial
-$\rho=-0.63$, controlling size and mean degree); the family cluster-bootstrap interval [-0.68,+0.16] includes zero, so we do not claim the association at family level.}
+\textbf{b}, Observed decay rate is associated with the terminal finite-horizon residual at the network level ($\rho=-0.43$; partial
+$\rho=-0.63$, controlling size and mean degree); the family cluster-bootstrap interval [-0.68,+0.16] includes zero, so the association is not significant under family-level clustering.}
 \label{fig:7}
 \end{figure}
 
